@@ -3,4 +3,14 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+
+    <color name="bgColor">#FBFBFB</color>
+    <color name="sepColor">#DCDCDC</color>
+    <color name="colorAccent2">#717171</color>
+    <color name="textPrimary">#000000</color>
+    <color name="textSecondary">#333333</color>
+    <color name="textDisabled">#909090</color>
+    <color name="textSuccess">#1E8703</color>
+    <color name="textWarning">#B80000</color>
+
 </resources>

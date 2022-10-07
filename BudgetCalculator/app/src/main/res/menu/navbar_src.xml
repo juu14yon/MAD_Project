@@ -3,14 +3,14 @@
 
     <item android:title="Home"
         android:icon="@drawable/icn_home"
-        android:id="homeMenu"/>
+        android:id="@+id/homeMenu"/>
     <item android:title="History"
         android:icon="@drawable/icn_record"
-        android:id="historyMenu"/>
+        android:id="@+id/historyMenu"/>
     <item android:title="Stats"
         android:icon="@drawable/icn_stat"
-        android:id="homeMenu"/>
+        android:id="@+id/statsMenu"/>
     <item android:title="Settings"
         android:icon="@drawable/icn_settings"
-        android:id="homeMenu"/>
+        android:id="@+id/settingsMenu"/>
 </menu>
