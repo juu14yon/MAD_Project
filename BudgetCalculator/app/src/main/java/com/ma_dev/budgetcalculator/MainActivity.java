@@ -6,11 +6,15 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 import com.ma_dev.budgetcalculator.databinding.ActivityMainBinding;
 
+import org.w3c.dom.Text;
+
 public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
+    TextView header;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,18 +23,25 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         replaceFrame(new HomeFragment());
 
+        header = (TextView) findViewById(R.id.headerText);
+
         binding.navBar.setOnNavigationItemSelectedListener(item -> {
             switch (item.getItemId()){
                 case R.id.homeMenu:
+                    header.setText("Dashboard");
                     replaceFrame(new HomeFragment());
                     break;
                 case R.id.historyMenu:
+                    header.setText("History");
                     replaceFrame(new HistoryFragment());
+                    //replaceFrame(new newRecordFragment());
                     break;
                 case R.id.statsMenu:
+                    header.setText("Monthly Report");
                     replaceFrame(new StatsFragment());
                     break;
                 case R.id.settingsMenu:
+                    header.setText("Settings");
                     replaceFrame(new SettingsFragment());
                     break;
 
