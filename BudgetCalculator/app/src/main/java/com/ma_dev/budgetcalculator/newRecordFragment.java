@@ -17,6 +17,7 @@ import android.widget.Spinner;
  * create an instance of this fragment.
  */
 public class newRecordFragment extends Fragment {
+    Spinner dropdown;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -56,19 +57,21 @@ public class newRecordFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-// Smt is wrong here
-        Spinner spinner = (Spinner) getView().findViewById(R.id.categoryDropdown);
-        Context c = getContext();
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(c,
-                R.array.categories_array, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.fragment_new_record, container, false);
+        dropdown = rootView.findViewById(R.id.categoryDropdown);
+
+        Context c = getContext();
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(c,
+                R.array.categories_array, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        dropdown.setAdapter(adapter);
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_new_record, container, false);
+        return rootView;
     }
 }

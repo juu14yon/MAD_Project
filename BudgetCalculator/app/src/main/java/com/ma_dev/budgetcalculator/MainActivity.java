@@ -10,8 +10,6 @@ import android.widget.TextView;
 
 import com.ma_dev.budgetcalculator.databinding.ActivityMainBinding;
 
-import org.w3c.dom.Text;
-
 public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
     TextView header;

@@ -1409,6 +1409,7 @@ id bounceStart
 id buttonPanel
 id cache_measures
 id callMeasure
+id cancelButton
 id cancel_action
 id carryVelocity
 id categoryDropdown
@@ -1468,6 +1469,7 @@ id easeIn
 id easeInOut
 id easeOut
 id east
+id editTextDate
 id edit_query
 id end
 id end_padder
@@ -1541,6 +1543,7 @@ id navigation_header_container
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
+id newRecordButton
 id noState
 id none
 id normal
@@ -1574,6 +1577,7 @@ id reverseSawtooth
 id right
 id right_icon
 id right_side
+id saveButton
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type

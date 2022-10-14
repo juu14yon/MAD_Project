@@ -1,12 +1,18 @@
 package com.ma_dev.budgetcalculator;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +20,7 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class HistoryFragment extends Fragment {
+    Button button;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -58,6 +65,19 @@ public class HistoryFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_history, null);
+        Activity mainAct = getActivity();
+
+        button = (Button) root.findViewById(R.id.newRecordButton);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                /*if (mainAct != null) {
+                    mainAct.replaceFrame(new newRecordFragment());
+                }*/
+            }
+        });
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_history, container, false);
     }

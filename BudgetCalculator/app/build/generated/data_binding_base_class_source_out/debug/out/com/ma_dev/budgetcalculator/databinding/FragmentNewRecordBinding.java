@@ -4,6 +4,7 @@ package com.ma_dev.budgetcalculator.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.Spinner;
@@ -24,6 +25,9 @@ public final class FragmentNewRecordBinding implements ViewBinding {
   public final EditText amountInput;
 
   @NonNull
+  public final Button cancelButton;
+
+  @NonNull
   public final Spinner categoryDropdown;
 
   @NonNull
@@ -33,17 +37,27 @@ public final class FragmentNewRecordBinding implements ViewBinding {
   public final EditText descriptionInput;
 
   @NonNull
+  public final EditText editTextDate;
+
+  @NonNull
   public final EditText nameInput;
 
+  @NonNull
+  public final Button saveButton;
+
   private FragmentNewRecordBinding(@NonNull FrameLayout rootView, @NonNull EditText amountInput,
-      @NonNull Spinner categoryDropdown, @NonNull TextView categoryDropdownLabel,
-      @NonNull EditText descriptionInput, @NonNull EditText nameInput) {
+      @NonNull Button cancelButton, @NonNull Spinner categoryDropdown,
+      @NonNull TextView categoryDropdownLabel, @NonNull EditText descriptionInput,
+      @NonNull EditText editTextDate, @NonNull EditText nameInput, @NonNull Button saveButton) {
     this.rootView = rootView;
     this.amountInput = amountInput;
+    this.cancelButton = cancelButton;
     this.categoryDropdown = categoryDropdown;
     this.categoryDropdownLabel = categoryDropdownLabel;
     this.descriptionInput = descriptionInput;
+    this.editTextDate = editTextDate;
     this.nameInput = nameInput;
+    this.saveButton = saveButton;
   }
 
   @Override
@@ -79,6 +93,12 @@ public final class FragmentNewRecordBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.cancelButton;
+      Button cancelButton = rootView.findViewById(id);
+      if (cancelButton == null) {
+        break missingId;
+      }
+
       id = R.id.categoryDropdown;
       Spinner categoryDropdown = rootView.findViewById(id);
       if (categoryDropdown == null) {
@@ -97,14 +117,27 @@ public final class FragmentNewRecordBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.editTextDate;
+      EditText editTextDate = rootView.findViewById(id);
+      if (editTextDate == null) {
+        break missingId;
+      }
+
       id = R.id.nameInput;
       EditText nameInput = rootView.findViewById(id);
       if (nameInput == null) {
         break missingId;
       }
 
-      return new FragmentNewRecordBinding((FrameLayout) rootView, amountInput, categoryDropdown,
-          categoryDropdownLabel, descriptionInput, nameInput);
+      id = R.id.saveButton;
+      Button saveButton = rootView.findViewById(id);
+      if (saveButton == null) {
+        break missingId;
+      }
+
+      return new FragmentNewRecordBinding((FrameLayout) rootView, amountInput, cancelButton,
+          categoryDropdown, categoryDropdownLabel, descriptionInput, editTextDate, nameInput,
+          saveButton);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

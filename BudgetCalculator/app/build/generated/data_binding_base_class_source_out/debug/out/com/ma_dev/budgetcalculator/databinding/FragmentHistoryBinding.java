@@ -4,6 +4,7 @@ package com.ma_dev.budgetcalculator.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -11,13 +12,18 @@ import androidx.viewbinding.ViewBinding;
 import com.ma_dev.budgetcalculator.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class FragmentHistoryBinding implements ViewBinding {
   @NonNull
   private final FrameLayout rootView;
 
-  private FragmentHistoryBinding(@NonNull FrameLayout rootView) {
+  @NonNull
+  public final Button newRecordButton;
+
+  private FragmentHistoryBinding(@NonNull FrameLayout rootView, @NonNull Button newRecordButton) {
     this.rootView = rootView;
+    this.newRecordButton = newRecordButton;
   }
 
   @Override
@@ -43,10 +49,19 @@ public final class FragmentHistoryBinding implements ViewBinding {
 
   @NonNull
   public static FragmentHistoryBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
-    }
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.newRecordButton;
+      Button newRecordButton = rootView.findViewById(id);
+      if (newRecordButton == null) {
+        break missingId;
+      }
 
-    return new FragmentHistoryBinding((FrameLayout) rootView);
+      return new FragmentHistoryBinding((FrameLayout) rootView, newRecordButton);
+    }
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }
