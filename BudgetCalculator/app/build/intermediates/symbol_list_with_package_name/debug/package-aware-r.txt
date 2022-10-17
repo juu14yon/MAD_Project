@@ -1289,13 +1289,19 @@ drawable ic_launcher_foreground
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable icn_about
+drawable icn_faq
 drawable icn_home
+drawable icn_language
+drawable icn_notification
 drawable icn_record
 drawable icn_settings
 drawable icn_stat
+drawable icn_theme
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
+drawable new_record_button
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -1321,6 +1327,9 @@ id SHOW_ALL
 id SHOW_PATH
 id SHOW_PROGRESS
 id SYM
+id aboutButton
+id aboutIcon
+id aboutLabel
 id accelerate
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
@@ -1395,6 +1404,8 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
+id availableLabel
+id availableValue
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -1406,6 +1417,7 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id buttonDate
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -1457,6 +1469,9 @@ id disableHome
 id disableIntraAutoTransition
 id disablePostScroll
 id disableScroll
+id divider
+id divider2
+id divider3
 id dragAnticlockwise
 id dragClockwise
 id dragDown
@@ -1469,7 +1484,6 @@ id easeIn
 id easeInOut
 id easeOut
 id east
-id editTextDate
 id edit_query
 id end
 id end_padder
@@ -1478,6 +1492,11 @@ id enterAlwaysCollapsed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id expencesLabel
+id expencesValue
+id faqButton
+id faqIcon
+id faqLabel
 id fill
 id fill_horizontal
 id fill_vertical
@@ -1489,6 +1508,7 @@ id fragment_container_view_tag
 id frameLayout
 id frost
 id ghost_view
+id goBackButton
 id gone
 id graph
 id graph_wrap
@@ -1510,6 +1530,8 @@ id ignoreRequest
 id image
 id immediateStop
 id included
+id incomeLabel
+id incomeValue
 id info
 id invisible
 id italic
@@ -1517,6 +1539,9 @@ id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
 id labeled
+id languageButton
+id languageIcon
+id languageLabel
 id largeLabel
 id layout
 id left
@@ -1548,6 +1573,10 @@ id noState
 id none
 id normal
 id north
+id notificationButton
+id notificationIcon
+id notificationLabel
+id notificationSwitch
 id notification_background
 id notification_main_column
 id notification_main_column_container
@@ -1587,6 +1616,7 @@ id scroll
 id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
+id scrollView2
 id scrollable
 id search_badge
 id search_bar
@@ -1615,6 +1645,7 @@ id snackbar_text
 id snap
 id snapMargins
 id south
+id space
 id spacer
 id special_effects_controller_view_tag
 id spline
@@ -1658,10 +1689,15 @@ id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
+id textView7
 id text_input_password_toggle
 id textinput_counter
 id textinput_error
 id textinput_helper_text
+id themeButton
+id themeIcon
+id themeLabel
+id themeSwitch
 id time
 id title
 id titleDividerNoCustom
@@ -1769,6 +1805,7 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout fragment_about_us
 layout fragment_history
 layout fragment_home
 layout fragment_new_record
@@ -1825,6 +1862,7 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string about_us
 string androidx_startup
 string app_name
 string appbar_scrolling_view_behavior

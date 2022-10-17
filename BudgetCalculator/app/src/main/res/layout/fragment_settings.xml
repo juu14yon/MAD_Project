@@ -13,17 +13,24 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/notificationLabel"
+        <Button
+            android:id="@+id/notificationButton"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="8dp"
-            android:gravity=""
-            android:text="Notifications"
-            android:textSize="16dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/notificationLabel"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/notificationIcon"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <Switch
+            android:id="@+id/notificationSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/notificationLabel"
+            app:layout_constraintEnd_toEndOf="@+id/notificationButton"
+            app:layout_constraintTop_toTopOf="@+id/notificationLabel" />
 
         <ImageView
             android:id="@+id/notificationIcon"
@@ -34,6 +41,28 @@
             app:layout_constraintBottom_toBottomOf="@+id/notificationLabel"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/notificationLabel" />
+
+        <TextView
+            android:id="@+id/notificationLabel"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="16dp"
+            android:gravity="center_vertical|left|start"
+            android:text="Notifications"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/notificationIcon"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/languageButton"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/languageLabel"
+            app:layout_constraintEnd_toEndOf="@+id/languageLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/notificationLabel" />
 
         <ImageView
             android:id="@+id/languageIcon"
@@ -48,50 +77,34 @@
         <TextView
             android:id="@+id/languageLabel"
             android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="8dp"
-            android:gravity=""
+            android:layout_height="56dp"
+            android:layout_marginStart="16dp"
+            android:gravity="center_vertical|left|start"
             android:text="Language"
             android:textSize="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/languageIcon"
             app:layout_constraintTop_toBottomOf="@+id/notificationLabel" />
 
-        <TextView
-            android:id="@+id/themeLabel"
+        <Button
+            android:id="@+id/themeButton"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="8dp"
-            android:gravity=""
-            android:text="Dark Theme"
-            android:textSize="16dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/themeLabel"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/themeIcon"
-            app:layout_constraintTop_toBottomOf="@+id/languageLabel" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/themeLabel"
+            app:layout_constraintVertical_bias="1.0" />
 
-        <TextView
-            android:id="@+id/faqLabel"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="8dp"
-            android:gravity=""
-            android:text="FAQ"
-            android:textSize="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/faqIcon"
-            app:layout_constraintTop_toBottomOf="@+id/themeLabel" />
-
-        <TextView
-            android:id="@+id/aboutLabel"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="8dp"
-            android:gravity=""
-            android:text="About Us"
-            android:textSize="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/aboutIcon"
-            app:layout_constraintTop_toBottomOf="@+id/faqLabel" />
+        <Switch
+            android:id="@+id/themeSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/themeLabel"
+            app:layout_constraintEnd_toEndOf="@+id/themeButton"
+            app:layout_constraintTop_toTopOf="@+id/themeLabel" />
 
         <ImageView
             android:id="@+id/themeIcon"
@@ -103,6 +116,31 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/themeLabel" />
 
+        <TextView
+            android:id="@+id/themeLabel"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="16dp"
+            android:gravity="center_vertical|left|start"
+            android:text="Dark Theme"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/themeIcon"
+            app:layout_constraintTop_toBottomOf="@+id/languageLabel" />
+
+        <Button
+            android:id="@+id/faqButton"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/faqLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/themeLabel"
+            app:layout_constraintVertical_bias="1.0" />
+
         <ImageView
             android:id="@+id/faqIcon"
             android:layout_width="24dp"
@@ -113,6 +151,28 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/faqLabel" />
 
+        <TextView
+            android:id="@+id/faqLabel"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="16dp"
+            android:gravity="center_vertical|left|start"
+            android:text="FAQ"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/faqIcon"
+            app:layout_constraintTop_toBottomOf="@+id/themeLabel" />
+
+        <Button
+            android:id="@+id/aboutButton"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/aboutLabel"
+            app:layout_constraintEnd_toEndOf="@+id/aboutLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/faqLabel" />
+
         <ImageView
             android:id="@+id/aboutIcon"
             android:layout_width="wrap_content"
@@ -122,5 +182,19 @@
             app:layout_constraintBottom_toBottomOf="@+id/aboutLabel"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/aboutLabel" />
+
+        <TextView
+            android:id="@+id/aboutLabel"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="16dp"
+            android:gravity="center_vertical|left|start"
+            android:text="About Us"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/aboutIcon"
+            app:layout_constraintTop_toBottomOf="@+id/faqLabel" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

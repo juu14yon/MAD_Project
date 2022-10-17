@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".newRecordFragment">
+    tools:context=".newRecordFragment"
+    android:background="@color/bgColor">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -39,17 +40,19 @@
         <EditText
             android:id="@+id/descriptionInput"
             android:layout_width="0dp"
-            android:layout_height="168dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
             android:ems="10"
             android:gravity="start|top"
             android:hint="Description"
             android:inputType="textMultiLine"
+            android:lines="3"
+            android:scrollbars="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
+            app:layout_constraintTop_toBottomOf="@+id/amountInput" />
 
         <Spinner
             android:id="@+id/categoryDropdown"
@@ -74,18 +77,23 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/descriptionInput" />
 
-        <EditText
-            android:id="@+id/editTextDate"
+        <Button
+            android:id="@+id/buttonDate"
+            style="?android:spinnerStyle"
             android:layout_width="0dp"
             android:layout_height="56dp"
             android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="32dp"
             android:ems="10"
-            android:hint="Date"
+            android:hint="Select date"
             android:inputType="date"
+            android:textSize="18dp"
+            android:paddingLeft="4dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/amountInput" />
+            app:layout_constraintTop_toBottomOf="@+id/categoryDropdown" />
 
         <Button
             android:id="@+id/cancelButton"
@@ -96,8 +104,9 @@
             android:layout_marginEnd="32dp"
             android:text="Cancel"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/categoryDropdown" />
+            app:layout_constraintTop_toBottomOf="@+id/buttonDate" />
 
         <Button
             android:id="@+id/saveButton"

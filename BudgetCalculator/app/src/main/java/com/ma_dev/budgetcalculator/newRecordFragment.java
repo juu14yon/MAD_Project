@@ -1,77 +1,110 @@
 package com.ma_dev.budgetcalculator;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.Spinner;
+import android.widget.TextView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link newRecordFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.Calendar;
+
 public class newRecordFragment extends Fragment {
     Spinner dropdown;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private DatePickerDialog datePickerDialog;
+    private String date;
+    Button dateButton;
+    Button cancelButton;
+    Button saveButton;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     public newRecordFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment newRecordFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static newRecordFragment newInstance(String param1, String param2) {
-        newRecordFragment fragment = new newRecordFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_new_record, container, false);
-        dropdown = rootView.findViewById(R.id.categoryDropdown);
+        TextView textview = (TextView)getActivity().findViewById(R.id.headerText);
+        textview.setText("New Record");
 
+        dropdown = rootView.findViewById(R.id.categoryDropdown);
         Context c = getContext();
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(c,
                 R.array.categories_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         dropdown.setAdapter(adapter);
 
+        dateButton = (Button) rootView.findViewById(R.id.buttonDate);
+        cancelButton = (Button) rootView.findViewById(R.id.cancelButton);
+        saveButton = (Button) rootView.findViewById(R.id.saveButton);
+        initDatePicker(c);
+
+        dateButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                datePickerDialog.show();
+            }
+        });
+
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+                transaction.add(R.id.frameLayout, new HistoryFragment());
+                transaction.commit();
+            }
+        });
+
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // CODE TO SAVE DATA
+
+                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+                transaction.add(R.id.frameLayout, new HistoryFragment());
+                transaction.commit();
+            }
+        });
+
         // Inflate the layout for this fragment
         return rootView;
+    }
+
+    private void initDatePicker(Context c){
+        DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                month = month+1;
+                date = makeDateString(day, month, year);
+                dateButton.setText(date);
+            }
+        };
+
+        Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+        datePickerDialog = new DatePickerDialog(c, dateSetListener, year, month, day);
+
+    }
+
+    private String makeDateString(int day, int month, int year) {
+        return day+"."+month+"."+year;
     }
 }

@@ -31,8 +31,7 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.historyMenu:
                     header.setText("History");
-                    replaceFrame(new HistoryFragment());
-                    //replaceFrame(new newRecordFragment());
+                    replaceFrame(new newRecordFragment());
                     break;
                 case R.id.statsMenu:
                     header.setText("Monthly Report");

@@ -4,20 +4,100 @@ package com.ma_dev.budgetcalculator.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.Switch;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import com.ma_dev.budgetcalculator.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class FragmentSettingsBinding implements ViewBinding {
   @NonNull
   private final FrameLayout rootView;
 
-  private FragmentSettingsBinding(@NonNull FrameLayout rootView) {
+  @NonNull
+  public final Button aboutButton;
+
+  @NonNull
+  public final ImageView aboutIcon;
+
+  @NonNull
+  public final TextView aboutLabel;
+
+  @NonNull
+  public final Button faqButton;
+
+  @NonNull
+  public final ImageView faqIcon;
+
+  @NonNull
+  public final TextView faqLabel;
+
+  @NonNull
+  public final Button languageButton;
+
+  @NonNull
+  public final ImageView languageIcon;
+
+  @NonNull
+  public final TextView languageLabel;
+
+  @NonNull
+  public final Button notificationButton;
+
+  @NonNull
+  public final ImageView notificationIcon;
+
+  @NonNull
+  public final TextView notificationLabel;
+
+  @NonNull
+  public final Switch notificationSwitch;
+
+  @NonNull
+  public final Button themeButton;
+
+  @NonNull
+  public final ImageView themeIcon;
+
+  @NonNull
+  public final TextView themeLabel;
+
+  @NonNull
+  public final Switch themeSwitch;
+
+  private FragmentSettingsBinding(@NonNull FrameLayout rootView, @NonNull Button aboutButton,
+      @NonNull ImageView aboutIcon, @NonNull TextView aboutLabel, @NonNull Button faqButton,
+      @NonNull ImageView faqIcon, @NonNull TextView faqLabel, @NonNull Button languageButton,
+      @NonNull ImageView languageIcon, @NonNull TextView languageLabel,
+      @NonNull Button notificationButton, @NonNull ImageView notificationIcon,
+      @NonNull TextView notificationLabel, @NonNull Switch notificationSwitch,
+      @NonNull Button themeButton, @NonNull ImageView themeIcon, @NonNull TextView themeLabel,
+      @NonNull Switch themeSwitch) {
     this.rootView = rootView;
+    this.aboutButton = aboutButton;
+    this.aboutIcon = aboutIcon;
+    this.aboutLabel = aboutLabel;
+    this.faqButton = faqButton;
+    this.faqIcon = faqIcon;
+    this.faqLabel = faqLabel;
+    this.languageButton = languageButton;
+    this.languageIcon = languageIcon;
+    this.languageLabel = languageLabel;
+    this.notificationButton = notificationButton;
+    this.notificationIcon = notificationIcon;
+    this.notificationLabel = notificationLabel;
+    this.notificationSwitch = notificationSwitch;
+    this.themeButton = themeButton;
+    this.themeIcon = themeIcon;
+    this.themeLabel = themeLabel;
+    this.themeSwitch = themeSwitch;
   }
 
   @Override
@@ -43,10 +123,118 @@ public final class FragmentSettingsBinding implements ViewBinding {
 
   @NonNull
   public static FragmentSettingsBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
-    }
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.aboutButton;
+      Button aboutButton = rootView.findViewById(id);
+      if (aboutButton == null) {
+        break missingId;
+      }
 
-    return new FragmentSettingsBinding((FrameLayout) rootView);
+      id = R.id.aboutIcon;
+      ImageView aboutIcon = rootView.findViewById(id);
+      if (aboutIcon == null) {
+        break missingId;
+      }
+
+      id = R.id.aboutLabel;
+      TextView aboutLabel = rootView.findViewById(id);
+      if (aboutLabel == null) {
+        break missingId;
+      }
+
+      id = R.id.faqButton;
+      Button faqButton = rootView.findViewById(id);
+      if (faqButton == null) {
+        break missingId;
+      }
+
+      id = R.id.faqIcon;
+      ImageView faqIcon = rootView.findViewById(id);
+      if (faqIcon == null) {
+        break missingId;
+      }
+
+      id = R.id.faqLabel;
+      TextView faqLabel = rootView.findViewById(id);
+      if (faqLabel == null) {
+        break missingId;
+      }
+
+      id = R.id.languageButton;
+      Button languageButton = rootView.findViewById(id);
+      if (languageButton == null) {
+        break missingId;
+      }
+
+      id = R.id.languageIcon;
+      ImageView languageIcon = rootView.findViewById(id);
+      if (languageIcon == null) {
+        break missingId;
+      }
+
+      id = R.id.languageLabel;
+      TextView languageLabel = rootView.findViewById(id);
+      if (languageLabel == null) {
+        break missingId;
+      }
+
+      id = R.id.notificationButton;
+      Button notificationButton = rootView.findViewById(id);
+      if (notificationButton == null) {
+        break missingId;
+      }
+
+      id = R.id.notificationIcon;
+      ImageView notificationIcon = rootView.findViewById(id);
+      if (notificationIcon == null) {
+        break missingId;
+      }
+
+      id = R.id.notificationLabel;
+      TextView notificationLabel = rootView.findViewById(id);
+      if (notificationLabel == null) {
+        break missingId;
+      }
+
+      id = R.id.notificationSwitch;
+      Switch notificationSwitch = rootView.findViewById(id);
+      if (notificationSwitch == null) {
+        break missingId;
+      }
+
+      id = R.id.themeButton;
+      Button themeButton = rootView.findViewById(id);
+      if (themeButton == null) {
+        break missingId;
+      }
+
+      id = R.id.themeIcon;
+      ImageView themeIcon = rootView.findViewById(id);
+      if (themeIcon == null) {
+        break missingId;
+      }
+
+      id = R.id.themeLabel;
+      TextView themeLabel = rootView.findViewById(id);
+      if (themeLabel == null) {
+        break missingId;
+      }
+
+      id = R.id.themeSwitch;
+      Switch themeSwitch = rootView.findViewById(id);
+      if (themeSwitch == null) {
+        break missingId;
+      }
+
+      return new FragmentSettingsBinding((FrameLayout) rootView, aboutButton, aboutIcon, aboutLabel,
+          faqButton, faqIcon, faqLabel, languageButton, languageIcon, languageLabel,
+          notificationButton, notificationIcon, notificationLabel, notificationSwitch, themeButton,
+          themeIcon, themeLabel, themeSwitch);
+    }
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

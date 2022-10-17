@@ -2,4 +2,15 @@
     <string name="app_name">BudgetCalculator</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="about_us">
+        This app was created as a project for Mobile App Development course (COMP4051) in
+        University of Central Asia (Naryn, Kyrgyzstan).\n\nAuthors:\n
+        ► Alexandra Yu\n
+        ► Naita Abdrahmanova\n
+        ► Zhainagul Zhumanazar\n\n\n
+        Source code (Github repository): https://github.com/juu14yon/MAD_Project\n\n\n
+
+        © 2022-2023
+    </string>
 </resources>

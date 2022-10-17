@@ -5,19 +5,70 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.Space;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import com.ma_dev.budgetcalculator.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class FragmentHomeBinding implements ViewBinding {
   @NonNull
   private final FrameLayout rootView;
 
-  private FragmentHomeBinding(@NonNull FrameLayout rootView) {
+  @NonNull
+  public final TextView availableLabel;
+
+  @NonNull
+  public final TextView availableValue;
+
+  @NonNull
+  public final View divider;
+
+  @NonNull
+  public final View divider2;
+
+  @NonNull
+  public final View divider3;
+
+  @NonNull
+  public final TextView expencesLabel;
+
+  @NonNull
+  public final TextView expencesValue;
+
+  @NonNull
+  public final TextView incomeLabel;
+
+  @NonNull
+  public final TextView incomeValue;
+
+  @NonNull
+  public final Space space;
+
+  @NonNull
+  public final TextView textView7;
+
+  private FragmentHomeBinding(@NonNull FrameLayout rootView, @NonNull TextView availableLabel,
+      @NonNull TextView availableValue, @NonNull View divider, @NonNull View divider2,
+      @NonNull View divider3, @NonNull TextView expencesLabel, @NonNull TextView expencesValue,
+      @NonNull TextView incomeLabel, @NonNull TextView incomeValue, @NonNull Space space,
+      @NonNull TextView textView7) {
     this.rootView = rootView;
+    this.availableLabel = availableLabel;
+    this.availableValue = availableValue;
+    this.divider = divider;
+    this.divider2 = divider2;
+    this.divider3 = divider3;
+    this.expencesLabel = expencesLabel;
+    this.expencesValue = expencesValue;
+    this.incomeLabel = incomeLabel;
+    this.incomeValue = incomeValue;
+    this.space = space;
+    this.textView7 = textView7;
   }
 
   @Override
@@ -43,10 +94,81 @@ public final class FragmentHomeBinding implements ViewBinding {
 
   @NonNull
   public static FragmentHomeBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
-    }
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.availableLabel;
+      TextView availableLabel = rootView.findViewById(id);
+      if (availableLabel == null) {
+        break missingId;
+      }
 
-    return new FragmentHomeBinding((FrameLayout) rootView);
+      id = R.id.availableValue;
+      TextView availableValue = rootView.findViewById(id);
+      if (availableValue == null) {
+        break missingId;
+      }
+
+      id = R.id.divider;
+      View divider = rootView.findViewById(id);
+      if (divider == null) {
+        break missingId;
+      }
+
+      id = R.id.divider2;
+      View divider2 = rootView.findViewById(id);
+      if (divider2 == null) {
+        break missingId;
+      }
+
+      id = R.id.divider3;
+      View divider3 = rootView.findViewById(id);
+      if (divider3 == null) {
+        break missingId;
+      }
+
+      id = R.id.expencesLabel;
+      TextView expencesLabel = rootView.findViewById(id);
+      if (expencesLabel == null) {
+        break missingId;
+      }
+
+      id = R.id.expencesValue;
+      TextView expencesValue = rootView.findViewById(id);
+      if (expencesValue == null) {
+        break missingId;
+      }
+
+      id = R.id.incomeLabel;
+      TextView incomeLabel = rootView.findViewById(id);
+      if (incomeLabel == null) {
+        break missingId;
+      }
+
+      id = R.id.incomeValue;
+      TextView incomeValue = rootView.findViewById(id);
+      if (incomeValue == null) {
+        break missingId;
+      }
+
+      id = R.id.space;
+      Space space = rootView.findViewById(id);
+      if (space == null) {
+        break missingId;
+      }
+
+      id = R.id.textView7;
+      TextView textView7 = rootView.findViewById(id);
+      if (textView7 == null) {
+        break missingId;
+      }
+
+      return new FragmentHomeBinding((FrameLayout) rootView, availableLabel, availableValue,
+          divider, divider2, divider3, expencesLabel, expencesValue, incomeLabel, incomeValue,
+          space, textView7);
+    }
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }
