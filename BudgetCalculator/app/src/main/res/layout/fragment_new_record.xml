@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".newRecordFragment"
-    android:background="@color/bgColor">
+    android:background="?attr/background_color">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -103,6 +103,8 @@
             android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
             android:text="Cancel"
+            android:background="?attr/foreground_color"
+            android:textColor="?attr/text1_color"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -114,8 +116,11 @@
             android:layout_width="0dp"
             android:layout_height="56dp"
             android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
             android:text="Save"
+            android:background="?attr/colorAccent"
+            android:textColor="#eeeeee"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cancelButton" />

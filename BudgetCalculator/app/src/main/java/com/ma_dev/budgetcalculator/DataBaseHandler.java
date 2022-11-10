@@ -36,14 +36,14 @@ public class DataBaseHandler extends SQLiteOpenHelper {
                 + ID_COL + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + DATE_COL + " TEXT,"
                 + NAME_COL + " TEXT,"
-                + AMOUNT_COL + " FLOAT,"
+                + AMOUNT_COL + " TEXT,"
                 + DESCRIPTION_COL + " TEXT,"
                 + CATEGORY_COL + " TEXT)";
         
         db.execSQL(query);
     }
 
-    public boolean addNewRecord(String name, Double amount, String description, String category, String date) {
+    public boolean addNewRecord(String name, String amount, String description, String category, String date) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
 
@@ -60,9 +60,13 @@ public class DataBaseHandler extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // this method is called to check if the table exists already.
-        //db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
+    }
+
+    @Override
+    public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        db.setVersion(oldVersion);
     }
 
     // ???
@@ -86,10 +90,16 @@ public class DataBaseHandler extends SQLiteOpenHelper {
         return  recordList;
     }
 
-    public void DeleteRecord(int recordid){
-        SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(TABLE_NAME, ID_COL+" = ?",new String[]{String.valueOf(recordid)});
-        db.close();
+    public boolean DeleteRecord(int recordid){
+        try {
+            SQLiteDatabase db = this.getWritableDatabase();
+            db.delete(TABLE_NAME, ID_COL + " = ?", new String[]{String.valueOf(recordid)});
+            db.close();
+            return true;
+        } catch(Exception e){
+            return false;
+        }
+
     }
 
     public int UpdateRecordDetails(String name, Double amount, String description, String category, String date, int id){
@@ -103,24 +113,5 @@ public class DataBaseHandler extends SQLiteOpenHelper {
         int count = db.update(TABLE_NAME, cVals, ID_COL+" = ?",new String[]{String.valueOf(id)});
         return  count;
     }
-
-    /*
-    *
-    * public ArrayList<HashMap<String, String>> GetRecordById(int recordid){
-        SQLiteDatabase db = this.getWritableDatabase();
-        ArrayList<HashMap<String, String>> recordList = new ArrayList<>();
-        String query = "SELECT name, location, designation FROM "+ TABLE_NAME;
-        Cursor cursor = db.query(TABLE_NAME, new String[]{KEY_NAME, KEY_LOC, KEY_DESG}, KEY_ID+ "=?",new String[]{String.valueOf(recordid)},null, null, null, null);
-        if (cursor.moveToNext()){
-            HashMap<String,String> record = new HashMap<>();
-            record.put("name",cursor.getString(cursor.getColumnIndex(KEY_NAME)));
-            record.put("designation",cursor.getString(cursor.getColumnIndex(KEY_DESG)));
-            record.put("location",cursor.getString(cursor.getColumnIndex(KEY_LOC)));
-            recordList.add(record);
-        }
-        return  recordList;
-    }
-    * */
-
 
 }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="?attr/background_color"
     tools:context=".MainActivity">
 
     <TextView
@@ -14,8 +14,9 @@
         android:text="Dashboard"
         android:textSize="24dp"
         android:textStyle="bold"
-        android:textColor="@color/textPrimary"
+        android:textColor="?attr/text1_color"
         android:gravity="center"
+        android:background="?attr/foreground_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,7 +25,7 @@
         android:id="@+id/frameLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/bgColor"
+        android:background="?attr/background_color"
         app:layout_constraintBottom_toTopOf="@+id/navBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,6 +37,7 @@
         android:id="@+id/navBar"
         android:layout_width="0dp"
         android:layout_height="80dp"
+        android:background="?attr/foreground_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

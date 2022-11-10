@@ -111,6 +111,7 @@ attr backgroundSplit
 attr backgroundStacked
 attr backgroundTint
 attr backgroundTintMode
+attr background_color
 attr barLength
 attr barrierAllowsGoneWidgets
 attr barrierDirection
@@ -367,6 +368,7 @@ attr fontStyle
 attr fontVariationSettings
 attr fontWeight
 attr foregroundInsidePadding
+attr foreground_color
 attr framePosition
 attr gapBetweenBars
 attr goIcon
@@ -709,6 +711,8 @@ attr targetId
 attr telltales_tailColor
 attr telltales_tailScale
 attr telltales_velocityMode
+attr text1_color
+attr text2_color
 attr textAllCaps
 attr textAppearanceBody1
 attr textAppearanceBody2
@@ -1894,7 +1898,6 @@ style Animation_AppCompat_Dialog
 style Animation_AppCompat_DropDownUp
 style Animation_AppCompat_Tooltip
 style Animation_Design_BottomSheetDialog
-style AppTheme
 style Base_AlertDialog_AppCompat
 style Base_AlertDialog_AppCompat_Light
 style Base_Animation_AppCompat_Dialog
@@ -2224,12 +2227,14 @@ style Theme_AppCompat_Light_Dialog_MinWidth
 style Theme_AppCompat_Light_DialogWhenLarge
 style Theme_AppCompat_Light_NoActionBar
 style Theme_AppCompat_NoActionBar
+style Theme_Dark
 style Theme_Design
 style Theme_Design_BottomSheetDialog
 style Theme_Design_Light
 style Theme_Design_Light_BottomSheetDialog
 style Theme_Design_Light_NoActionBar
 style Theme_Design_NoActionBar
+style Theme_Light
 style Theme_MaterialComponents
 style Theme_MaterialComponents_BottomSheetDialog
 style Theme_MaterialComponents_Bridge
@@ -2508,4 +2513,5 @@ styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewStubCompat android_id android_layout android_inflatedId
 styleable ViewTransition android_id SharedValue SharedValueId clearsTag duration ifTagNotSet ifTagSet motionInterpolator motionTarget onStateTransition pathMotionArc setsTag transitionDisable upDuration viewTransitionMode
+styleable dark_theme background_color colorAccent foreground_color text1_color text2_color
 styleable include constraintSet

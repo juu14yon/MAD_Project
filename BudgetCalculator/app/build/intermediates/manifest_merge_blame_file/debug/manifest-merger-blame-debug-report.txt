@@ -34,8 +34,8 @@
 22        android:supportsRtl="true"
 22-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:13:9-35
 23        android:testOnly="true"
-24        android:theme="@style/AppTheme" >
-24-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:14:9-40
+24        android:theme="@style/Theme.Light" >
+24-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:14:9-43
 25        <activity
 25-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:15:9-21:20
 26            android:name="com.ma_dev.budgetcalculator.MainActivity"

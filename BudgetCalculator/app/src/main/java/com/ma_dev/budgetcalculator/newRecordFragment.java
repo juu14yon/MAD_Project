@@ -108,7 +108,14 @@ public class newRecordFragment extends Fragment {
                     d = "-";
                 }
 
-                if(dbh.addNewRecord(n, Double.parseDouble(a), d, c, dt)) {
+                if (c.equals("Income")){
+                    a = "+" + Double.parseDouble(a);
+                }
+                else{
+                    a = "-" + Double.parseDouble(a);
+                }
+
+                if(dbh.addNewRecord(n, a, d, c, dt)) {
                     Toast.makeText(getContext(), "Saved Successfully", Toast.LENGTH_SHORT).show();
                 }
 
