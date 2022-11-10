@@ -13,8 +13,10 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -23,10 +25,19 @@ public class newRecordFragment extends Fragment {
 
     private DatePickerDialog datePickerDialog;
     private String date;
+    private DataBaseHandler dbh;
+
     Button dateButton;
     Button cancelButton;
     Button saveButton;
 
+    EditText nameInput;
+    EditText amountInput;
+    EditText descriptionInput;
+
+    Spinner categoryInput;
+
+    TextView warningMessage;
 
     public newRecordFragment() {
         // Required empty public constructor
@@ -47,9 +58,18 @@ public class newRecordFragment extends Fragment {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         dropdown.setAdapter(adapter);
 
+        dbh = new DataBaseHandler(c);
+
         dateButton = (Button) rootView.findViewById(R.id.buttonDate);
         cancelButton = (Button) rootView.findViewById(R.id.cancelButton);
         saveButton = (Button) rootView.findViewById(R.id.saveButton);
+
+        nameInput = (EditText) rootView.findViewById(R.id.nameInput);
+        amountInput = (EditText) rootView.findViewById(R.id.amountInput);
+        descriptionInput = (EditText) rootView.findViewById(R.id.descriptionInput);
+        categoryInput = (Spinner) rootView.findViewById(R.id.categoryDropdown);
+        warningMessage = (TextView) rootView.findViewById(R.id.warningMessage);
+
         initDatePicker(c);
 
         dateButton.setOnClickListener(new View.OnClickListener()
@@ -73,7 +93,24 @@ public class newRecordFragment extends Fragment {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // CODE TO SAVE DATA
+                String n = nameInput.getText().toString();
+                String a = amountInput.getText().toString();
+                String d = descriptionInput.getText().toString();
+                String c = categoryInput.getSelectedItem().toString();
+                String dt = dateButton.getText().toString();
+
+                if (n.isEmpty() || a.isEmpty() || c.isEmpty() || dt.isEmpty()) {
+                    Toast.makeText(getContext(), "Please enter all the data..", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (d.isEmpty()){
+                    d = "-";
+                }
+
+                if(dbh.addNewRecord(n, Double.parseDouble(a), d, c, dt)) {
+                    Toast.makeText(getContext(), "Saved Successfully", Toast.LENGTH_SHORT).show();
+                }
 
                 FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
                 transaction.add(R.id.frameLayout, new HistoryFragment());
@@ -106,5 +143,10 @@ public class newRecordFragment extends Fragment {
 
     private String makeDateString(int day, int month, int year) {
         return day+"."+month+"."+year;
+    }
+
+
+    private void saveRecordToExcel(){
+
     }
 }
