@@ -29,7 +29,8 @@ public class SettingsFragment extends Fragment {
                 transaction.commit();
             }
         });
-        // Inflate the layout for this fragment
+
+
         return rootView;
     }
 }

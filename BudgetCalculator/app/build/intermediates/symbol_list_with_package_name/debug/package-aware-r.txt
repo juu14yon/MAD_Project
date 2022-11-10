@@ -1394,6 +1394,7 @@ id all
 id allStates
 id always
 id amountInput
+id amountText
 id animateToEnd
 id animateToStart
 id antiClockwise
@@ -1426,6 +1427,7 @@ id cancel_action
 id carryVelocity
 id categoryDropdown
 id categoryDropdownLabel
+id categoryText
 id center
 id center_horizontal
 id center_vertical
@@ -1524,6 +1526,7 @@ id honorRequest
 id horizontal_only
 id icon
 id icon_group
+id idText
 id ifRoom
 id ignore
 id ignoreRequest
@@ -1563,6 +1566,7 @@ id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
 id nameInput
+id nameText
 id navBar
 id navigation_header_container
 id never
@@ -1601,6 +1605,7 @@ id progress_circular
 id progress_horizontal
 id radio
 id ratio
+id recordsListView
 id rectangles
 id reverseSawtooth
 id right
@@ -1728,6 +1733,7 @@ id view_tree_saved_state_registry_owner
 id view_tree_view_model_store_owner
 id visible
 id visible_removing_fragment_view_tag
+id warningMessage
 id west
 id withText
 id wrap
@@ -1811,6 +1817,7 @@ layout fragment_home
 layout fragment_new_record
 layout fragment_settings
 layout fragment_stats
+layout listrow
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
 layout notification_action

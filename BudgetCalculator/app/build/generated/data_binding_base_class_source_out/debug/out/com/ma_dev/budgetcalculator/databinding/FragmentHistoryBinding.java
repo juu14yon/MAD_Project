@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ListView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -21,9 +22,14 @@ public final class FragmentHistoryBinding implements ViewBinding {
   @NonNull
   public final Button newRecordButton;
 
-  private FragmentHistoryBinding(@NonNull FrameLayout rootView, @NonNull Button newRecordButton) {
+  @NonNull
+  public final ListView recordsListView;
+
+  private FragmentHistoryBinding(@NonNull FrameLayout rootView, @NonNull Button newRecordButton,
+      @NonNull ListView recordsListView) {
     this.rootView = rootView;
     this.newRecordButton = newRecordButton;
+    this.recordsListView = recordsListView;
   }
 
   @Override
@@ -59,7 +65,13 @@ public final class FragmentHistoryBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentHistoryBinding((FrameLayout) rootView, newRecordButton);
+      id = R.id.recordsListView;
+      ListView recordsListView = rootView.findViewById(id);
+      if (recordsListView == null) {
+        break missingId;
+      }
+
+      return new FragmentHistoryBinding((FrameLayout) rootView, newRecordButton, recordsListView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

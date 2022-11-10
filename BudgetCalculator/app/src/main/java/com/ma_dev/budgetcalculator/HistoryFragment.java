@@ -1,6 +1,6 @@
 package com.ma_dev.budgetcalculator;
 
-import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,10 +10,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class HistoryFragment extends Fragment {
     Button button;
+    DataBaseHandler dbh;
 
     public HistoryFragment() {
         // Required empty public constructor
@@ -23,6 +30,17 @@ public class HistoryFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_history, container, false);
+        Context c = getContext();
+        dbh = new DataBaseHandler(c);
+
+        ArrayList<HashMap<String, String>> recordList = dbh.GetRecords();
+        ListView lv = (ListView) root.findViewById(R.id.recordsListView);
+        ListAdapter adapter = new SimpleAdapter(c,
+                recordList, R.layout.listrow,
+                new String[]{"Name", "Category", "Amount", "ID"},
+                new int[]{R.id.nameText, R.id.categoryText, R.id.amountText, R.id.idText});
+        lv.setAdapter(adapter);
+
         TextView textview = (TextView)getActivity().findViewById(R.id.headerText);
         textview.setText("History");
 
@@ -35,7 +53,6 @@ public class HistoryFragment extends Fragment {
             }
         });
 
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_history, container, false);
+        return root;
     }
 }

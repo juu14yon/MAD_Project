@@ -7,21 +7,13 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import androidx.annotation.Nullable;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class DataBaseHandler extends SQLiteOpenHelper {
-
-    // creating a constant variables for our database.
-    // below variable is for our database name.
     private static final String DB_NAME = "history";
-
-    // below int is our database version
     private static final int DB_VERSION = 1;
 
-    // below variable is for our table name.
     private static final String TABLE_NAME = "transactionHistory";
 
     private static final String ID_COL = "id";
@@ -31,7 +23,7 @@ public class DataBaseHandler extends SQLiteOpenHelper {
     private static final String CATEGORY_COL = "category";
     private static final String DATE_COL = "date";
 
-    // creating a constructor for our database handler.
+
     public DataBaseHandler(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
@@ -40,10 +32,6 @@ public class DataBaseHandler extends SQLiteOpenHelper {
     // below method is for creating a database by running a sqlite query
     @Override
     public void onCreate(SQLiteDatabase db) {
-        // on below line we are creating
-        // an sqlite query and we are
-        // setting our column names
-        // along with their data types.
         String query = "CREATE TABLE " + TABLE_NAME + " ("
                 + ID_COL + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + DATE_COL + " TEXT,"
@@ -82,18 +70,19 @@ public class DataBaseHandler extends SQLiteOpenHelper {
     public ArrayList<HashMap<String, String>> GetRecords(){
         SQLiteDatabase db = this.getWritableDatabase();
         ArrayList<HashMap<String, String>> recordList = new ArrayList<>();
-        String query = "SELECT name, category, amount FROM "+ TABLE_NAME;
+        String query = "SELECT name, category, amount, id FROM "+ TABLE_NAME;
         Cursor cursor = db.rawQuery(query,null);
+
         while (cursor.moveToNext()){
             HashMap<String,String> record = new HashMap<>();
-            record.put("Name",cursor.getString(cursor.getColumnIndex(NAME_COL)));
-            //record.put("Description",cursor.getString(cursor.getColumnIndex(DESCRIPTION_COL)));
-            record.put("Category",cursor.getString(cursor.getColumnIndex(CATEGORY_COL)));
-            //record.put("Date",cursor.getString(cursor.getColumnIndex(DATE_COL)));
-            record.put("Amount",cursor.getString(cursor.getColumnIndex(AMOUNT_COL)));
+            record.put("Name", cursor.getString(cursor.getColumnIndex(NAME_COL)));
+            record.put("Category", cursor.getString(cursor.getColumnIndex(CATEGORY_COL)));
+            record.put("Amount", cursor.getString(cursor.getColumnIndex(AMOUNT_COL)));
+            record.put("ID", cursor.getString(cursor.getColumnIndex(ID_COL)));
 
             recordList.add(record);
         }
+
         return  recordList;
     }
 
@@ -132,4 +121,6 @@ public class DataBaseHandler extends SQLiteOpenHelper {
         return  recordList;
     }
     * */
+
+
 }

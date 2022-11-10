@@ -45,10 +45,13 @@ public final class FragmentNewRecordBinding implements ViewBinding {
   @NonNull
   public final Button saveButton;
 
+  @NonNull
+  public final TextView warningMessage;
+
   private FragmentNewRecordBinding(@NonNull FrameLayout rootView, @NonNull EditText amountInput,
       @NonNull Button buttonDate, @NonNull Button cancelButton, @NonNull Spinner categoryDropdown,
       @NonNull TextView categoryDropdownLabel, @NonNull EditText descriptionInput,
-      @NonNull EditText nameInput, @NonNull Button saveButton) {
+      @NonNull EditText nameInput, @NonNull Button saveButton, @NonNull TextView warningMessage) {
     this.rootView = rootView;
     this.amountInput = amountInput;
     this.buttonDate = buttonDate;
@@ -58,6 +61,7 @@ public final class FragmentNewRecordBinding implements ViewBinding {
     this.descriptionInput = descriptionInput;
     this.nameInput = nameInput;
     this.saveButton = saveButton;
+    this.warningMessage = warningMessage;
   }
 
   @Override
@@ -135,9 +139,15 @@ public final class FragmentNewRecordBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.warningMessage;
+      TextView warningMessage = rootView.findViewById(id);
+      if (warningMessage == null) {
+        break missingId;
+      }
+
       return new FragmentNewRecordBinding((FrameLayout) rootView, amountInput, buttonDate,
           cancelButton, categoryDropdown, categoryDropdownLabel, descriptionInput, nameInput,
-          saveButton);
+          saveButton, warningMessage);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
