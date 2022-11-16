@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import com.ma_dev.budgetcalculator.databinding.ActivityMainBinding;
@@ -44,14 +45,6 @@ public class MainActivity extends AppCompatActivity {
                     header.setText("Monthly Report");
                     replaceFrame(new StatsFragment());
                     break;
-                case R.id.settingsMenu:
-                    /*
-                    header.setText("Settings");
-                    replaceFrame(new SettingsFragment());
-                     */
-                    startActivity(new Intent(MainActivity.this, SettingsActivity.class));
-                    break;
-
             }
 
             return true;
@@ -63,5 +56,9 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction fragTransaction = fragManager.beginTransaction();
         fragTransaction.replace(R.id.frameLayout, frag);
         fragTransaction.commit();
+    }
+
+    public void openSettings(View view) {
+        startActivity(new Intent(MainActivity.this, SettingsActivity.class));
     }
 }

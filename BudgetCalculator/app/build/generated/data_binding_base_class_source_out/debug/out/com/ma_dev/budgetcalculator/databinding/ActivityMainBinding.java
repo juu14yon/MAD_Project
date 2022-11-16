@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -27,13 +28,18 @@ public final class ActivityMainBinding implements ViewBinding {
   public final TextView headerText;
 
   @NonNull
+  public final ImageButton imageButton;
+
+  @NonNull
   public final BottomNavigationView navBar;
 
   private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull FrameLayout frameLayout,
-      @NonNull TextView headerText, @NonNull BottomNavigationView navBar) {
+      @NonNull TextView headerText, @NonNull ImageButton imageButton,
+      @NonNull BottomNavigationView navBar) {
     this.rootView = rootView;
     this.frameLayout = frameLayout;
     this.headerText = headerText;
+    this.imageButton = imageButton;
     this.navBar = navBar;
   }
 
@@ -76,13 +82,20 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.imageButton;
+      ImageButton imageButton = rootView.findViewById(id);
+      if (imageButton == null) {
+        break missingId;
+      }
+
       id = R.id.navBar;
       BottomNavigationView navBar = rootView.findViewById(id);
       if (navBar == null) {
         break missingId;
       }
 
-      return new ActivityMainBinding((ConstraintLayout) rootView, frameLayout, headerText, navBar);
+      return new ActivityMainBinding((ConstraintLayout) rootView, frameLayout, headerText,
+          imageButton, navBar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -42,4 +42,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/navbar_src"/>
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:background='?attr/foreground_color'
+        android:tint="?attr/text1_color"
+        android:onClick="openSettings"
+        app:layout_constraintBottom_toBottomOf="@+id/headerText"
+        app:layout_constraintEnd_toEndOf="@+id/headerText"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icn_settings" />
 </androidx.constraintlayout.widget.ConstraintLayout>

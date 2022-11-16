@@ -1296,6 +1296,7 @@ drawable ic_mtrl_chip_close_circle
 drawable icn_about
 drawable icn_back
 drawable icn_faq
+drawable icn_header_settings
 drawable icn_home
 drawable icn_language
 drawable icn_notification
@@ -1536,6 +1537,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageButton
 id imageView
 id immediateStop
 id included
@@ -1643,7 +1645,6 @@ id select_dialog_listview
 id selected
 id settingsFrameLayout
 id settingsHeader
-id settingsMenu
 id sharedValueSet
 id sharedValueUnset
 id shortcut
