@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:2:1-24:12
+ADDED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:2:1-27:12
 MERGED from [androidx.databinding:viewbinding:4.0.0] C:\Users\alexandra.yugay\.gradle\caches\transforms-2\files-2.1\fbee8d91505582d78dab4b49b9cc403a\jetified-viewbinding-4.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\alexandra.yugay\.gradle\caches\transforms-2\files-2.1\4f5da102134eca067247a156bb3d6ec8\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\alexandra.yugay\.gradle\caches\transforms-2\files-2.1\bcaf2f38bd0e6ffe04a17e5f685cbed4\material-1.0.0\AndroidManifest.xml:17:1-24:12
@@ -49,33 +49,33 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\alexandra.yugay\
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\alexandra.yugay\.gradle\caches\transforms-2\files-2.1\fc12b1d7b1a887a81ff1f750b0b473c7\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\alexandra.yugay\.gradle\caches\transforms-2\files-2.1\6a5aacb22b562922820652a32ac05ba6\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\alexandra.yugay\.gradle\caches\transforms-2\files-2.1\8c90c3c6e4d825cdf53e900b800df63d\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:2:1-27:12
 	package
 		ADDED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:3:5-42
 		INJECTED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:2:1-24:12
+		ADDED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:2:1-27:12
 		INJECTED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:2:1-24:12
+		ADDED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:2:1-27:12
 		INJECTED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:5:5-96
+ADDED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:5:5-80
 	android:name
 		ADDED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:5:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:6:5-97
+ADDED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:6:5-81
 	android:name
 		ADDED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:6:22-78
 application
-ADDED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:8:5-22:19
+ADDED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:8:5-25:19
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\alexandra.yugay\.gradle\caches\transforms-2\files-2.1\4f5da102134eca067247a156bb3d6ec8\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\alexandra.yugay\.gradle\caches\transforms-2\files-2.1\4f5da102134eca067247a156bb3d6ec8\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\alexandra.yugay\.gradle\caches\transforms-2\files-2.1\bcaf2f38bd0e6ffe04a17e5f685cbed4\material-1.0.0\AndroidManifest.xml:22:5-20
@@ -104,22 +104,28 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\al
 		ADDED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:9:9-35
 	android:theme
 		ADDED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:14:9-43
+activity#com.ma_dev.budgetcalculator.SettingsActivity
+ADDED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:15:9-106
+	android:parentActivityName
+		ADDED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:15:52-94
+	android:name
+		ADDED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:15:19-51
 activity#com.ma_dev.budgetcalculator.MainActivity
-ADDED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:15:9-21:20
+ADDED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:16:9-24:20
 	android:exported
-		ADDED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:15:48-71
+		ADDED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:18:13-36
 	android:name
-		ADDED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:15:19-47
+		ADDED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:17:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:16:13-20:29
+ADDED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:19:13-23:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:17:17-69
+ADDED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:20:17-69
 	android:name
-		ADDED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:17:25-66
+		ADDED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:20:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:19:17-77
+ADDED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:22:17-77
 	android:name
-		ADDED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:19:27-74
+		ADDED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:22:27-74
 uses-sdk
 INJECTED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml

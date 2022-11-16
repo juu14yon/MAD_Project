@@ -1,5 +1,9 @@
 [
     {
+        "merged": "C:\\Users\\alexandra.yugay\\Documents\\GitHub\\MAD_Project\\BudgetCalculator\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_settings.xml",
+        "source": "C:\\Users\\alexandra.yugay\\Documents\\GitHub\\MAD_Project\\BudgetCalculator\\app\\src\\main\\res\\layout\\activity_settings.xml"
+    },
+    {
         "merged": "C:\\Users\\alexandra.yugay\\Documents\\GitHub\\MAD_Project\\BudgetCalculator\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\listrow.xml",
         "source": "C:\\Users\\alexandra.yugay\\Documents\\GitHub\\MAD_Project\\BudgetCalculator\\app\\src\\main\\res\\layout\\listrow.xml"
     },

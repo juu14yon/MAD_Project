@@ -1,5 +1,6 @@
 package com.ma_dev.budgetcalculator;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatDelegate;
@@ -44,7 +45,7 @@ public class SettingsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-                transaction.add(R.id.frameLayout, new AboutUsFragment());
+                transaction.add(R.id.settingsFrameLayout, new AboutUsFragment());
                 transaction.commit();
             }
         });

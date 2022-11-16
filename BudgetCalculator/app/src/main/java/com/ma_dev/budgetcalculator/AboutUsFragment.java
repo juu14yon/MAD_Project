@@ -20,7 +20,7 @@ public class AboutUsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_about_us, container, false);
-        TextView textview = (TextView)getActivity().findViewById(R.id.headerText);
+        TextView textview = (TextView)getActivity().findViewById(R.id.settingsHeader);
         textview.setText("About Us");
 
         Button goBack = (Button) rootView.findViewById(R.id.goBackButton);
@@ -29,7 +29,7 @@ public class AboutUsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-                transaction.add(R.id.frameLayout, new SettingsFragment());
+                transaction.add(R.id.settingsFrameLayout, new SettingsFragment());
                 transaction.commit();
             }
         });

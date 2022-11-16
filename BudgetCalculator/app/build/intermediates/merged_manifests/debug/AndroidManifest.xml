@@ -23,6 +23,9 @@
         android:testOnly="true"
         android:theme="@style/Theme.Light" >
         <activity
+            android:name="com.ma_dev.budgetcalculator.SettingsActivity"
+            android:parentActivityName="com.ma_dev.budgetcalculator.MainActivity" />
+        <activity
             android:name="com.ma_dev.budgetcalculator.MainActivity"
             android:exported="true" >
             <intent-filter>

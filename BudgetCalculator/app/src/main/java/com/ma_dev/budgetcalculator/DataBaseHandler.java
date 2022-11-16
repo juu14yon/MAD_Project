@@ -74,7 +74,7 @@ public class DataBaseHandler extends SQLiteOpenHelper {
     public ArrayList<HashMap<String, String>> GetRecords(){
         SQLiteDatabase db = this.getWritableDatabase();
         ArrayList<HashMap<String, String>> recordList = new ArrayList<>();
-        String query = "SELECT name, category, amount, id FROM "+ TABLE_NAME;
+        String query = "SELECT name, category, amount, id FROM "+ TABLE_NAME + " ORDER BY date DESC, id DESC;";
         Cursor cursor = db.rawQuery(query,null);
 
         while (cursor.moveToNext()){

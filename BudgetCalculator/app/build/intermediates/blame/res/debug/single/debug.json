@@ -28,6 +28,10 @@
         "source": "C:\\Users\\alexandra.yugay\\Documents\\GitHub\\MAD_Project\\BudgetCalculator\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
     },
     {
+        "merged": "C:\\Users\\alexandra.yugay\\Documents\\GitHub\\MAD_Project\\BudgetCalculator\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_settings.xml.flat",
+        "source": "C:\\Users\\alexandra.yugay\\Documents\\GitHub\\MAD_Project\\BudgetCalculator\\app\\src\\main\\res\\layout\\activity_settings.xml"
+    },
+    {
         "merged": "C:\\Users\\alexandra.yugay\\Documents\\GitHub\\MAD_Project\\BudgetCalculator\\app\\build\\intermediates\\res\\merged\\debug\\drawable_icn_stat.xml.flat",
         "source": "C:\\Users\\alexandra.yugay\\Documents\\GitHub\\MAD_Project\\BudgetCalculator\\app\\src\\main\\res\\drawable\\icn_stat.xml"
     },
@@ -78,6 +82,10 @@
     {
         "merged": "C:\\Users\\alexandra.yugay\\Documents\\GitHub\\MAD_Project\\BudgetCalculator\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "C:\\Users\\alexandra.yugay\\Documents\\GitHub\\MAD_Project\\BudgetCalculator\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\alexandra.yugay\\Documents\\GitHub\\MAD_Project\\BudgetCalculator\\app\\build\\intermediates\\res\\merged\\debug\\drawable_icn_back.xml.flat",
+        "source": "C:\\Users\\alexandra.yugay\\Documents\\GitHub\\MAD_Project\\BudgetCalculator\\app\\src\\main\\res\\drawable\\icn_back.xml"
     },
     {
         "merged": "C:\\Users\\alexandra.yugay\\Documents\\GitHub\\MAD_Project\\BudgetCalculator\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",

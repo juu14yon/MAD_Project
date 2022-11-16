@@ -38,6 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:src="@drawable/icn_notification"
+            android:tint="?attr/text1_color"
             app:layout_constraintBottom_toBottomOf="@+id/notificationLabel"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/notificationLabel" />
@@ -70,6 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:src="@drawable/icn_language"
+            android:tint="?attr/text1_color"
             app:layout_constraintBottom_toBottomOf="@+id/languageLabel"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/notificationLabel" />
@@ -112,6 +114,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:src="@drawable/icn_theme"
+            android:tint="?attr/text1_color"
             app:layout_constraintBottom_toBottomOf="@+id/themeLabel"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/themeLabel" />
@@ -147,6 +150,7 @@
             android:layout_height="24dp"
             android:layout_marginStart="24dp"
             android:src="@drawable/icn_faq"
+            android:tint="?attr/text1_color"
             app:layout_constraintBottom_toBottomOf="@+id/faqLabel"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/faqLabel" />
@@ -179,6 +183,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:src="@drawable/icn_about"
+            android:tint="?attr/text1_color"
             app:layout_constraintBottom_toBottomOf="@+id/aboutLabel"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/aboutLabel" />

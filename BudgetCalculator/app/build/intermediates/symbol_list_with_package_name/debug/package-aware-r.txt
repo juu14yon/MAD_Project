@@ -1294,6 +1294,7 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable icn_about
+drawable icn_back
 drawable icn_faq
 drawable icn_home
 drawable icn_language
@@ -1535,6 +1536,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageView
 id immediateStop
 id included
 id incomeLabel
@@ -1639,6 +1641,8 @@ id search_src_text
 id search_voice_btn
 id select_dialog_listview
 id selected
+id settingsFrameLayout
+id settingsHeader
 id settingsMenu
 id sharedValueSet
 id sharedValueUnset
@@ -1800,6 +1804,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
+layout activity_settings
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog

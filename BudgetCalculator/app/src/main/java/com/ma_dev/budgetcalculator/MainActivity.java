@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -44,8 +45,11 @@ public class MainActivity extends AppCompatActivity {
                     replaceFrame(new StatsFragment());
                     break;
                 case R.id.settingsMenu:
+                    /*
                     header.setText("Settings");
                     replaceFrame(new SettingsFragment());
+                     */
+                    startActivity(new Intent(MainActivity.this, SettingsActivity.class));
                     break;
 
             }
