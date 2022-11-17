@@ -15,10 +15,13 @@
             android:id="@+id/recordsListView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_marginTop="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/daySpinner">
+
+        </ListView>
 
         <Button
             android:id="@+id/newRecordButton"
@@ -26,13 +29,73 @@
             android:layout_height="64dp"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="32dp"
+            android:background="@drawable/new_record_button"
+            android:gravity="center"
             android:text="+"
             android:textColor="#eeeeee"
             android:textSize="40dp"
-            android:gravity="center"
-            android:background="@drawable/new_record_button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
+
+        <Spinner
+            android:id="@+id/daySpinner"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <Spinner
+            android:id="@+id/monthSpinner"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/daySpinner"
+            app:layout_constraintStart_toEndOf="@+id/yearSpinner"
+            app:layout_constraintTop_toTopOf="@+id/daySpinner" />
+
+        <Spinner
+            android:id="@+id/yearSpinner"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/monthSpinner" />
+
+        <View
+            android:id="@+id/divider4"
+            android:layout_width="409dp"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toTopOf="@+id/recordsListView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Day"
+            app:layout_constraintStart_toStartOf="@+id/daySpinner"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Month"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView"
+            app:layout_constraintStart_toStartOf="@+id/monthSpinner" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Year"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView2"
+            app:layout_constraintStart_toStartOf="@+id/yearSpinner" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ListView;
+import android.widget.Spinner;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -20,16 +22,46 @@ public final class FragmentHistoryBinding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
+  public final Spinner daySpinner;
+
+  @NonNull
+  public final View divider4;
+
+  @NonNull
+  public final Spinner monthSpinner;
+
+  @NonNull
   public final Button newRecordButton;
 
   @NonNull
   public final ListView recordsListView;
 
-  private FragmentHistoryBinding(@NonNull FrameLayout rootView, @NonNull Button newRecordButton,
-      @NonNull ListView recordsListView) {
+  @NonNull
+  public final TextView textView;
+
+  @NonNull
+  public final TextView textView2;
+
+  @NonNull
+  public final TextView textView3;
+
+  @NonNull
+  public final Spinner yearSpinner;
+
+  private FragmentHistoryBinding(@NonNull FrameLayout rootView, @NonNull Spinner daySpinner,
+      @NonNull View divider4, @NonNull Spinner monthSpinner, @NonNull Button newRecordButton,
+      @NonNull ListView recordsListView, @NonNull TextView textView, @NonNull TextView textView2,
+      @NonNull TextView textView3, @NonNull Spinner yearSpinner) {
     this.rootView = rootView;
+    this.daySpinner = daySpinner;
+    this.divider4 = divider4;
+    this.monthSpinner = monthSpinner;
     this.newRecordButton = newRecordButton;
     this.recordsListView = recordsListView;
+    this.textView = textView;
+    this.textView2 = textView2;
+    this.textView3 = textView3;
+    this.yearSpinner = yearSpinner;
   }
 
   @Override
@@ -59,6 +91,24 @@ public final class FragmentHistoryBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.daySpinner;
+      Spinner daySpinner = rootView.findViewById(id);
+      if (daySpinner == null) {
+        break missingId;
+      }
+
+      id = R.id.divider4;
+      View divider4 = rootView.findViewById(id);
+      if (divider4 == null) {
+        break missingId;
+      }
+
+      id = R.id.monthSpinner;
+      Spinner monthSpinner = rootView.findViewById(id);
+      if (monthSpinner == null) {
+        break missingId;
+      }
+
       id = R.id.newRecordButton;
       Button newRecordButton = rootView.findViewById(id);
       if (newRecordButton == null) {
@@ -71,7 +121,32 @@ public final class FragmentHistoryBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentHistoryBinding((FrameLayout) rootView, newRecordButton, recordsListView);
+      id = R.id.textView;
+      TextView textView = rootView.findViewById(id);
+      if (textView == null) {
+        break missingId;
+      }
+
+      id = R.id.textView2;
+      TextView textView2 = rootView.findViewById(id);
+      if (textView2 == null) {
+        break missingId;
+      }
+
+      id = R.id.textView3;
+      TextView textView3 = rootView.findViewById(id);
+      if (textView3 == null) {
+        break missingId;
+      }
+
+      id = R.id.yearSpinner;
+      Spinner yearSpinner = rootView.findViewById(id);
+      if (yearSpinner == null) {
+        break missingId;
+      }
+
+      return new FragmentHistoryBinding((FrameLayout) rootView, daySpinner, divider4, monthSpinner,
+          newRecordButton, recordsListView, textView, textView2, textView3, yearSpinner);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

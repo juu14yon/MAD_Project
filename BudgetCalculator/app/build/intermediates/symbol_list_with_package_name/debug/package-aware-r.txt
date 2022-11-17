@@ -1458,6 +1458,7 @@ id cos
 id currentState
 id custom
 id customPanel
+id daySpinner
 id decelerate
 id decelerateAndComplete
 id decor_content_parent
@@ -1480,6 +1481,7 @@ id disableScroll
 id divider
 id divider2
 id divider3
+id divider4
 id dragAnticlockwise
 id dragClockwise
 id dragDown
@@ -1569,6 +1571,7 @@ id media_actions
 id message
 id middle
 id mini
+id monthSpinner
 id motion_base
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
@@ -1703,6 +1706,9 @@ id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
+id textView
+id textView2
+id textView3
 id textView7
 id text_input_password_toggle
 id textinput_counter
@@ -1750,6 +1756,7 @@ id wrap_content
 id wrap_content_constrained
 id x_left
 id x_right
+id yearSpinner
 integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
 integer app_bar_elevation_anim_duration
