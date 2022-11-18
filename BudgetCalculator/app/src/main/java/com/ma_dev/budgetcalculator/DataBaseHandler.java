@@ -31,6 +31,7 @@ public class DataBaseHandler extends SQLiteOpenHelper {
     private static final String YEAR_COL = "year";
 
     private int minYear, maxYear;
+    private Double available = 0.0, income = 0.0, expences = 0.0;
 
     public DataBaseHandler(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
@@ -216,5 +217,52 @@ public class DataBaseHandler extends SQLiteOpenHelper {
         else{
             return 2022;
         }
+    }
+
+    /*
+    public void setAvailable(){
+        available = getIncome() - getExpences();
+    }
+    public void setIncome(Double a){
+        income = a;
+    }
+    public void setExpences(Double a){
+        expences = a;
+    }*/
+
+    @SuppressLint("Range")
+    public void updateTotals(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ArrayList<HashMap<String, String>> recordList = new ArrayList<>();
+        String query = "SELECT amount " +
+                "FROM "+ TABLE_NAME;
+
+        Cursor cursor = db.rawQuery(query,null);
+
+        String temp, sign;
+        double value;
+        while (cursor.moveToNext()){
+            temp = cursor.getString(cursor.getColumnIndex(AMOUNT_COL));
+            sign = temp.substring(0, 1);
+            value = Double.parseDouble(temp.substring(1));
+            if(sign.equals("+")){
+                income += value;
+            }
+            else{
+                expences += value;
+            }
+        }
+
+        available = income - expences;
+    }
+
+    public Double getAvailable(){
+        return available;
+    }
+    public Double getIncome(){
+        return income;
+    }
+    public Double getExpences(){
+        return expences;
     }
 }
