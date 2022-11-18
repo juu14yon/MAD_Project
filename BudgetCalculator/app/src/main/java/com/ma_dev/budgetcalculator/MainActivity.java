@@ -16,6 +16,7 @@ import com.ma_dev.budgetcalculator.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
     TextView header;
+    Double available, income, expences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,5 +61,25 @@ public class MainActivity extends AppCompatActivity {
 
     public void openSettings(View view) {
         startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+    }
+
+    private void setAvailable(Double a){
+        available = a;
+    }
+    private void setIncome(Double a){
+        income = a;
+    }
+    private void setExpences(Double a){
+        expences = a;
+    }
+
+    private Double getAvailable(){
+        return available;
+    }
+    private Double getIncome(){
+        return income;
+    }
+    private Double getExpences(){
+        return expences;
     }
 }

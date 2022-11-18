@@ -58,6 +58,9 @@ public class HistoryFragment extends Fragment {
         for (int i = 1; i<=12; i++){
             monthItems.add(""+i);
         }
+        for (int i = dbh.minYear(); i<=dbh.maxYear(); i++){
+            yearItems.add(""+i);
+        }
 
         ArrayAdapter<String> yearAdapter = new ArrayAdapter<String>(c, android.R.layout.simple_spinner_dropdown_item, yearItems);
         yearSpinner.setAdapter(yearAdapter);
@@ -81,18 +84,25 @@ public class HistoryFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 month = monthSpinner.getSelectedItem().toString();
+                dayItems.clear();
+                day = "All";
                 fillHistory(root, c);
 
-                daySpinner.setEnabled(true);
+                if (!month.equals("All")) {
+                    daySpinner.setEnabled(true);
 
-                dayItems.add("All");
+                    dayItems.add("All");
 
-                for (int i = 1; i <= 30; i++){
-                    dayItems.add(""+i);
+                    for (int i = 1; i <= 30; i++) {
+                        dayItems.add("" + i);
+                    }
                 }
-
+                else{
+                    daySpinner.setEnabled(false);
+                    dayItems.clear();
+                }
                 ArrayAdapter<String> dayAdapter = new ArrayAdapter<String>(c, android.R.layout.simple_spinner_dropdown_item, dayItems);
-                daySpinner.setAdapter(yearAdapter);
+                daySpinner.setAdapter(dayAdapter);
             }
 
             @Override
@@ -110,7 +120,7 @@ public class HistoryFragment extends Fragment {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
+                day = "All";
             }
         });
 
@@ -154,6 +164,11 @@ https://stackoverflow.com/questions/17207366/creating-a-menu-after-a-long-click-
     }
 
     public void fillHistory(View root, Context c){
+        /*if (!month.equals("All")){
+            month = "" + (Integer.parseInt(month) - 1);
+        }
+
+         */
         ArrayList<HashMap<String, String>> recordList = dbh.GetRecords(year, month, day);
         ListView lv = (ListView) root.findViewById(R.id.recordsListView);
         ListAdapter adapter = new SimpleAdapter(c,

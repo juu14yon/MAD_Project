@@ -30,6 +30,7 @@ public class DataBaseHandler extends SQLiteOpenHelper {
     private static final String MONTH_COL = "month";
     private static final String YEAR_COL = "year";
 
+    private int minYear, maxYear;
 
     public DataBaseHandler(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
@@ -42,9 +43,9 @@ public class DataBaseHandler extends SQLiteOpenHelper {
         String query = "CREATE TABLE " + TABLE_NAME + " ("
                 + ID_COL + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + DATE_COL + " TEXT,"
-                + DAY_COL + " TEXT,"
-                + MONTH_COL + " TEXT,"
-                + YEAR_COL + " TEXT,"
+                + DAY_COL + " INTEGER,"
+                + MONTH_COL + " INTEGER,"
+                + YEAR_COL + " INTEGER,"
                 + NAME_COL + " TEXT,"
                 + AMOUNT_COL + " TEXT,"
                 + DESCRIPTION_COL + " TEXT,"
@@ -65,9 +66,9 @@ public class DataBaseHandler extends SQLiteOpenHelper {
         values.put(DESCRIPTION_COL, description);
         values.put(CATEGORY_COL, category);
         values.put(DATE_COL, date);
-        values.put(DAY_COL, ""+calendar.get(Calendar.DAY_OF_MONTH));
-        values.put(MONTH_COL, ""+calendar.get(Calendar.MONTH));
-        values.put(YEAR_COL, ""+calendar.get(Calendar.YEAR));
+        values.put(DAY_COL, calendar.get(Calendar.DAY_OF_MONTH));
+        values.put(MONTH_COL, calendar.get(Calendar.MONTH)+1);
+        values.put(YEAR_COL, calendar.get(Calendar.YEAR));
 
         db.insert(TABLE_NAME, null, values);
         db.close();
@@ -107,7 +108,7 @@ public class DataBaseHandler extends SQLiteOpenHelper {
             recordList.add(record);
         }
 
-        return  recordList;
+        return recordList;
     }
 
     public boolean DeleteRecord(int recordid){
@@ -134,9 +135,9 @@ public class DataBaseHandler extends SQLiteOpenHelper {
         cVals.put(DESCRIPTION_COL, description);
         cVals.put(CATEGORY_COL, category);
         cVals.put(DATE_COL, date);
-        cVals.put(DAY_COL, ""+calendar.get(Calendar.DAY_OF_MONTH));
-        cVals.put(MONTH_COL, ""+calendar.get(Calendar.MONTH));
-        cVals.put(YEAR_COL, ""+calendar.get(Calendar.YEAR));
+        cVals.put(DAY_COL, calendar.get(Calendar.DAY_OF_MONTH));
+        cVals.put(MONTH_COL, calendar.get(Calendar.MONTH)+1);
+        cVals.put(YEAR_COL, calendar.get(Calendar.YEAR));
 
         int count = db.update(TABLE_NAME, cVals, ID_COL+" = ?",new String[]{String.valueOf(id)});
         return  count;
@@ -144,6 +145,9 @@ public class DataBaseHandler extends SQLiteOpenHelper {
 
     public String where(String year, String month, String day){
         String out = "";
+        boolean y = false;
+        boolean m = false;
+
         if (year.equals("All") && month.equals("All") && day.equals("All")){
             return out;
         }
@@ -151,12 +155,20 @@ public class DataBaseHandler extends SQLiteOpenHelper {
             out += " WHERE ";
             if (!year.equals("All")){
                 out += "year = '" + year + "'";
+                y = true;
             }
             if (!month.equals("All")){
-                out += "month = '" + month + "'";
+                if (y){
+                    out += " AND";
+                }
+                out += " month = '" + month + "'";
+                m = true;
             }
             if (!day.equals("All")){
-                out += "day = '" + day + "'";
+                if (y || m){
+                    out += " AND";
+                }
+                out += " day = '" + day + "' ";
             }
         }
         return out;
@@ -170,5 +182,39 @@ public class DataBaseHandler extends SQLiteOpenHelper {
             wholeDate = new Date();
         }
         return wholeDate;
+    }
+
+    @SuppressLint("Range")
+    public int minYear(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ArrayList<HashMap<String, String>> recordList = new ArrayList<>();
+        String query = "SELECT year" +
+                " FROM "+ TABLE_NAME +
+                " WHERE year = (SELECT MIN(year) FROM " + TABLE_NAME + ");";
+
+        Cursor cursor = db.rawQuery(query,null);
+
+        if(cursor.moveToNext()){
+            return Integer.parseInt(cursor.getString(cursor.getColumnIndex(YEAR_COL)));
+        }
+        else{
+            return 2022;
+        }
+    }
+    @SuppressLint("Range")
+    public int maxYear(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ArrayList<HashMap<String, String>> recordList = new ArrayList<>();
+        String query = "SELECT year" +
+                " FROM "+ TABLE_NAME +
+                " WHERE year = (SELECT MAX(year) FROM " + TABLE_NAME + ");";
+
+        Cursor cursor = db.rawQuery(query,null);
+        if(cursor.moveToNext()){
+            return Integer.parseInt(cursor.getString(cursor.getColumnIndex(YEAR_COL)));
+        }
+        else{
+            return 2022;
+        }
     }
 }

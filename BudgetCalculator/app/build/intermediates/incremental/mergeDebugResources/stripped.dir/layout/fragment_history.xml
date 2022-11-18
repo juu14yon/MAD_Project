@@ -19,7 +19,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/daySpinner">
+            app:layout_constraintTop_toBottomOf="@+id/monthSpinner">
 
         </ListView>
 
@@ -39,23 +39,26 @@
 
         <Spinner
             android:id="@+id/daySpinner"
-            android:layout_width="80dp"
+            style="@style/Widget.AppCompat.Spinner"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toTopOf="@+id/monthSpinner" />
 
         <Spinner
             android:id="@+id/monthSpinner"
+            style="@style/Widget.AppCompat.Spinner"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             app:layout_constraintEnd_toStartOf="@+id/daySpinner"
             app:layout_constraintStart_toEndOf="@+id/yearSpinner"
-            app:layout_constraintTop_toTopOf="@+id/daySpinner" />
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
         <Spinner
             android:id="@+id/yearSpinner"
+            style="@style/Widget.AppCompat.Spinner"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
