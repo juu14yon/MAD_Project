@@ -50,13 +50,13 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final Space space;
 
   @NonNull
-  public final TextView textView7;
+  public final TextView tipTextView;
 
   private FragmentHomeBinding(@NonNull FrameLayout rootView, @NonNull TextView availableLabel,
       @NonNull TextView availableValue, @NonNull View divider, @NonNull View divider2,
       @NonNull View divider3, @NonNull TextView expencesLabel, @NonNull TextView expencesValue,
       @NonNull TextView incomeLabel, @NonNull TextView incomeValue, @NonNull Space space,
-      @NonNull TextView textView7) {
+      @NonNull TextView tipTextView) {
     this.rootView = rootView;
     this.availableLabel = availableLabel;
     this.availableValue = availableValue;
@@ -68,7 +68,7 @@ public final class FragmentHomeBinding implements ViewBinding {
     this.incomeLabel = incomeLabel;
     this.incomeValue = incomeValue;
     this.space = space;
-    this.textView7 = textView7;
+    this.tipTextView = tipTextView;
   }
 
   @Override
@@ -158,15 +158,15 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.textView7;
-      TextView textView7 = rootView.findViewById(id);
-      if (textView7 == null) {
+      id = R.id.tipTextView;
+      TextView tipTextView = rootView.findViewById(id);
+      if (tipTextView == null) {
         break missingId;
       }
 
       return new FragmentHomeBinding((FrameLayout) rootView, availableLabel, availableValue,
           divider, divider2, divider3, expencesLabel, expencesValue, incomeLabel, incomeValue,
-          space, textView7);
+          space, tipTextView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

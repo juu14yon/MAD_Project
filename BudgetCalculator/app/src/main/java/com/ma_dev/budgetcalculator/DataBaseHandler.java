@@ -188,7 +188,6 @@ public class DataBaseHandler extends SQLiteOpenHelper {
     @SuppressLint("Range")
     public int minYear(){
         SQLiteDatabase db = this.getWritableDatabase();
-        ArrayList<HashMap<String, String>> recordList = new ArrayList<>();
         String query = "SELECT year" +
                 " FROM "+ TABLE_NAME +
                 " WHERE year = (SELECT MIN(year) FROM " + TABLE_NAME + ");";
@@ -205,7 +204,6 @@ public class DataBaseHandler extends SQLiteOpenHelper {
     @SuppressLint("Range")
     public int maxYear(){
         SQLiteDatabase db = this.getWritableDatabase();
-        ArrayList<HashMap<String, String>> recordList = new ArrayList<>();
         String query = "SELECT year" +
                 " FROM "+ TABLE_NAME +
                 " WHERE year = (SELECT MAX(year) FROM " + TABLE_NAME + ");";
@@ -219,21 +217,9 @@ public class DataBaseHandler extends SQLiteOpenHelper {
         }
     }
 
-    /*
-    public void setAvailable(){
-        available = getIncome() - getExpences();
-    }
-    public void setIncome(Double a){
-        income = a;
-    }
-    public void setExpences(Double a){
-        expences = a;
-    }*/
-
     @SuppressLint("Range")
     public void updateTotals(){
         SQLiteDatabase db = this.getWritableDatabase();
-        ArrayList<HashMap<String, String>> recordList = new ArrayList<>();
         String query = "SELECT amount " +
                 "FROM "+ TABLE_NAME;
 
@@ -254,6 +240,30 @@ public class DataBaseHandler extends SQLiteOpenHelper {
         }
 
         available = income - expences;
+
+        income = 0.0;
+        expences = 0.0;
+
+        Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH) + 1;
+
+        query = "SELECT amount " +
+                "FROM "+ TABLE_NAME + " WHERE year = " + year + " AND month = " + month;
+
+        cursor = db.rawQuery(query,null);
+
+        while (cursor.moveToNext()){
+            temp = cursor.getString(cursor.getColumnIndex(AMOUNT_COL));
+            sign = temp.substring(0, 1);
+            value = Double.parseDouble(temp.substring(1));
+            if(sign.equals("+")){
+                income += value;
+            }
+            else{
+                expences += value;
+            }
+        }
     }
 
     public Double getAvailable(){
