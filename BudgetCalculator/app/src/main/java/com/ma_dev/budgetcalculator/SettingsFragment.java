@@ -19,6 +19,7 @@ public class SettingsFragment extends Fragment {
     Button themeButton;
     Switch notifSwitch;
     Button notifButton;
+    Button faqButton;
 
     public SettingsFragment() {
         // Required empty public constructor
@@ -34,6 +35,7 @@ public class SettingsFragment extends Fragment {
         themeButton = rootView.findViewById(R.id.themeButton);
         notifSwitch = rootView.findViewById(R.id.notificationSwitch);
         notifButton = rootView.findViewById(R.id.notificationButton);
+        faqButton = rootView.findViewById(R.id.faqButton);
 
         if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
             themeSwitch.setChecked(true);
@@ -73,6 +75,15 @@ public class SettingsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 notifSwitch.setChecked(!notifSwitch.isChecked());
+            }
+        });
+
+        faqButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+                transaction.add(R.id.settingsFrameLayout, new FAQFragment());
+                transaction.commit();
             }
         });
 

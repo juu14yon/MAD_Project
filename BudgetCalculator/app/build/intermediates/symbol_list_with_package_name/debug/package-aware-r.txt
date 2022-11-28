@@ -1709,6 +1709,7 @@ id textStart
 id textView
 id textView2
 id textView3
+id textView4
 id text_input_password_toggle
 id textinput_counter
 id textinput_error
@@ -1829,6 +1830,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout fragment_about_us
+layout fragment_f_a_q
 layout fragment_history
 layout fragment_home
 layout fragment_new_record
@@ -1895,6 +1897,7 @@ string character_counter_content_description
 string character_counter_pattern
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
+string faq
 string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string mtrl_chip_close_icon_content_description

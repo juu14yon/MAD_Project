@@ -5059,6 +5059,29 @@
         Source code (Github repository): https://github.com/juu14yon/MAD_Project\n\n\n
 
         © 2022-2023
+    </string><string name="faq">
+<b>1.	Is there a fee to use this new ADM (Акча. Деньги. Money) app?\n</b>
+\tNo. This new app is available for free.\n\n
+<b>2.	What categories does the application have?\n</b>
+\tThe ADM app has different categories, such as income, transportation, food, utilities, necessary payments, entertainment, health and medical, lifestyle and savings.\n\n
+<b>3.	Can I edit or add new categories?\n</b>
+\tUnfortunately, you cannot. But you can add descriptions to each record.\n\n
+<b>4.	Can I change my budget for a past month?\n</b>
+\tYes, you can edit your budget records for the whole period.\n\n
+<b>5.	How far back can I view my spending?\n</b>
+\tYou can view up all budget records. You can also select year, month and day to display records from specific period of time.\n\n
+<b>6.	How Can I Track My Savings Goals?\n</b>
+\tBased on age and lifestyle, people save for all kinds of reasons. You might be putting money aside for retirement, annual property taxes, a trip abroad, a major home renovation, your children\'s college funds, or a big-ticket article of clothing or piece of jewelry. Whatever your need or desire, track your progress toward all of your goals. ADM (Акча. Деньги. Money) is probably the best-known money management software.\n\n
+<b>7.	What Are the Absolute Priorities?\n</b>
+\tIf you feel overwhelmed by the number of things you need to save for—a wedding, a new refrigerator, a house—then take a deep breath and focus on a few critical items. Utilities and housing should be at the top, followed by food. Other key items include medication and transportation. A nice dinner out or new shoes are discretionary. Some items, like hospital bills, are not.\n\n
+<b>8.	Should I establish goals from the beginning?\n</b>
+\tWhen you start budgeting, it is important to give equal consideration to long term and short term savings goals. In order to determine what types of goals should be set and when, ask yourself specific questions like:\n
+\t\t•	Do I want to develop a plan for retirement?\n
+\t\t•	Am I saving for my college education, or do I need to set up a fund for my children?\n
+\t\t•	Is it necessary to set up a fund for large expenses such as a vehicle purchase or a mortgage?\n
+\t\t•	Do I have any big-ticket, short-term financial goals, like a new appliance or a summer vacation?\n\n
+\tThese budgeting questions will help you develop a set of financial goals, and create a timeframe for achieving them. For example, saving for retirement is considered a long-term goal, and creating a travel fund could be considered a short-term goal.\n
+
     </string></file><file path="C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\res\values\styles.xml" qualifiers=""><style name="Theme.Light" parent="Theme.AppCompat.Light.NoActionBar">
         
         <item name="colorPrimary">@color/colorPrimary</item>
@@ -5079,7 +5102,7 @@
         <item name="foreground_color">#1E1E1E</item>
         <item name="text1_color">#BEBEBE</item>
         <item name="text2_color">#909090</item>
-    </style></file><file name="activity_settings" path="C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\res\layout\activity_settings.xml" qualifiers="" type="layout"/><file name="icn_back" path="C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\res\drawable\icn_back.xml" qualifiers="" type="drawable"/><file name="icn_header_settings" path="C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\res\drawable\icn_header_settings.xml" qualifiers="" type="drawable"/></source><source path="C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\build\generated\res\rs\debug"/><source path="C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\build\generated\res\resValues\debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\debug\res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="AlertDialog">
+    </style></file><file name="activity_settings" path="C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\res\layout\activity_settings.xml" qualifiers="" type="layout"/><file name="icn_back" path="C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\res\drawable\icn_back.xml" qualifiers="" type="drawable"/><file name="icn_header_settings" path="C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\res\drawable\icn_header_settings.xml" qualifiers="" type="drawable"/><file name="fragment_f_a_q" path="C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\res\layout\fragment_f_a_q.xml" qualifiers="" type="layout"/></source><source path="C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\build\generated\res\rs\debug"/><source path="C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\build\generated\res\resValues\debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\debug\res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="AlertDialog">
         <attr name="android:layout"/>
         <attr format="reference" name="buttonPanelSideLayout"/>
         <attr format="reference" name="listLayout"/>

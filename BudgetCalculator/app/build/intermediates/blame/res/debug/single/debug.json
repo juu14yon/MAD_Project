@@ -60,6 +60,10 @@
         "source": "C:\\Users\\alexandra.yugay\\Documents\\GitHub\\MAD_Project\\BudgetCalculator\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "C:\\Users\\alexandra.yugay\\Documents\\GitHub\\MAD_Project\\BudgetCalculator\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_f_a_q.xml.flat",
+        "source": "C:\\Users\\alexandra.yugay\\Documents\\GitHub\\MAD_Project\\BudgetCalculator\\app\\src\\main\\res\\layout\\fragment_f_a_q.xml"
+    },
+    {
         "merged": "C:\\Users\\alexandra.yugay\\Documents\\GitHub\\MAD_Project\\BudgetCalculator\\app\\build\\intermediates\\res\\merged\\debug\\drawable_icn_notification.xml.flat",
         "source": "C:\\Users\\alexandra.yugay\\Documents\\GitHub\\MAD_Project\\BudgetCalculator\\app\\src\\main\\res\\drawable\\icn_notification.xml"
     },

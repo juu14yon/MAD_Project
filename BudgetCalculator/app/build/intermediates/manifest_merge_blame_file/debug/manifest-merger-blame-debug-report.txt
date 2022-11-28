@@ -16,71 +16,74 @@
 12    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 12-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:6:5-81
 12-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:6:22-78
-13
-14    <application
-14-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:8:5-25:19
-15        android:allowBackup="true"
-15-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:9:9-35
-16        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-16-->[androidx.core:core:1.8.0] C:\Users\alexandra.yugay\.gradle\caches\transforms-2\files-2.1\db59709fd9d4cb349176afaa7521632c\core-1.8.0\AndroidManifest.xml:24:18-86
-17        android:debuggable="true"
-18        android:extractNativeLibs="false"
-19        android:icon="@mipmap/ic_launcher"
-19-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:10:9-43
-20        android:label="@string/app_name"
-20-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:11:9-41
-21        android:roundIcon="@mipmap/ic_launcher_round"
-21-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:12:9-54
-22        android:supportsRtl="true"
-22-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:13:9-35
-23        android:testOnly="true"
-24        android:theme="@style/Theme.Light" >
-24-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:14:9-43
-25        <activity
-25-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:15:9-106
-26            android:name="com.ma_dev.budgetcalculator.SettingsActivity"
-26-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:15:19-51
-27            android:parentActivityName="com.ma_dev.budgetcalculator.MainActivity" />
-27-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:15:52-94
-28        <activity
-28-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:16:9-24:20
-29            android:name="com.ma_dev.budgetcalculator.MainActivity"
-29-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:17:13-41
-30            android:exported="true" >
-30-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:18:13-36
-31            <intent-filter>
-31-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:19:13-23:29
-32                <action android:name="android.intent.action.MAIN" />
-32-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:20:17-69
-32-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:20:25-66
-33
-34                <category android:name="android.intent.category.LAUNCHER" />
-34-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:22:17-77
-34-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:22:27-74
-35            </intent-filter>
-36        </activity>
-37
-38        <provider
-38-->[androidx.emoji2:emoji2:1.2.0] C:\Users\alexandra.yugay\.gradle\caches\transforms-2\files-2.1\d0044c06416237e6e47828e28c4d7627\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-39            android:name="androidx.startup.InitializationProvider"
-39-->[androidx.emoji2:emoji2:1.2.0] C:\Users\alexandra.yugay\.gradle\caches\transforms-2\files-2.1\d0044c06416237e6e47828e28c4d7627\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
-40            android:authorities="com.ma_dev.budgetcalculator.androidx-startup"
-40-->[androidx.emoji2:emoji2:1.2.0] C:\Users\alexandra.yugay\.gradle\caches\transforms-2\files-2.1\d0044c06416237e6e47828e28c4d7627\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
-41            android:exported="false" >
-41-->[androidx.emoji2:emoji2:1.2.0] C:\Users\alexandra.yugay\.gradle\caches\transforms-2\files-2.1\d0044c06416237e6e47828e28c4d7627\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
-42            <meta-data
-42-->[androidx.emoji2:emoji2:1.2.0] C:\Users\alexandra.yugay\.gradle\caches\transforms-2\files-2.1\d0044c06416237e6e47828e28c4d7627\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
-43                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-43-->[androidx.emoji2:emoji2:1.2.0] C:\Users\alexandra.yugay\.gradle\caches\transforms-2\files-2.1\d0044c06416237e6e47828e28c4d7627\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
-44                android:value="androidx.startup" />
-44-->[androidx.emoji2:emoji2:1.2.0] C:\Users\alexandra.yugay\.gradle\caches\transforms-2\files-2.1\d0044c06416237e6e47828e28c4d7627\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
-45            <meta-data
-45-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\alexandra.yugay\.gradle\caches\transforms-2\files-2.1\00425d4c570067b1941b66f34ec081db\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
-46                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-46-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\alexandra.yugay\.gradle\caches\transforms-2\files-2.1\00425d4c570067b1941b66f34ec081db\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
-47                android:value="androidx.startup" />
-47-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\alexandra.yugay\.gradle\caches\transforms-2\files-2.1\00425d4c570067b1941b66f34ec081db\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
-48        </provider>
-49    </application>
-50
-51</manifest>
+13    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+13-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:7:5-78
+13-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:7:22-76
+14
+15    <application
+15-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:9:5-26:19
+16        android:allowBackup="true"
+16-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:10:9-35
+17        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+17-->[androidx.core:core:1.8.0] C:\Users\alexandra.yugay\.gradle\caches\transforms-2\files-2.1\db59709fd9d4cb349176afaa7521632c\core-1.8.0\AndroidManifest.xml:24:18-86
+18        android:debuggable="true"
+19        android:extractNativeLibs="false"
+20        android:icon="@mipmap/ic_launcher"
+20-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:11:9-43
+21        android:label="@string/app_name"
+21-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:12:9-41
+22        android:roundIcon="@mipmap/ic_launcher_round"
+22-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:13:9-54
+23        android:supportsRtl="true"
+23-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:14:9-35
+24        android:testOnly="true"
+25        android:theme="@style/Theme.Light" >
+25-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:15:9-43
+26        <activity
+26-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:16:9-106
+27            android:name="com.ma_dev.budgetcalculator.SettingsActivity"
+27-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:16:19-51
+28            android:parentActivityName="com.ma_dev.budgetcalculator.MainActivity" />
+28-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:16:52-94
+29        <activity
+29-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:17:9-25:20
+30            android:name="com.ma_dev.budgetcalculator.MainActivity"
+30-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:18:13-41
+31            android:exported="true" >
+31-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:19:13-36
+32            <intent-filter>
+32-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:20:13-24:29
+33                <action android:name="android.intent.action.MAIN" />
+33-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:21:17-69
+33-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:21:25-66
+34
+35                <category android:name="android.intent.category.LAUNCHER" />
+35-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:23:17-77
+35-->C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\AndroidManifest.xml:23:27-74
+36            </intent-filter>
+37        </activity>
+38
+39        <provider
+39-->[androidx.emoji2:emoji2:1.2.0] C:\Users\alexandra.yugay\.gradle\caches\transforms-2\files-2.1\d0044c06416237e6e47828e28c4d7627\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+40            android:name="androidx.startup.InitializationProvider"
+40-->[androidx.emoji2:emoji2:1.2.0] C:\Users\alexandra.yugay\.gradle\caches\transforms-2\files-2.1\d0044c06416237e6e47828e28c4d7627\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+41            android:authorities="com.ma_dev.budgetcalculator.androidx-startup"
+41-->[androidx.emoji2:emoji2:1.2.0] C:\Users\alexandra.yugay\.gradle\caches\transforms-2\files-2.1\d0044c06416237e6e47828e28c4d7627\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+42            android:exported="false" >
+42-->[androidx.emoji2:emoji2:1.2.0] C:\Users\alexandra.yugay\.gradle\caches\transforms-2\files-2.1\d0044c06416237e6e47828e28c4d7627\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+43            <meta-data
+43-->[androidx.emoji2:emoji2:1.2.0] C:\Users\alexandra.yugay\.gradle\caches\transforms-2\files-2.1\d0044c06416237e6e47828e28c4d7627\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+44                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+44-->[androidx.emoji2:emoji2:1.2.0] C:\Users\alexandra.yugay\.gradle\caches\transforms-2\files-2.1\d0044c06416237e6e47828e28c4d7627\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+45                android:value="androidx.startup" />
+45-->[androidx.emoji2:emoji2:1.2.0] C:\Users\alexandra.yugay\.gradle\caches\transforms-2\files-2.1\d0044c06416237e6e47828e28c4d7627\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+46            <meta-data
+46-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\alexandra.yugay\.gradle\caches\transforms-2\files-2.1\00425d4c570067b1941b66f34ec081db\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+47                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+47-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\alexandra.yugay\.gradle\caches\transforms-2\files-2.1\00425d4c570067b1941b66f34ec081db\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+48                android:value="androidx.startup" />
+48-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\alexandra.yugay\.gradle\caches\transforms-2\files-2.1\00425d4c570067b1941b66f34ec081db\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+49        </provider>
+50    </application>
+51
+52</manifest>
