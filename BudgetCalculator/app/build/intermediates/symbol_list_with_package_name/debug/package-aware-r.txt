@@ -826,6 +826,13 @@ attr windowNoTitle
 bool abc_action_bar_embed_tabs
 bool abc_config_actionMenuItemAllCaps
 bool mtrl_btn_textappearance_all_caps
+color Entertainment
+color Food
+color Health
+color Lifestyle
+color Necessary
+color Transportation
+color Utilities
 color abc_background_cache_hint_selector_material_dark
 color abc_background_cache_hint_selector_material_light
 color abc_btn_colored_borderless_text_material
@@ -1681,6 +1688,7 @@ id startVertical
 id staticLayout
 id staticPostLayout
 id statsMenu
+id statsPie
 id status_bar_latest_event_content
 id stop
 id stretch

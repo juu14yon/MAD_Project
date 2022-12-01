@@ -13,4 +13,13 @@
     <color name="textSuccess">#1E8703</color>
     <color name="textWarning">#B80000</color>
 
+    <color name="Transportation">#838D83</color>
+    <color name="Food">#FFC107</color>
+    <color name="Utilities">#CD6FFA</color>
+    <color name="Necessary">#FA6F6F</color>
+    <color name="Entertainment">#7594E3</color>
+    <color name="Health">#76F174</color>
+    <color name="Lifestyle">#6BD9BF</color>
+
+
 </resources>

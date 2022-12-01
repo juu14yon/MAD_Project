@@ -49,9 +49,6 @@ public class HistoryFragment extends Fragment {
         yearSpinner = root.findViewById(R.id.yearSpinner);
 
         daySpinner.setEnabled(false);
-
-        // FILL IN YEAR ARRAY
-        // THE MONTH IS WRONG: CHOOSE 10, DISPLAYS 11
         yearItems.add("All");
         monthItems.add("All");
         for (int i = 1; i<=12; i++){
@@ -163,11 +160,6 @@ https://stackoverflow.com/questions/17207366/creating-a-menu-after-a-long-click-
     }
 
     public void fillHistory(View root, Context c){
-        /*if (!month.equals("All")){
-            month = "" + (Integer.parseInt(month) - 1);
-        }
-
-         */
         ArrayList<HashMap<String, String>> recordList = dbh.GetRecords(year, month, day);
         ListView lv = (ListView) root.findViewById(R.id.recordsListView);
         ListAdapter adapter = new SimpleAdapter(c,

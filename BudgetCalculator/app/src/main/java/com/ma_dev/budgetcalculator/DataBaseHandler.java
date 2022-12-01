@@ -275,4 +275,40 @@ public class DataBaseHandler extends SQLiteOpenHelper {
     public Double getExpences(){
         return expences;
     }
+
+    @SuppressLint("Range")
+    public ArrayList<Float> getCategoriesStats(){
+        final String[] categories = new String[]{"Transportation", "Food", "Utilities", "Necessary Payments", "Entertainment", "Health and medical", "Lifestyle"};
+        ArrayList<Float> totals = new ArrayList<>();
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor;
+        double value;
+        float total;
+        String query;
+
+        for (String ctgr: categories
+             ) {
+            query = "SELECT amount " +
+                    "FROM "+ TABLE_NAME +
+                    " WHERE category = \"" + ctgr + "\"";
+
+            total = 0;
+
+            try{
+                cursor = db.rawQuery(query,null);
+                while (cursor.moveToNext()){
+                    value = Float.parseFloat(cursor.getString(cursor.getColumnIndex(AMOUNT_COL)).substring(1));
+                    total += value;
+                }
+            } catch (NumberFormatException e) {
+                total = 0;
+            }
+
+
+            totals.add(total);
+        }
+
+        return totals;
+    }
 }
