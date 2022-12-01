@@ -30,6 +30,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:fillViewport="true"
+            android:background="?attr/foreground_color"
             app:layout_constraintTop_toBottomOf="@+id/statsPie">
 
             <LinearLayout

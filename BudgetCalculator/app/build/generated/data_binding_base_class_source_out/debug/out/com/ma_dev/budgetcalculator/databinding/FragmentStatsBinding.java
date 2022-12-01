@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -19,11 +21,136 @@ public final class FragmentStatsBinding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
+  public final TextView entertainmentPercentage;
+
+  @NonNull
+  public final TextView foodPercentage;
+
+  @NonNull
+  public final TextView healthPercentage;
+
+  @NonNull
+  public final ImageView imageView10;
+
+  @NonNull
+  public final ImageView imageView11;
+
+  @NonNull
+  public final ImageView imageView13;
+
+  @NonNull
+  public final ImageView imageView15;
+
+  @NonNull
+  public final ImageView imageView16;
+
+  @NonNull
+  public final ImageView imageView17;
+
+  @NonNull
+  public final ImageView imageView18;
+
+  @NonNull
+  public final ImageView imageView19;
+
+  @NonNull
+  public final ImageView imageView20;
+
+  @NonNull
+  public final ImageView imageView5;
+
+  @NonNull
+  public final ImageView imageView6;
+
+  @NonNull
+  public final ImageView imageView7;
+
+  @NonNull
+  public final ImageView imageView8;
+
+  @NonNull
+  public final ImageView imageView9;
+
+  @NonNull
+  public final TextView lifestylePercentage;
+
+  @NonNull
+  public final TextView necessaryPercentage;
+
+  @NonNull
   public final PieChart statsPie;
 
-  private FragmentStatsBinding(@NonNull FrameLayout rootView, @NonNull PieChart statsPie) {
+  @NonNull
+  public final TextView textView10;
+
+  @NonNull
+  public final TextView textView12;
+
+  @NonNull
+  public final TextView textView14;
+
+  @NonNull
+  public final TextView textView16;
+
+  @NonNull
+  public final TextView textView18;
+
+  @NonNull
+  public final TextView textView20;
+
+  @NonNull
+  public final TextView textView22;
+
+  @NonNull
+  public final TextView transportationPercentage;
+
+  @NonNull
+  public final TextView utilitiesPercentage;
+
+  private FragmentStatsBinding(@NonNull FrameLayout rootView,
+      @NonNull TextView entertainmentPercentage, @NonNull TextView foodPercentage,
+      @NonNull TextView healthPercentage, @NonNull ImageView imageView10,
+      @NonNull ImageView imageView11, @NonNull ImageView imageView13,
+      @NonNull ImageView imageView15, @NonNull ImageView imageView16,
+      @NonNull ImageView imageView17, @NonNull ImageView imageView18,
+      @NonNull ImageView imageView19, @NonNull ImageView imageView20, @NonNull ImageView imageView5,
+      @NonNull ImageView imageView6, @NonNull ImageView imageView7, @NonNull ImageView imageView8,
+      @NonNull ImageView imageView9, @NonNull TextView lifestylePercentage,
+      @NonNull TextView necessaryPercentage, @NonNull PieChart statsPie,
+      @NonNull TextView textView10, @NonNull TextView textView12, @NonNull TextView textView14,
+      @NonNull TextView textView16, @NonNull TextView textView18, @NonNull TextView textView20,
+      @NonNull TextView textView22, @NonNull TextView transportationPercentage,
+      @NonNull TextView utilitiesPercentage) {
     this.rootView = rootView;
+    this.entertainmentPercentage = entertainmentPercentage;
+    this.foodPercentage = foodPercentage;
+    this.healthPercentage = healthPercentage;
+    this.imageView10 = imageView10;
+    this.imageView11 = imageView11;
+    this.imageView13 = imageView13;
+    this.imageView15 = imageView15;
+    this.imageView16 = imageView16;
+    this.imageView17 = imageView17;
+    this.imageView18 = imageView18;
+    this.imageView19 = imageView19;
+    this.imageView20 = imageView20;
+    this.imageView5 = imageView5;
+    this.imageView6 = imageView6;
+    this.imageView7 = imageView7;
+    this.imageView8 = imageView8;
+    this.imageView9 = imageView9;
+    this.lifestylePercentage = lifestylePercentage;
+    this.necessaryPercentage = necessaryPercentage;
     this.statsPie = statsPie;
+    this.textView10 = textView10;
+    this.textView12 = textView12;
+    this.textView14 = textView14;
+    this.textView16 = textView16;
+    this.textView18 = textView18;
+    this.textView20 = textView20;
+    this.textView22 = textView22;
+    this.transportationPercentage = transportationPercentage;
+    this.utilitiesPercentage = utilitiesPercentage;
   }
 
   @Override
@@ -53,13 +180,186 @@ public final class FragmentStatsBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.entertainmentPercentage;
+      TextView entertainmentPercentage = rootView.findViewById(id);
+      if (entertainmentPercentage == null) {
+        break missingId;
+      }
+
+      id = R.id.foodPercentage;
+      TextView foodPercentage = rootView.findViewById(id);
+      if (foodPercentage == null) {
+        break missingId;
+      }
+
+      id = R.id.healthPercentage;
+      TextView healthPercentage = rootView.findViewById(id);
+      if (healthPercentage == null) {
+        break missingId;
+      }
+
+      id = R.id.imageView10;
+      ImageView imageView10 = rootView.findViewById(id);
+      if (imageView10 == null) {
+        break missingId;
+      }
+
+      id = R.id.imageView11;
+      ImageView imageView11 = rootView.findViewById(id);
+      if (imageView11 == null) {
+        break missingId;
+      }
+
+      id = R.id.imageView13;
+      ImageView imageView13 = rootView.findViewById(id);
+      if (imageView13 == null) {
+        break missingId;
+      }
+
+      id = R.id.imageView15;
+      ImageView imageView15 = rootView.findViewById(id);
+      if (imageView15 == null) {
+        break missingId;
+      }
+
+      id = R.id.imageView16;
+      ImageView imageView16 = rootView.findViewById(id);
+      if (imageView16 == null) {
+        break missingId;
+      }
+
+      id = R.id.imageView17;
+      ImageView imageView17 = rootView.findViewById(id);
+      if (imageView17 == null) {
+        break missingId;
+      }
+
+      id = R.id.imageView18;
+      ImageView imageView18 = rootView.findViewById(id);
+      if (imageView18 == null) {
+        break missingId;
+      }
+
+      id = R.id.imageView19;
+      ImageView imageView19 = rootView.findViewById(id);
+      if (imageView19 == null) {
+        break missingId;
+      }
+
+      id = R.id.imageView20;
+      ImageView imageView20 = rootView.findViewById(id);
+      if (imageView20 == null) {
+        break missingId;
+      }
+
+      id = R.id.imageView5;
+      ImageView imageView5 = rootView.findViewById(id);
+      if (imageView5 == null) {
+        break missingId;
+      }
+
+      id = R.id.imageView6;
+      ImageView imageView6 = rootView.findViewById(id);
+      if (imageView6 == null) {
+        break missingId;
+      }
+
+      id = R.id.imageView7;
+      ImageView imageView7 = rootView.findViewById(id);
+      if (imageView7 == null) {
+        break missingId;
+      }
+
+      id = R.id.imageView8;
+      ImageView imageView8 = rootView.findViewById(id);
+      if (imageView8 == null) {
+        break missingId;
+      }
+
+      id = R.id.imageView9;
+      ImageView imageView9 = rootView.findViewById(id);
+      if (imageView9 == null) {
+        break missingId;
+      }
+
+      id = R.id.lifestylePercentage;
+      TextView lifestylePercentage = rootView.findViewById(id);
+      if (lifestylePercentage == null) {
+        break missingId;
+      }
+
+      id = R.id.necessaryPercentage;
+      TextView necessaryPercentage = rootView.findViewById(id);
+      if (necessaryPercentage == null) {
+        break missingId;
+      }
+
       id = R.id.statsPie;
       PieChart statsPie = rootView.findViewById(id);
       if (statsPie == null) {
         break missingId;
       }
 
-      return new FragmentStatsBinding((FrameLayout) rootView, statsPie);
+      id = R.id.textView10;
+      TextView textView10 = rootView.findViewById(id);
+      if (textView10 == null) {
+        break missingId;
+      }
+
+      id = R.id.textView12;
+      TextView textView12 = rootView.findViewById(id);
+      if (textView12 == null) {
+        break missingId;
+      }
+
+      id = R.id.textView14;
+      TextView textView14 = rootView.findViewById(id);
+      if (textView14 == null) {
+        break missingId;
+      }
+
+      id = R.id.textView16;
+      TextView textView16 = rootView.findViewById(id);
+      if (textView16 == null) {
+        break missingId;
+      }
+
+      id = R.id.textView18;
+      TextView textView18 = rootView.findViewById(id);
+      if (textView18 == null) {
+        break missingId;
+      }
+
+      id = R.id.textView20;
+      TextView textView20 = rootView.findViewById(id);
+      if (textView20 == null) {
+        break missingId;
+      }
+
+      id = R.id.textView22;
+      TextView textView22 = rootView.findViewById(id);
+      if (textView22 == null) {
+        break missingId;
+      }
+
+      id = R.id.transportationPercentage;
+      TextView transportationPercentage = rootView.findViewById(id);
+      if (transportationPercentage == null) {
+        break missingId;
+      }
+
+      id = R.id.utilitiesPercentage;
+      TextView utilitiesPercentage = rootView.findViewById(id);
+      if (utilitiesPercentage == null) {
+        break missingId;
+      }
+
+      return new FragmentStatsBinding((FrameLayout) rootView, entertainmentPercentage,
+          foodPercentage, healthPercentage, imageView10, imageView11, imageView13, imageView15,
+          imageView16, imageView17, imageView18, imageView19, imageView20, imageView5, imageView6,
+          imageView7, imageView8, imageView9, lifestylePercentage, necessaryPercentage, statsPie,
+          textView10, textView12, textView14, textView16, textView18, textView20, textView22,
+          transportationPercentage, utilitiesPercentage);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

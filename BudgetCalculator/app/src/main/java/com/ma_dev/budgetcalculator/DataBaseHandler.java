@@ -286,12 +286,18 @@ public class DataBaseHandler extends SQLiteOpenHelper {
         double value;
         float total;
         String query;
+        Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH) + 1;
+
+        query = "SELECT amount " +
+                "FROM "+ TABLE_NAME + " WHERE year = " + year + " AND month = " + month;
 
         for (String ctgr: categories
              ) {
             query = "SELECT amount " +
                     "FROM "+ TABLE_NAME +
-                    " WHERE category = \"" + ctgr + "\"";
+                    " WHERE category = \"" + ctgr + "\"" + " AND year = " + year + " AND month = " + month;
 
             total = 0;
 

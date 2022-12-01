@@ -1,5 +1,6 @@
 package com.ma_dev.budgetcalculator;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -9,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
@@ -28,6 +30,8 @@ public class StatsFragment extends Fragment {
     PieChart pie;
     DataBaseHandler dbh;
     ArrayList<Float> totals;
+    float expencesSum = 0;
+    TextView transPrcntg, foodPrcntg, utilityPrcntg, necessaryPrcntg, entertPrcntg, healthPrcntg, lifePrcntg;
 
     final String[] categories = new String[]{"Transportation", "Food", "Utilities", "Necessary Payments",
             "Entertainment", "Health and medical", "Lifestyle"};
@@ -42,12 +46,34 @@ public class StatsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_stats, container, false);
+        Context c = getContext();
+
         pie = root.findViewById(R.id.statsPie);
-        dbh = new DataBaseHandler(getContext());
+
+        dbh = new DataBaseHandler(c);
         totals = dbh.getCategoriesStats();
+        for (float value : totals){
+            expencesSum += value;
+        }
+
+        transPrcntg = root.findViewById(R.id.transportationPercentage);
+        foodPrcntg = root.findViewById(R.id.foodPercentage);
+        utilityPrcntg = root.findViewById(R.id.utilitiesPercentage);
+        necessaryPrcntg = root.findViewById(R.id.necessaryPercentage);
+        entertPrcntg = root.findViewById(R.id.entertainmentPercentage);
+        healthPrcntg = root.findViewById(R.id.healthPercentage);
+        lifePrcntg = root.findViewById(R.id.lifestylePercentage);
+
+        transPrcntg.setText(toPercentage(totals.get(0)));
+        foodPrcntg.setText(toPercentage(totals.get(1)));
+        utilityPrcntg.setText(toPercentage(totals.get(2)));
+        necessaryPrcntg.setText(toPercentage(totals.get(3)));
+        entertPrcntg.setText(toPercentage(totals.get(4)));
+        healthPrcntg.setText(toPercentage(totals.get(5)));
+        lifePrcntg.setText(toPercentage(totals.get(6)));
 
         setupPie();
-        loadPieData();
+        loadPieData(c);
 
         return root;
     }
@@ -55,17 +81,16 @@ public class StatsFragment extends Fragment {
     private void setupPie() {
         pie.setDrawHoleEnabled(true);
         pie.setUsePercentValues(true);
-        pie.setEntryLabelTextSize(12);
-        pie.setEntryLabelColor(Color.BLACK);
-        pie.setCenterText("REPORT");
-        pie.setCenterTextSize(24);
+        pie.setCenterText("Total:\n" + expencesSum);
+        pie.setCenterTextSize(16);
         pie.getDescription().setEnabled(false);
+        pie.setDrawEntryLabels(false);
 
         Legend legend = pie.getLegend();
         legend.setEnabled(false);
     }
 
-    private void loadPieData() {
+    private void loadPieData(Context c) {
         ArrayList<PieEntry> entries = new ArrayList<PieEntry>();
 
         for (int i = 0; i< categories.length; i++){
@@ -73,7 +98,7 @@ public class StatsFragment extends Fragment {
         }
 
         PieDataSet dataSet = new PieDataSet(entries, "Expense Category");
-        dataSet.setColors(colorCodes);
+        dataSet.setColors(colorCodes, c);
 
         PieData data = new PieData(dataSet);
         data.setDrawValues(false);
@@ -85,5 +110,17 @@ public class StatsFragment extends Fragment {
         pie.invalidate();
 
         pie.animateY(1400, Easing.EaseInOutQuad);
+    }
+
+    public String toPercentage(float num){
+        String out = "";
+        try {
+            num /= expencesSum;
+        } catch (Exception e) {
+        }
+
+        double roundOff = (double) Math.round((num) * 10000) / 100;
+
+        return out + roundOff + "%";
     }
 }
