@@ -17,6 +17,7 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -26,12 +27,14 @@ public class HistoryFragment extends Fragment {
     Button button;
     DataBaseHandler dbh;
     Spinner daySpinner, monthSpinner, yearSpinner;
+    ListView lv;
     String year = "All";
     String month = "All";
     String day = "All";
     List<String> yearItems = new ArrayList<String>();
     List<String> monthItems = new ArrayList<String>();
     List<String> dayItems = new ArrayList<String>();
+    ArrayList<Integer> ids = new ArrayList<Integer>();
 
     public HistoryFragment() {
         // Required empty public constructor
@@ -121,30 +124,25 @@ public class HistoryFragment extends Fragment {
         });
 
 
-/*
-Refer to this link to create context menu:
-https://stackoverflow.com/questions/17207366/creating-a-menu-after-a-long-click-event-on-a-list-view
+        fillHistory(root, c);
+        lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+              @Override
+              public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                  Integer currentID = ids.get(position);
+                  if(dbh.DeleteRecord(currentID)){
+                      Toast.makeText(c, "Deleted successfully", Toast.LENGTH_SHORT).show();
+                  }
+                  else{
+                      Toast.makeText(c, "Could not delete record", Toast.LENGTH_SHORT).show();
+                  }
 
-        lv.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                TextView idView = v.findViewById(R.id.idText);
-                int id = Integer.parseInt(idView.getText().toString());
+                  fillHistory(root, c);
+                  return true;
+              }
+          });
 
-                if(dbh.DeleteRecord(id)){
-                    Toast.makeText(c, "Deleted successfully", Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    Toast.makeText(c, "Could not delete record", Toast.LENGTH_SHORT).show();
-                }
 
-                return true;
-            }
-        });
-
- */
-
-        TextView textview = (TextView)getActivity().findViewById(R.id.headerText);
+        TextView textview = (TextView) getActivity().findViewById(R.id.headerText);
         textview.setText("History");
 
         button = (Button) root.findViewById(R.id.newRecordButton);
@@ -160,8 +158,16 @@ https://stackoverflow.com/questions/17207366/creating-a-menu-after-a-long-click-
     }
 
     public void fillHistory(View root, Context c){
+        ids.clear();
+        
         ArrayList<HashMap<String, String>> recordList = dbh.GetRecords(year, month, day);
-        ListView lv = (ListView) root.findViewById(R.id.recordsListView);
+        for (HashMap<String, String> items : recordList){
+            ids.add(Integer.parseInt(items.get("ID")));
+        }
+
+        lv = (ListView) root.findViewById(R.id.recordsListView);
+        registerForContextMenu(lv);
+
         ListAdapter adapter = new SimpleAdapter(c,
                 recordList, R.layout.listrow,
                 new String[]{"Name", "Category", "Amount", "ID"},

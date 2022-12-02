@@ -80,6 +80,7 @@ public class StatsFragment extends Fragment {
 
     private void setupPie() {
         pie.setDrawHoleEnabled(true);
+        pie.setTransparentCircleAlpha(0);
         pie.setUsePercentValues(true);
         pie.setCenterText("Total:\n" + expencesSum);
         pie.setCenterTextSize(16);
