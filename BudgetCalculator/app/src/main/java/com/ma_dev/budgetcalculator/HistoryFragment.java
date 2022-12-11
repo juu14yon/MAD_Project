@@ -36,6 +36,9 @@ public class HistoryFragment extends Fragment {
     List<String> dayItems = new ArrayList<String>();
     ArrayList<Integer> ids = new ArrayList<Integer>();
 
+    Context c;
+    Integer currentID;
+
     public HistoryFragment() {
         // Required empty public constructor
     }
@@ -44,7 +47,8 @@ public class HistoryFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_history, container, false);
-        Context c = getContext();
+        setHasOptionsMenu(true);
+        c = getContext();
         dbh = new DataBaseHandler(c);
 
         daySpinner = root.findViewById(R.id.daySpinner);
@@ -125,21 +129,19 @@ public class HistoryFragment extends Fragment {
 
 
         fillHistory(root, c);
-        lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-              @Override
-              public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                  Integer currentID = ids.get(position);
-                  if(dbh.DeleteRecord(currentID)){
-                      Toast.makeText(c, "Deleted successfully", Toast.LENGTH_SHORT).show();
-                  }
-                  else{
-                      Toast.makeText(c, "Could not delete record", Toast.LENGTH_SHORT).show();
-                  }
 
-                  fillHistory(root, c);
-                  return true;
-              }
-          });
+
+        lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                currentID = ids.get(position);
+                Toast.makeText(c, "" + currentID, Toast.LENGTH_SHORT).show();
+                //getActivity().openOptionsMenu();
+                fillHistory(root, c);
+                return true;
+            }
+
+        });
 
 
         TextView textview = (TextView) getActivity().findViewById(R.id.headerText);
