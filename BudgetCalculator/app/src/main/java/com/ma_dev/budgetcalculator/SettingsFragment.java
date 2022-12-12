@@ -1,5 +1,7 @@
 package com.ma_dev.budgetcalculator;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatDelegate;
@@ -15,6 +17,9 @@ import android.widget.Switch;
 public class SettingsFragment extends Fragment {
     Switch themeSwitch, notifSwitch;
     Button themeButton, notifButton, faqButton;
+    SharedPreferences sharedPreferences;
+    String currentTheme;
+    boolean currentNotif;
 
     public SettingsFragment() {
         // Required empty public constructor
@@ -32,11 +37,10 @@ public class SettingsFragment extends Fragment {
         notifButton = rootView.findViewById(R.id.notificationButton);
         faqButton = rootView.findViewById(R.id.faqButton);
 
-        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
-            themeSwitch.setChecked(true);
-        }else{
-            themeSwitch.setChecked(false);
-        }
+        sharedPreferences = getActivity().getSharedPreferences("ADM-prefs",
+                Context.MODE_PRIVATE);
+        currentTheme = sharedPreferences.getString("myTheme", "Light");
+        currentNotif = sharedPreferences.getBoolean("myNotifs", true);
 
         aboutButton.setOnClickListener(v -> {
             FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
@@ -45,16 +49,34 @@ public class SettingsFragment extends Fragment {
         });
 
         themeSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            SharedPreferences.Editor editor = sharedPreferences.edit();
             if (isChecked){
+                editor.putString("myTheme", "Dark");
+                currentTheme = "Dark";
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
             }
             else{
+                editor.putString("myTheme", "Light");
+                currentTheme = "Light";
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
             }
+            editor.apply();
         });
 
+        if (currentTheme.equals("Dark")){
+            themeSwitch.setChecked(true);
+        }else{
+            themeSwitch.setChecked(false);
+        }
         themeButton.setOnClickListener(v -> themeSwitch.setChecked(!themeSwitch.isChecked()));
 
+        notifSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putBoolean("myNotifs", isChecked);
+            currentNotif = isChecked;
+            editor.apply();
+        });
+        themeSwitch.setChecked(currentNotif);
         notifButton.setOnClickListener(v -> notifSwitch.setChecked(!notifSwitch.isChecked()));
 
         faqButton.setOnClickListener(v -> {

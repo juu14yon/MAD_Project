@@ -6,7 +6,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -14,16 +16,28 @@ import android.widget.TextView;
 import com.ma_dev.budgetcalculator.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
+    SharedPreferences sharedPreferences;
     ActivityMainBinding binding;
     TextView header;
+    String currentTheme = "Light";
+    boolean currentNotif = true;
+    static final String myPreference = "ADM-prefs";
+    static final String myTheme = "myTheme";
+    static final String myNotifs = "myNotifs";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+        sharedPreferences = getSharedPreferences(myPreference,
+                Context.MODE_PRIVATE);
+        currentTheme = sharedPreferences.getString(myTheme, "Light");
+        currentNotif = sharedPreferences.getBoolean(myNotifs, true);
+
+        if (!currentTheme.equals("Light") | AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
             setTheme(R.style.Theme_Dark);
         }else{
             setTheme(R.style.Theme_Light);
         }
+        
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());

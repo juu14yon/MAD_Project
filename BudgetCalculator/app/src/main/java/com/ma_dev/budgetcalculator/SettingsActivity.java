@@ -6,14 +6,24 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 
 public class SettingsActivity extends AppCompatActivity {
+    SharedPreferences sharedPreferences;
+    String currentTheme = "Light";
+    static final String myPreference = "ADM-prefs";
+    static final String myTheme = "myTheme";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+        sharedPreferences = getSharedPreferences(myPreference,
+                Context.MODE_PRIVATE);
+        currentTheme = sharedPreferences.getString(myTheme, "Light");
+
+        if (!currentTheme.equals("Light") | AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
             setTheme(R.style.Theme_Dark);
         }else{
             setTheme(R.style.Theme_Light);

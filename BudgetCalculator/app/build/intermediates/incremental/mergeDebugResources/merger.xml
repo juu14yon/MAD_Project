@@ -5049,7 +5049,6 @@
         <item>Entertainment</item>
         <item>Health and medical</item>
         <item>Lifestyle</item>
-        <item>Savings</item>
     </string-array></file><file path="C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\res\values\colors.xml" qualifiers=""><color name="colorPrimary">#6200EE</color><color name="colorPrimaryDark">#3700B3</color><color name="colorAccent">#BB86FC</color><color name="bgColor">#FBFBFB</color><color name="sepColor">#DCDCDC</color><color name="colorAccent2">#717171</color><color name="textPrimary">#000000</color><color name="textSecondary">#333333</color><color name="textDisabled">#909090</color><color name="textSuccess">#1E8703</color><color name="textWarning">#B80000</color><color name="Transportation">#838D83</color><color name="Food">#FFC107</color><color name="Utilities">#CD6FFA</color><color name="Necessary">#FA6F6F</color><color name="Entertainment">#7594E3</color><color name="Health">#76F174</color><color name="Lifestyle">#6BD9BF</color></file><file path="C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\res\values\strings.xml" qualifiers=""><string name="app_name">BudgetCalculator</string><string name="hello_blank_fragment">Hello blank fragment</string><string name="about_us">
         This app was created as a project for Mobile App Development course (COMP4051) in
         University of Central Asia (Naryn, Kyrgyzstan).\n\nAuthors:\n
