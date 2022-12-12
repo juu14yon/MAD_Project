@@ -28,8 +28,8 @@ public class StatsFragment extends Fragment {
     TextView transPrcntg, foodPrcntg, utilityPrcntg, necessaryPrcntg, entertPrcntg, healthPrcntg, lifePrcntg;
     PieChart pie;
 
-    final String[] categories = new String[]{"Transportation", "Food", "Utilities", "Necessary Payments",
-            "Entertainment", "Health and medical", "Lifestyle"};
+    String[] categories;
+
     final int[] colorCodes = new int[]{R.color.Transportation, R.color.Food, R.color.Utilities, R.color.Necessary,
             R.color.Entertainment, R.color.Health, R.color.Lifestyle};
 
@@ -43,6 +43,11 @@ public class StatsFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_stats, container, false);
         Context c = getContext();
         dbh = new DataBaseHandler(c);
+
+        categories = new String[]{c.getString(R.string.transportation), c.getString(R.string.food),
+                c.getString(R.string.utilities), c.getString(R.string.necessary_payments),
+                c.getString(R.string.entertainment), c.getString(R.string.health_and_medical),
+                c.getString(R.string.lifestyle)};
 
         pie = rootView.findViewById(R.id.statsPie);
 
@@ -77,7 +82,7 @@ public class StatsFragment extends Fragment {
         pie.setDrawHoleEnabled(true);
         pie.setTransparentCircleAlpha(0);
         pie.setUsePercentValues(true);
-        pie.setCenterText("Total:\n" + expensesSum);
+        pie.setCenterText(getString(R.string.total) + expensesSum);
         pie.setCenterTextSize(16);
         pie.getDescription().setEnabled(false);
         pie.setDrawEntryLabels(false);

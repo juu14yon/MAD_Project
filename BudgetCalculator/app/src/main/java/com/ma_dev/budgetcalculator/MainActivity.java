@@ -48,15 +48,15 @@ public class MainActivity extends AppCompatActivity {
         binding.navBar.setOnNavigationItemSelectedListener(item -> {
             switch (item.getItemId()){
                 case R.id.homeMenu:
-                    header.setText("Dashboard");
+                    header.setText(R.string.dashboard);
                     replaceFrame(new HomeFragment());
                     break;
                 case R.id.historyMenu:
-                    header.setText("History");
+                    header.setText(R.string.history);
                     replaceFrame(new HistoryFragment());
                     break;
                 case R.id.statsMenu:
-                    header.setText("Monthly Report");
+                    header.setText(R.string.monthly_report);
                     replaceFrame(new StatsFragment());
                     break;
             }

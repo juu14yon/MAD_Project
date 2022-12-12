@@ -90,12 +90,12 @@ public class DataBaseHandler extends SQLiteOpenHelper {
     }
 
     @SuppressLint("Range")
-    public ArrayList<HashMap<String, String>> getRecords(String year, String month, String day){
+    public ArrayList<HashMap<String, String>> getRecords(String year, String month, String day, String all){
         SQLiteDatabase db = this.getWritableDatabase();
         ArrayList<HashMap<String, String>> recordList = new ArrayList<>();
         String query = "SELECT name, category, amount, id " +
                 "FROM "+ TABLE_NAME +
-                whereDateFilter(year, month, day) +
+                whereDateFilter(year, month, day, all) +
                 " ORDER BY year DESC, month DESC, day DESC, id DESC;";
 
         Cursor cursor = db.rawQuery(query,null);
@@ -165,28 +165,28 @@ public class DataBaseHandler extends SQLiteOpenHelper {
         db.update(TABLE_NAME, cVals, ID_COL+" = ?",new String[]{String.valueOf(id)});
     }
 
-    public String whereDateFilter(String year, String month, String day){
+    public String whereDateFilter(String year, String month, String day, String all){
         String out = "";
         boolean y = false;
         boolean m = false;
 
-        if (year.equals("All") && month.equals("All") && day.equals("All")){
+        if (year.equals(all) && month.equals(all) && day.equals(all)){
             return out;
         }
         else{
             out += " WHERE ";
-            if (!year.equals("All")){
+            if (!year.equals(all)){
                 out += "year = '" + year + "'";
                 y = true;
             }
-            if (!month.equals("All")){
+            if (!month.equals(all)){
                 if (y){
                     out += " AND";
                 }
                 out += " month = '" + month + "'";
                 m = true;
             }
-            if (!day.equals("All")){
+            if (!day.equals(all)){
                 if (y || m){
                     out += " AND";
                 }

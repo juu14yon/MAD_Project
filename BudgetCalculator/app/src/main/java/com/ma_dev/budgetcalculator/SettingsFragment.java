@@ -93,7 +93,7 @@ public class SettingsFragment extends Fragment {
 
         exportButton.setOnClickListener(v -> {
              if(dbh.exportDatabase()){
-                 Toast.makeText(getContext(), "Data was successfully exported to Downloads", Toast.LENGTH_SHORT).show();
+                 Toast.makeText(getContext(), R.string.export_successful, Toast.LENGTH_SHORT).show();
              }
         });
 

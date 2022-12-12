@@ -21,7 +21,7 @@ public class AboutUsFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_about_us, container, false);
         TextView header = getActivity().findViewById(R.id.settingsHeader);
-        header.setText("About Us");
+        header.setText(R.string.aboutus);
 
         Button goBack = rootView.findViewById(R.id.goBackButton);
 

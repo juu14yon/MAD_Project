@@ -34,9 +34,7 @@ public class HistoryFragment extends Fragment {
     Spinner daySpinner, monthSpinner, yearSpinner;
     ListView lv;
 
-    String year = "All";
-    String month = "All";
-    String day = "All";
+    String year, month, day;
 
     List<String> yearItems = new ArrayList<>();
     List<String> monthItems = new ArrayList<>();
@@ -54,17 +52,20 @@ public class HistoryFragment extends Fragment {
         rootView = inflater.inflate(R.layout.fragment_history, container, false);
         c = getContext();
         dbh = new DataBaseHandler(c);
+        year = c.getString(R.string.all);
+        month = c.getString(R.string.all);
+        day = c.getString(R.string.all);
 
         TextView header = getActivity().findViewById(R.id.headerText);
-        header.setText("History");
+        header.setText(R.string.history);
 
         daySpinner = rootView.findViewById(R.id.daySpinner);
         monthSpinner = rootView.findViewById(R.id.monthSpinner);
         yearSpinner = rootView.findViewById(R.id.yearSpinner);
 
         daySpinner.setEnabled(false);
-        yearItems.add("All");
-        monthItems.add("All");
+        yearItems.add(getString(R.string.all));
+        monthItems.add(getString(R.string.all));
 
         for (int i = 1; i<=12; i++){
             monthItems.add(""+i);
@@ -94,13 +95,13 @@ public class HistoryFragment extends Fragment {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 month = monthSpinner.getSelectedItem().toString();
                 dayItems.clear();
-                day = "All";
+                day = getString(R.string.all);
                 fillHistory(rootView, c);
 
-                if (!month.equals("All")) {
+                if (!month.equals(getString(R.string.all))) {
                     daySpinner.setEnabled(true);
 
-                    dayItems.add("All");
+                    dayItems.add(getString(R.string.all));
                     for (int i = 1; i <= 30; i++) {
                         dayItems.add("" + i);
                     }
@@ -127,7 +128,7 @@ public class HistoryFragment extends Fragment {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                day = "All";
+                day = getString(R.string.all);
             }
         });
 
@@ -151,11 +152,11 @@ public class HistoryFragment extends Fragment {
 
     private void showEditOptions(Integer currentID) {
         final AlertDialog.Builder builder = new AlertDialog.Builder(c);
-        builder.setTitle("Edit Records");
+        builder.setTitle(R.string.edit_record);
         builder.setMessage("");
         builder.setCancelable(true);
 
-        builder.setPositiveButton("Update", (dialog, which) -> {
+        builder.setPositiveButton(R.string.update, (dialog, which) -> {
             Bundle bundle = new Bundle();
             bundle.putInt("id", currentID);
 
@@ -167,17 +168,17 @@ public class HistoryFragment extends Fragment {
             transaction.commit();
         });
 
-        builder.setNegativeButton("Delete", (dialog, which) -> {
+        builder.setNegativeButton(R.string.delete, (dialog, which) -> {
             if (dbh.deleteRecord(currentID)){
-                Toast.makeText(c, "Record deleted successfully", Toast.LENGTH_SHORT).show();
+                Toast.makeText(c, R.string.delete_confirm, Toast.LENGTH_SHORT).show();
             }
             else{
-                Toast.makeText(c, "Could not delete this record", Toast.LENGTH_SHORT).show();
+                Toast.makeText(c, R.string.delete_fail, Toast.LENGTH_SHORT).show();
             }
             fillHistory(rootView, c);
         });
 
-        builder.setNeutralButton("Cancel", (dialog, which) -> builder.create().dismiss());
+        builder.setNeutralButton(R.string.cancel, (dialog, which) -> builder.create().dismiss());
 
         builder.show();
     }
@@ -185,7 +186,7 @@ public class HistoryFragment extends Fragment {
     public void fillHistory(View root, Context c){
         ids.clear();
         
-        ArrayList<HashMap<String, String>> recordList = dbh.getRecords(year, month, day);
+        ArrayList<HashMap<String, String>> recordList = dbh.getRecords(year, month, day, getString(R.string.all));
         for (HashMap<String, String> items : recordList){
             ids.add(Integer.parseInt(items.get("ID")));
         }

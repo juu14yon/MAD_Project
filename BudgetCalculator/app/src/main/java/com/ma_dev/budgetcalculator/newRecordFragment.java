@@ -46,7 +46,7 @@ public class newRecordFragment extends Fragment {
         dbh = new DataBaseHandler(c);
 
         TextView header = getActivity().findViewById(R.id.headerText);
-        header.setText("New Record");
+        header.setText(R.string.new_record);
 
         categoryInput = rootView.findViewById(R.id.categoryDropdown);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(c,
@@ -80,7 +80,7 @@ public class newRecordFragment extends Fragment {
             String dt = dateButton.getText().toString();
 
             if (n.isEmpty() || a.isEmpty() || c1.isEmpty() || dt.isEmpty()) {
-                Toast.makeText(getContext(), "Please enter all the data..", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), R.string.complete_fields, Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -88,7 +88,7 @@ public class newRecordFragment extends Fragment {
                 d = "-";
             }
 
-            if (c1.equals("Income")){
+            if (c1.equals(getString(R.string.income))){
                 a = "+" + Double.parseDouble(a);
             }
             else{
@@ -96,7 +96,7 @@ public class newRecordFragment extends Fragment {
             }
 
             if(dbh.addNewRecord(n, a, d, c1, dt)) {
-                Toast.makeText(getContext(), "Saved Successfully", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), R.string.save_success, Toast.LENGTH_SHORT).show();
             }
 
             FragmentTransaction transaction = getParentFragmentManager().beginTransaction();

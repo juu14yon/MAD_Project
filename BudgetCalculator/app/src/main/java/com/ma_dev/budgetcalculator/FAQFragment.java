@@ -19,7 +19,7 @@ public class FAQFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_f_a_q, container, false);
         TextView header = getActivity().findViewById(R.id.settingsHeader);
-        header.setText("FAQ");
+        header.setText(R.string.questions);
 
         return rootView;
     }

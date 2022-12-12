@@ -49,7 +49,7 @@ public class updateRecordsFragment extends Fragment {
         dbh = new DataBaseHandler(c);
 
         TextView header = getActivity().findViewById(R.id.headerText);
-        header.setText("New Record");
+        header.setText(R.string.update_record);
 
         categoryInput = rootView.findViewById(R.id.updateCategorySpinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(c,
@@ -96,7 +96,7 @@ public class updateRecordsFragment extends Fragment {
             String dt = dateButton.getText().toString();
 
             if (n.isEmpty() || a.isEmpty() || c1.isEmpty() || dt.isEmpty()) {
-                Toast.makeText(getContext(), "Please enter all the data..", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), R.string.complete_fields, Toast.LENGTH_SHORT).show();
                 return;
             }
 

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="categories_array">
-        <item>Income</item>
-        <item>Transportation</item>
-        <item>Food</item>
-        <item>Utilities</item>
-        <item>Necessary Payments</item>
-        <item>Entertainment</item>
-        <item>Health and medical</item>
-        <item>Lifestyle</item>
+        <item>@string/income</item>
+        <item>@string/transportation</item>
+        <item>@string/food</item>
+        <item>@string/utilities</item>
+        <item>@string/necessary_payments</item>
+        <item>@string/entertainment</item>
+        <item>@string/health_and_medical</item>
+        <item>@string/lifestyle</item>
     </string-array>
 </resources>

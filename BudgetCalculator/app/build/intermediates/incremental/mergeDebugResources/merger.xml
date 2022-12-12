@@ -5041,15 +5041,15 @@
         <attr format="color" name="text2_color"> </attr>
         <attr format="color" name="colorAccent"> </attr>
     </declare-styleable></file><file path="C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\res\values\categorydropdown.xml" qualifiers=""><string-array name="categories_array">
-        <item>Income</item>
-        <item>Transportation</item>
-        <item>Food</item>
-        <item>Utilities</item>
-        <item>Necessary Payments</item>
-        <item>Entertainment</item>
-        <item>Health and medical</item>
-        <item>Lifestyle</item>
-    </string-array></file><file path="C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\res\values\colors.xml" qualifiers=""><color name="colorPrimary">#6200EE</color><color name="colorPrimaryDark">#3700B3</color><color name="colorAccent">#BB86FC</color><color name="bgColor">#FBFBFB</color><color name="sepColor">#DCDCDC</color><color name="colorAccent2">#717171</color><color name="textPrimary">#000000</color><color name="textSecondary">#333333</color><color name="textDisabled">#909090</color><color name="textSuccess">#1E8703</color><color name="textWarning">#B80000</color><color name="Transportation">#838D83</color><color name="Food">#FFC107</color><color name="Utilities">#CD6FFA</color><color name="Necessary">#FA6F6F</color><color name="Entertainment">#7594E3</color><color name="Health">#76F174</color><color name="Lifestyle">#6BD9BF</color></file><file path="C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\res\values\strings.xml" qualifiers=""><string name="app_name">BudgetCalculator</string><string name="hello_blank_fragment">Hello blank fragment</string><string name="about_us">
+        <item>@string/income</item>
+        <item>@string/transportation</item>
+        <item>@string/food</item>
+        <item>@string/utilities</item>
+        <item>@string/necessary_payments</item>
+        <item>@string/entertainment</item>
+        <item>@string/health_and_medical</item>
+        <item>@string/lifestyle</item>
+    </string-array></file><file path="C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\res\values\colors.xml" qualifiers=""><color name="colorPrimary">#6200EE</color><color name="colorPrimaryDark">#3700B3</color><color name="colorAccent">#BB86FC</color><color name="bgColor">#FBFBFB</color><color name="sepColor">#DCDCDC</color><color name="colorAccent2">#717171</color><color name="textPrimary">#000000</color><color name="textSecondary">#333333</color><color name="textDisabled">#909090</color><color name="textSuccess">#1E8703</color><color name="textWarning">#B80000</color><color name="Transportation">#838D83</color><color name="Food">#FFC107</color><color name="Utilities">#CD6FFA</color><color name="Necessary">#FA6F6F</color><color name="Entertainment">#7594E3</color><color name="Health">#76F174</color><color name="Lifestyle">#6BD9BF</color></file><file path="C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\res\values\strings.xml" qualifiers=""><string name="app_name">BudgetCalculator</string><string name="about_us">
         This app was created as a project for Mobile App Development course (COMP4051) in
         University of Central Asia (Naryn, Kyrgyzstan).\n\nAuthors:\n
         ► Alexandra Yu\n
@@ -5081,7 +5081,7 @@
 \t\t•	Do I have any big-ticket, short-term financial goals, like a new appliance or a summer vacation?\n\n
 \tThese budgeting questions will help you develop a set of financial goals, and create a timeframe for achieving them. For example, saving for retirement is considered a long-term goal, and creating a travel fund could be considered a short-term goal.\n
 
-    </string></file><file path="C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\res\values\styles.xml" qualifiers=""><style name="Theme.Light" parent="Theme.AppCompat.Light.NoActionBar">
+    </string><string name="available">Available</string><string name="questions">FAQ</string><string name="history">History</string><string name="expences">Expences</string><string name="utilities">Utilities</string><string name="update_record">Update record</string><string name="dashboard">Dashboard</string><string name="delete_fail">Could not delete this record</string><string name="new_record">New record</string><string name="amount">Amount</string><string name="all">All</string><string name="health_and_medical">Health and Medical</string><string name="settings">Settings</string><string name="entertainment">Entertainment</string><string name="aboutus">About us</string><string name="select_category">Select category: </string><string name="transportation">Transportation</string><string name="update">Update</string><string name="food">Food</string><string name="lifestyle">Lifestyle</string><string name="delete_confirm">Record deleted successfully</string><string name="necessary_payments">Necessary payments</string><string name="delete">Delete</string><string name="dark_theme">Dark theme</string><string name="export_successful">Data was successfully exported to Downloads</string><string name="name">Name</string><string name="notifications">Notifications</string><string name="export_data">Export data</string><string name="income">Income</string><string name="total">Total:\n</string><string name="cancel">Cancel</string><string name="go_back">Go back</string><string name="year">Year</string><string name="language">Language</string><string name="welcomeText">One of the best budgeting tips you can follow is the 50-20-30 rule, which suggests that you spend:\n  -- 50% of your after-tax income on needs,\n  -- 30% on wants,\n  -- 20% to savings.\n\nThis is a great way to allocate your money into budget categories, especially if you’re creating a budget for the first time.</string><string name="save">Save</string><string name="monthly_report">Monthly report</string><string name="complete_fields">Please enter all data</string><string name="day">Day</string><string name="description">Description</string><string name="select_date">Select date</string><string name="edit_record">Edit record</string><string name="save_success">Saved successfully</string><string name="month">Month</string></file><file path="C:\Users\alexandra.yugay\Documents\GitHub\MAD_Project\BudgetCalculator\app\src\main\res\values\styles.xml" qualifiers=""><style name="Theme.Light" parent="Theme.AppCompat.Light.NoActionBar">
         
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
