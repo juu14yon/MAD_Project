@@ -13,8 +13,6 @@ import android.widget.TextView;
 
 import com.ma_dev.budgetcalculator.databinding.ActivityMainBinding;
 
-import java.util.Calendar;
-
 public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
     TextView header;

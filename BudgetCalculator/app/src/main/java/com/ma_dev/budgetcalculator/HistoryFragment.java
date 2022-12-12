@@ -1,6 +1,8 @@
 package com.ma_dev.budgetcalculator;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -31,12 +33,13 @@ public class HistoryFragment extends Fragment {
     String year = "All";
     String month = "All";
     String day = "All";
-    List<String> yearItems = new ArrayList<String>();
-    List<String> monthItems = new ArrayList<String>();
-    List<String> dayItems = new ArrayList<String>();
-    ArrayList<Integer> ids = new ArrayList<Integer>();
+    List<String> yearItems = new ArrayList<>();
+    List<String> monthItems = new ArrayList<>();
+    List<String> dayItems = new ArrayList<>();
+    ArrayList<Integer> ids = new ArrayList<>();
 
     Context c;
+    View root;
     Integer currentID;
 
     public HistoryFragment() {
@@ -46,8 +49,7 @@ public class HistoryFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_history, container, false);
-        setHasOptionsMenu(true);
+        root = inflater.inflate(R.layout.fragment_history, container, false);
         c = getContext();
         dbh = new DataBaseHandler(c);
 
@@ -65,9 +67,9 @@ public class HistoryFragment extends Fragment {
             yearItems.add(""+i);
         }
 
-        ArrayAdapter<String> yearAdapter = new ArrayAdapter<String>(c, android.R.layout.simple_spinner_dropdown_item, yearItems);
+        ArrayAdapter<String> yearAdapter = new ArrayAdapter<>(c, android.R.layout.simple_spinner_dropdown_item, yearItems);
         yearSpinner.setAdapter(yearAdapter);
-        ArrayAdapter<String> monthAdapter = new ArrayAdapter<String>(c, android.R.layout.simple_spinner_dropdown_item, monthItems);
+        ArrayAdapter<String> monthAdapter = new ArrayAdapter<>(c, android.R.layout.simple_spinner_dropdown_item, monthItems);
         monthSpinner.setAdapter(monthAdapter);
 
         yearSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -104,7 +106,7 @@ public class HistoryFragment extends Fragment {
                     daySpinner.setEnabled(false);
                     dayItems.clear();
                 }
-                ArrayAdapter<String> dayAdapter = new ArrayAdapter<String>(c, android.R.layout.simple_spinner_dropdown_item, dayItems);
+                ArrayAdapter<String> dayAdapter = new ArrayAdapter<>(c, android.R.layout.simple_spinner_dropdown_item, dayItems);
                 daySpinner.setAdapter(dayAdapter);
             }
 
@@ -127,7 +129,6 @@ public class HistoryFragment extends Fragment {
             }
         });
 
-
         fillHistory(root, c);
 
 
@@ -136,11 +137,17 @@ public class HistoryFragment extends Fragment {
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 currentID = ids.get(position);
                 Toast.makeText(c, "" + currentID, Toast.LENGTH_SHORT).show();
-                //getActivity().openOptionsMenu();
-                fillHistory(root, c);
+                showEditOptions(currentID);
                 return true;
             }
 
+        });
+
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+            }
         });
 
 
@@ -159,6 +166,40 @@ public class HistoryFragment extends Fragment {
         return root;
     }
 
+    private void showEditOptions(Integer currentID) {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(c);
+        builder.setTitle("Edit Records");
+        builder.setMessage("Select action: ");
+        builder.setCancelable(true);
+        builder.setPositiveButton("Update", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                
+                fillHistory(root, c);
+            }
+        });
+        builder.setNegativeButton("Delete", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if (dbh.DeleteRecord(currentID)){
+                    Toast.makeText(c, "Record deleted successfully", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(c, "Could not delete this record", Toast.LENGTH_SHORT).show();
+                }
+                fillHistory(root, c);
+            }
+        });
+        builder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                builder.create().dismiss();
+            }
+        });
+
+        builder.show();
+    }
+
     public void fillHistory(View root, Context c){
         ids.clear();
         
@@ -168,7 +209,6 @@ public class HistoryFragment extends Fragment {
         }
 
         lv = (ListView) root.findViewById(R.id.recordsListView);
-        registerForContextMenu(lv);
 
         ListAdapter adapter = new SimpleAdapter(c,
                 recordList, R.layout.listrow,
@@ -176,4 +216,5 @@ public class HistoryFragment extends Fragment {
                 new int[]{R.id.nameText, R.id.categoryText, R.id.amountText, R.id.idText});
         lv.setAdapter(adapter);
     }
+
 }

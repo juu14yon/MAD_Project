@@ -25,10 +25,14 @@
         android:theme="@style/Theme.Light" >
         <activity
             android:name="com.ma_dev.budgetcalculator.SettingsActivity"
-            android:parentActivityName="com.ma_dev.budgetcalculator.MainActivity" />
+            android:configChanges="orientation"
+            android:parentActivityName="com.ma_dev.budgetcalculator.MainActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.ma_dev.budgetcalculator.MainActivity"
-            android:exported="true" >
+            android:configChanges="orientation"
+            android:exported="true"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

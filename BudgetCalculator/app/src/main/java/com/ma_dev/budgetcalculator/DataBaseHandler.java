@@ -30,15 +30,12 @@ public class DataBaseHandler extends SQLiteOpenHelper {
     private static final String MONTH_COL = "month";
     private static final String YEAR_COL = "year";
 
-    private int minYear, maxYear;
     private Double available = 0.0, income = 0.0, expences = 0.0;
 
     public DataBaseHandler(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
 
-
-    // below method is for creating a database by running a sqlite query
     @Override
     public void onCreate(SQLiteDatabase db) {
         String query = "CREATE TABLE " + TABLE_NAME + " ("
@@ -87,14 +84,13 @@ public class DataBaseHandler extends SQLiteOpenHelper {
         db.setVersion(oldVersion);
     }
 
-    // ???
     @SuppressLint("Range")
     public ArrayList<HashMap<String, String>> GetRecords(String year, String month, String day){
         SQLiteDatabase db = this.getWritableDatabase();
         ArrayList<HashMap<String, String>> recordList = new ArrayList<>();
         String query = "SELECT name, category, amount, id " +
                 "FROM "+ TABLE_NAME +
-                where(year, month, day) +
+                whereDate(year, month, day) +
                 " ORDER BY date DESC, id DESC;";
 
         Cursor cursor = db.rawQuery(query,null);
@@ -144,7 +140,7 @@ public class DataBaseHandler extends SQLiteOpenHelper {
         return  count;
     }
 
-    public String where(String year, String month, String day){
+    public String whereDate(String year, String month, String day){
         String out = "";
         boolean y = false;
         boolean m = false;
@@ -290,9 +286,6 @@ public class DataBaseHandler extends SQLiteOpenHelper {
         int year = calendar.get(Calendar.YEAR);
         int month = calendar.get(Calendar.MONTH) + 1;
 
-        query = "SELECT amount " +
-                "FROM "+ TABLE_NAME + " WHERE year = " + year + " AND month = " + month;
-
         for (String ctgr: categories
              ) {
             query = "SELECT amount " +
@@ -310,7 +303,6 @@ public class DataBaseHandler extends SQLiteOpenHelper {
             } catch (NumberFormatException e) {
                 total = 0;
             }
-
 
             totals.add(total);
         }
