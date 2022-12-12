@@ -3,7 +3,7 @@ Semester project for Mobile App Development course.
 
 <hr>
 
-__Name:__ ...............
+__Name:__ ADM
 
 __Description:__ Budget calculator app.
 
