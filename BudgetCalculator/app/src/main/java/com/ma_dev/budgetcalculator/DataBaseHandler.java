@@ -108,6 +108,27 @@ public class DataBaseHandler extends SQLiteOpenHelper {
         return recordList;
     }
 
+    @SuppressLint("Range")
+    public HashMap<String,String> GetARecord(Integer id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        HashMap<String,String> record = new HashMap<>();
+        String query = "SELECT * " +
+                "FROM "+ TABLE_NAME +
+                " WHERE id = " + id;
+
+        Cursor cursor = db.rawQuery(query,null);
+
+        while (cursor.moveToNext()){
+            record.put("Name", cursor.getString(cursor.getColumnIndex(NAME_COL)));
+            record.put("Category", cursor.getString(cursor.getColumnIndex(CATEGORY_COL)));
+            record.put("Amount", cursor.getString(cursor.getColumnIndex(AMOUNT_COL)));
+            record.put("Description", cursor.getString(cursor.getColumnIndex(DESCRIPTION_COL)));
+            record.put("Date", cursor.getString(cursor.getColumnIndex(DATE_COL)));
+        }
+
+        return record;
+    }
+
     public boolean DeleteRecord(int recordid){
         try {
             SQLiteDatabase db = this.getWritableDatabase();
@@ -120,7 +141,7 @@ public class DataBaseHandler extends SQLiteOpenHelper {
 
     }
 
-    public int UpdateRecordDetails(String name, Double amount, String description, String category, String date, int id){
+    public void UpdateRecordDetails(String name, String amount, String description, String category, String date, int id){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cVals = new ContentValues();
 
@@ -137,7 +158,6 @@ public class DataBaseHandler extends SQLiteOpenHelper {
         cVals.put(YEAR_COL, calendar.get(Calendar.YEAR));
 
         int count = db.update(TABLE_NAME, cVals, ID_COL+" = ?",new String[]{String.valueOf(id)});
-        return  count;
     }
 
     public String whereDate(String year, String month, String day){

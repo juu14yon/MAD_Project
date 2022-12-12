@@ -39,7 +39,7 @@ public class HistoryFragment extends Fragment {
     ArrayList<Integer> ids = new ArrayList<>();
 
     Context c;
-    View root;
+    View rootView;
     Integer currentID;
 
     public HistoryFragment() {
@@ -49,13 +49,13 @@ public class HistoryFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        root = inflater.inflate(R.layout.fragment_history, container, false);
+        rootView = inflater.inflate(R.layout.fragment_history, container, false);
         c = getContext();
         dbh = new DataBaseHandler(c);
 
-        daySpinner = root.findViewById(R.id.daySpinner);
-        monthSpinner = root.findViewById(R.id.monthSpinner);
-        yearSpinner = root.findViewById(R.id.yearSpinner);
+        daySpinner = rootView.findViewById(R.id.daySpinner);
+        monthSpinner = rootView.findViewById(R.id.monthSpinner);
+        yearSpinner = rootView.findViewById(R.id.yearSpinner);
 
         daySpinner.setEnabled(false);
         yearItems.add("All");
@@ -76,7 +76,7 @@ public class HistoryFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 year = yearSpinner.getSelectedItem().toString();
-                fillHistory(root, c);
+                fillHistory(rootView, c);
             }
 
             @Override
@@ -91,7 +91,7 @@ public class HistoryFragment extends Fragment {
                 month = monthSpinner.getSelectedItem().toString();
                 dayItems.clear();
                 day = "All";
-                fillHistory(root, c);
+                fillHistory(rootView, c);
 
                 if (!month.equals("All")) {
                     daySpinner.setEnabled(true);
@@ -120,7 +120,7 @@ public class HistoryFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 day = daySpinner.getSelectedItem().toString();
-                fillHistory(root, c);
+                fillHistory(rootView, c);
             }
 
             @Override
@@ -129,7 +129,7 @@ public class HistoryFragment extends Fragment {
             }
         });
 
-        fillHistory(root, c);
+        fillHistory(rootView, c);
 
 
         lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
@@ -151,10 +151,10 @@ public class HistoryFragment extends Fragment {
         });
 
 
-        TextView textview = (TextView) getActivity().findViewById(R.id.headerText);
+        TextView textview = getActivity().findViewById(R.id.headerText);
         textview.setText("History");
 
-        button = (Button) root.findViewById(R.id.newRecordButton);
+        button = rootView.findViewById(R.id.newRecordButton);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
@@ -163,7 +163,7 @@ public class HistoryFragment extends Fragment {
             }
         });
 
-        return root;
+        return rootView;
     }
 
     private void showEditOptions(Integer currentID) {
@@ -174,8 +174,15 @@ public class HistoryFragment extends Fragment {
         builder.setPositiveButton("Update", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                
-                fillHistory(root, c);
+                Bundle bundle = new Bundle();
+                bundle.putInt("id", currentID);
+
+                updateRecordsFragment updateRecordsFragment = new updateRecordsFragment();
+                updateRecordsFragment.setArguments(bundle);
+
+                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+                transaction.add(R.id.frameLayout, updateRecordsFragment);
+                transaction.commit();
             }
         });
         builder.setNegativeButton("Delete", new DialogInterface.OnClickListener() {
@@ -187,7 +194,7 @@ public class HistoryFragment extends Fragment {
                 else{
                     Toast.makeText(c, "Could not delete this record", Toast.LENGTH_SHORT).show();
                 }
-                fillHistory(root, c);
+                fillHistory(rootView, c);
             }
         });
         builder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {

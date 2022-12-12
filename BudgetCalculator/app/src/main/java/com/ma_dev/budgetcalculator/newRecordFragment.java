@@ -60,15 +60,15 @@ public class newRecordFragment extends Fragment {
 
         dbh = new DataBaseHandler(c);
 
-        dateButton = (Button) rootView.findViewById(R.id.buttonDate);
-        cancelButton = (Button) rootView.findViewById(R.id.cancelButton);
-        saveButton = (Button) rootView.findViewById(R.id.saveButton);
+        dateButton = rootView.findViewById(R.id.buttonDate);
+        cancelButton = rootView.findViewById(R.id.cancelButton);
+        saveButton = rootView.findViewById(R.id.saveButton);
 
-        nameInput = (EditText) rootView.findViewById(R.id.nameInput);
-        amountInput = (EditText) rootView.findViewById(R.id.amountInput);
-        descriptionInput = (EditText) rootView.findViewById(R.id.descriptionInput);
-        categoryInput = (Spinner) rootView.findViewById(R.id.categoryDropdown);
-        warningMessage = (TextView) rootView.findViewById(R.id.warningMessage);
+        nameInput = rootView.findViewById(R.id.nameInput);
+        amountInput = rootView.findViewById(R.id.amountInput);
+        descriptionInput = rootView.findViewById(R.id.descriptionInput);
+        categoryInput = rootView.findViewById(R.id.categoryDropdown);
+        warningMessage = rootView.findViewById(R.id.warningMessage);
 
         initDatePicker(c);
 
@@ -125,7 +125,6 @@ public class newRecordFragment extends Fragment {
             }
         });
 
-        // Inflate the layout for this fragment
         return rootView;
     }
 
@@ -150,10 +149,5 @@ public class newRecordFragment extends Fragment {
 
     private String makeDateString(int day, int month, int year) {
         return day+"."+month+"."+year;
-    }
-
-
-    private void saveRecordToExcel(){
-
     }
 }

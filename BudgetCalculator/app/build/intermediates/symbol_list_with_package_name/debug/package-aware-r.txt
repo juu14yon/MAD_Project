@@ -1478,7 +1478,6 @@ id decelerate
 id decelerateAndComplete
 id decor_content_parent
 id default_activity_button
-id deleteMenuItem
 id deltaRelative
 id dependency_ordering
 id descriptionInput
@@ -1753,6 +1752,7 @@ id textView20
 id textView22
 id textView3
 id textView4
+id textView5
 id text_input_password_toggle
 id textinput_counter
 id textinput_error
@@ -1783,7 +1783,13 @@ id unchecked
 id uniform
 id unlabeled
 id up
-id updateMenuItem
+id updateAmount
+id updateCancelButton
+id updateCategorySpinner
+id updateDate
+id updateDescription
+id updateName
+id updateSaveButton
 id useLogo
 id utilitiesPercentage
 id vertical_only
@@ -1882,6 +1888,7 @@ layout fragment_home
 layout fragment_new_record
 layout fragment_settings
 layout fragment_stats
+layout fragment_update_records
 layout listrow
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
@@ -1904,7 +1911,6 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
-menu contextmenu
 menu navbar_src
 mipmap ic_launcher
 mipmap ic_launcher_round
