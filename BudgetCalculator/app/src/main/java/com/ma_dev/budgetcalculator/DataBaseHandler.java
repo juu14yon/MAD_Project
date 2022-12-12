@@ -6,7 +6,12 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.os.Environment;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -328,5 +333,58 @@ public class DataBaseHandler extends SQLiteOpenHelper {
         }
 
         return totals;
+    }
+
+
+    @SuppressLint("Range")
+    public boolean exportDatabase() {
+        Date today = Calendar.getInstance().getTime();
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd_hh-mm-ss");
+        String strDate = dateFormat.format(today);
+
+        String name, amount, date, category, description;
+        String state = Environment.getExternalStorageState();
+        if (!Environment.MEDIA_MOUNTED.equals(state)) {
+            return false;
+        }
+        else {
+            File exportDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+            if (!exportDir.exists()){
+                exportDir.mkdirs();
+            }
+
+            File file;
+            PrintWriter printWriter = null;
+            try {
+                file = new File(exportDir, "backup" + strDate + ".csv");
+                file.createNewFile();
+                printWriter = new PrintWriter(new FileWriter(file));
+
+                SQLiteDatabase db = this.getReadableDatabase();
+
+                Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+                printWriter.println("NAME,AMOUNT,CATEGORY,DATE,DESCRIPTION");
+                while(cursor.moveToNext()) {
+                    name = cursor.getString(cursor.getColumnIndex(NAME_COL));
+                    amount = cursor.getString(cursor.getColumnIndex(AMOUNT_COL));
+                    category = cursor.getString(cursor.getColumnIndex(CATEGORY_COL));
+                    date = cursor.getString(cursor.getColumnIndex(DATE_COL));
+                    description = cursor.getString(cursor.getColumnIndex(DESCRIPTION_COL));
+
+                    String record = name + "," + amount + "," + category + "," + date + "," + description;
+                    printWriter.println(record);
+                }
+                cursor.close();
+                db.close();
+            }
+            catch(Exception exc) {
+                return false;
+            }
+            finally {
+                if(printWriter != null) printWriter.close();
+            }
+
+            return true;
+        }
     }
 }

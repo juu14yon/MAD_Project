@@ -13,10 +13,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Switch;
+import android.widget.Toast;
 
 public class SettingsFragment extends Fragment {
+    DataBaseHandler dbh;
+
     Switch themeSwitch, notifSwitch;
-    Button themeButton, notifButton, faqButton;
+    Button themeButton, notifButton, faqButton, exportButton;
     SharedPreferences sharedPreferences;
     String currentTheme;
     boolean currentNotif;
@@ -29,6 +32,9 @@ public class SettingsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_settings, container, false);
+        Context c = getContext();
+        dbh = new DataBaseHandler(c);
+
         Button aboutButton = rootView.findViewById(R.id.aboutButton);
 
         themeSwitch = rootView.findViewById(R.id.themeSwitch);
@@ -36,9 +42,9 @@ public class SettingsFragment extends Fragment {
         notifSwitch = rootView.findViewById(R.id.notificationSwitch);
         notifButton = rootView.findViewById(R.id.notificationButton);
         faqButton = rootView.findViewById(R.id.faqButton);
+        exportButton = rootView.findViewById(R.id.exportButton);
 
-        sharedPreferences = getActivity().getSharedPreferences("ADM-prefs",
-                Context.MODE_PRIVATE);
+        sharedPreferences = getActivity().getSharedPreferences("ADM-prefs", Context.MODE_PRIVATE);
         currentTheme = sharedPreferences.getString("myTheme", "Light");
         currentNotif = sharedPreferences.getBoolean("myNotifs", true);
 
@@ -76,13 +82,19 @@ public class SettingsFragment extends Fragment {
             currentNotif = isChecked;
             editor.apply();
         });
-        themeSwitch.setChecked(currentNotif);
+        notifSwitch.setChecked(currentNotif);
         notifButton.setOnClickListener(v -> notifSwitch.setChecked(!notifSwitch.isChecked()));
 
         faqButton.setOnClickListener(v -> {
             FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
             transaction.add(R.id.settingsFrameLayout, new FAQFragment());
             transaction.commit();
+        });
+
+        exportButton.setOnClickListener(v -> {
+             if(dbh.exportDatabase()){
+                 Toast.makeText(getContext(), "Data was successfully exported to Downloads", Toast.LENGTH_SHORT).show();
+             }
         });
 
         return rootView;

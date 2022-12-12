@@ -1303,6 +1303,7 @@ drawable ic_mtrl_chip_close_circle
 drawable icn_about
 drawable icn_back
 drawable icn_entertainment
+drawable icn_export
 drawable icn_faq
 drawable icn_food
 drawable icn_header_settings
@@ -1520,6 +1521,9 @@ id expand_activities_button
 id expanded_menu
 id expencesLabel
 id expencesValue
+id exportButton
+id exportIcon
+id exportLabel
 id faqButton
 id faqIcon
 id faqLabel

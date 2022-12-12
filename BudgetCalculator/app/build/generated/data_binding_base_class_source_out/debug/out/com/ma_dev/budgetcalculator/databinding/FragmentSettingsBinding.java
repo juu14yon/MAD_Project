@@ -31,6 +31,15 @@ public final class FragmentSettingsBinding implements ViewBinding {
   public final TextView aboutLabel;
 
   @NonNull
+  public final Button exportButton;
+
+  @NonNull
+  public final ImageView exportIcon;
+
+  @NonNull
+  public final TextView exportLabel;
+
+  @NonNull
   public final Button faqButton;
 
   @NonNull
@@ -73,7 +82,8 @@ public final class FragmentSettingsBinding implements ViewBinding {
   public final Switch themeSwitch;
 
   private FragmentSettingsBinding(@NonNull FrameLayout rootView, @NonNull Button aboutButton,
-      @NonNull ImageView aboutIcon, @NonNull TextView aboutLabel, @NonNull Button faqButton,
+      @NonNull ImageView aboutIcon, @NonNull TextView aboutLabel, @NonNull Button exportButton,
+      @NonNull ImageView exportIcon, @NonNull TextView exportLabel, @NonNull Button faqButton,
       @NonNull ImageView faqIcon, @NonNull TextView faqLabel, @NonNull Button languageButton,
       @NonNull ImageView languageIcon, @NonNull TextView languageLabel,
       @NonNull Button notificationButton, @NonNull ImageView notificationIcon,
@@ -84,6 +94,9 @@ public final class FragmentSettingsBinding implements ViewBinding {
     this.aboutButton = aboutButton;
     this.aboutIcon = aboutIcon;
     this.aboutLabel = aboutLabel;
+    this.exportButton = exportButton;
+    this.exportIcon = exportIcon;
+    this.exportLabel = exportLabel;
     this.faqButton = faqButton;
     this.faqIcon = faqIcon;
     this.faqLabel = faqLabel;
@@ -142,6 +155,24 @@ public final class FragmentSettingsBinding implements ViewBinding {
       id = R.id.aboutLabel;
       TextView aboutLabel = rootView.findViewById(id);
       if (aboutLabel == null) {
+        break missingId;
+      }
+
+      id = R.id.exportButton;
+      Button exportButton = rootView.findViewById(id);
+      if (exportButton == null) {
+        break missingId;
+      }
+
+      id = R.id.exportIcon;
+      ImageView exportIcon = rootView.findViewById(id);
+      if (exportIcon == null) {
+        break missingId;
+      }
+
+      id = R.id.exportLabel;
+      TextView exportLabel = rootView.findViewById(id);
+      if (exportLabel == null) {
         break missingId;
       }
 
@@ -230,9 +261,9 @@ public final class FragmentSettingsBinding implements ViewBinding {
       }
 
       return new FragmentSettingsBinding((FrameLayout) rootView, aboutButton, aboutIcon, aboutLabel,
-          faqButton, faqIcon, faqLabel, languageButton, languageIcon, languageLabel,
-          notificationButton, notificationIcon, notificationLabel, notificationSwitch, themeButton,
-          themeIcon, themeLabel, themeSwitch);
+          exportButton, exportIcon, exportLabel, faqButton, faqIcon, faqLabel, languageButton,
+          languageIcon, languageLabel, notificationButton, notificationIcon, notificationLabel,
+          notificationSwitch, themeButton, themeIcon, themeLabel, themeSwitch);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

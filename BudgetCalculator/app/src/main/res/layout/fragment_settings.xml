@@ -202,5 +202,39 @@
             app:layout_constraintStart_toEndOf="@+id/aboutIcon"
             app:layout_constraintTop_toBottomOf="@+id/faqLabel" />
 
+        <Button
+            android:id="@+id/exportButton"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/exportLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/exportLabel" />
+
+        <ImageView
+            android:id="@+id/exportIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:src="@drawable/icn_export"
+            android:tint="?attr/text1_color"
+            app:layout_constraintBottom_toBottomOf="@+id/exportLabel"
+            app:layout_constraintTop_toTopOf="@+id/exportLabel"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/exportLabel"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="16dp"
+            android:gravity="center_vertical|left|start"
+            android:text="Export data"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/exportIcon"
+            app:layout_constraintTop_toBottomOf="@+id/aboutButton" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
