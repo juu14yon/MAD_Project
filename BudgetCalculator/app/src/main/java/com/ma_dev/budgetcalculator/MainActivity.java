@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         replaceFrame(new HomeFragment());
 
-        header = (TextView) findViewById(R.id.headerText);
+        header = findViewById(R.id.headerText);
 
         binding.navBar.setOnNavigationItemSelectedListener(item -> {
             switch (item.getItemId()){

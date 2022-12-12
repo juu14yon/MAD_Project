@@ -1,7 +1,6 @@
 package com.ma_dev.budgetcalculator;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,7 +8,6 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.animation.Easing;
@@ -18,20 +16,17 @@ import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
-import com.github.mikephil.charting.formatter.PercentFormatter;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-
 
 public class StatsFragment extends Fragment {
-    PieChart pie;
     DataBaseHandler dbh;
+
     ArrayList<Float> totals;
-    float expencesSum = 0;
+    float expensesSum = 0;
+
     TextView transPrcntg, foodPrcntg, utilityPrcntg, necessaryPrcntg, entertPrcntg, healthPrcntg, lifePrcntg;
+    PieChart pie;
 
     final String[] categories = new String[]{"Transportation", "Food", "Utilities", "Necessary Payments",
             "Entertainment", "Health and medical", "Lifestyle"};
@@ -45,24 +40,24 @@ public class StatsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_stats, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_stats, container, false);
         Context c = getContext();
-
-        pie = root.findViewById(R.id.statsPie);
-
         dbh = new DataBaseHandler(c);
+
+        pie = rootView.findViewById(R.id.statsPie);
+
         totals = dbh.getCategoriesStats();
         for (float value : totals){
-            expencesSum += value;
+            expensesSum += value;
         }
 
-        transPrcntg = root.findViewById(R.id.transportationPercentage);
-        foodPrcntg = root.findViewById(R.id.foodPercentage);
-        utilityPrcntg = root.findViewById(R.id.utilitiesPercentage);
-        necessaryPrcntg = root.findViewById(R.id.necessaryPercentage);
-        entertPrcntg = root.findViewById(R.id.entertainmentPercentage);
-        healthPrcntg = root.findViewById(R.id.healthPercentage);
-        lifePrcntg = root.findViewById(R.id.lifestylePercentage);
+        transPrcntg = rootView.findViewById(R.id.transportationPercentage);
+        foodPrcntg = rootView.findViewById(R.id.foodPercentage);
+        utilityPrcntg = rootView.findViewById(R.id.utilitiesPercentage);
+        necessaryPrcntg = rootView.findViewById(R.id.necessaryPercentage);
+        entertPrcntg = rootView.findViewById(R.id.entertainmentPercentage);
+        healthPrcntg = rootView.findViewById(R.id.healthPercentage);
+        lifePrcntg = rootView.findViewById(R.id.lifestylePercentage);
 
         transPrcntg.setText(toPercentage(totals.get(0)));
         foodPrcntg.setText(toPercentage(totals.get(1)));
@@ -75,14 +70,14 @@ public class StatsFragment extends Fragment {
         setupPie();
         loadPieData(c);
 
-        return root;
+        return rootView;
     }
 
     private void setupPie() {
         pie.setDrawHoleEnabled(true);
         pie.setTransparentCircleAlpha(0);
         pie.setUsePercentValues(true);
-        pie.setCenterText("Total:\n" + expencesSum);
+        pie.setCenterText("Total:\n" + expensesSum);
         pie.setCenterTextSize(16);
         pie.getDescription().setEnabled(false);
         pie.setDrawEntryLabels(false);
@@ -92,7 +87,7 @@ public class StatsFragment extends Fragment {
     }
 
     private void loadPieData(Context c) {
-        ArrayList<PieEntry> entries = new ArrayList<PieEntry>();
+        ArrayList<PieEntry> entries = new ArrayList<>();
 
         for (int i = 0; i< categories.length; i++){
             entries.add(new PieEntry(totals.get(i), categories[i]));
@@ -103,10 +98,6 @@ public class StatsFragment extends Fragment {
 
         PieData data = new PieData(dataSet);
         data.setDrawValues(false);
-        //data.setValueFormatter(new PercentFormatter(pie));
-        //data.setValueTextSize(12f);
-        //data.setValueTextColor(R.attr.text1_color);
-
         pie.setData(data);
         pie.invalidate();
 
@@ -116,8 +107,8 @@ public class StatsFragment extends Fragment {
     public String toPercentage(float num){
         String out = "";
         try {
-            num /= expencesSum;
-        } catch (Exception e) {
+            num /= expensesSum;
+        } catch (Exception ignored) {
         }
 
         double roundOff = (double) Math.round((num) * 10000) / 100;

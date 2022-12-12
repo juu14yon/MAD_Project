@@ -20,20 +20,17 @@ public class AboutUsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_about_us, container, false);
-        TextView textview = (TextView)getActivity().findViewById(R.id.settingsHeader);
-        textview.setText("About Us");
+        TextView header = getActivity().findViewById(R.id.settingsHeader);
+        header.setText("About Us");
 
-        Button goBack = (Button) rootView.findViewById(R.id.goBackButton);
+        Button goBack = rootView.findViewById(R.id.goBackButton);
 
-        goBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-                transaction.add(R.id.settingsFrameLayout, new SettingsFragment());
-                transaction.commit();
-            }
+        goBack.setOnClickListener(v -> {
+            FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+            transaction.add(R.id.settingsFrameLayout, new SettingsFragment());
+            transaction.commit();
         });
-        // Inflate the layout for this fragment
+
         return rootView;
     }
 }

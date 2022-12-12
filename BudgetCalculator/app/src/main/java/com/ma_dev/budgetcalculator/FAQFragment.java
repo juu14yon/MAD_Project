@@ -17,11 +17,11 @@ public class FAQFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_f_a_q, container, false);
-        TextView textview = (TextView)getActivity().findViewById(R.id.settingsHeader);
-        textview.setText("FAQ");
+        View rootView = inflater.inflate(R.layout.fragment_f_a_q, container, false);
+        TextView header = getActivity().findViewById(R.id.settingsHeader);
+        header.setText("FAQ");
 
-        return root;
+        return rootView;
     }
 
 

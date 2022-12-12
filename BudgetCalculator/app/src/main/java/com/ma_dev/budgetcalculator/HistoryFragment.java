@@ -2,7 +2,6 @@ package com.ma_dev.budgetcalculator;
 
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -26,21 +25,24 @@ import java.util.HashMap;
 import java.util.List;
 
 public class HistoryFragment extends Fragment {
-    Button button;
+    View rootView;
+    Context c;
     DataBaseHandler dbh;
+    Integer currentID;
+
+    Button button;
     Spinner daySpinner, monthSpinner, yearSpinner;
     ListView lv;
+
     String year = "All";
     String month = "All";
     String day = "All";
+
     List<String> yearItems = new ArrayList<>();
     List<String> monthItems = new ArrayList<>();
     List<String> dayItems = new ArrayList<>();
-    ArrayList<Integer> ids = new ArrayList<>();
 
-    Context c;
-    View rootView;
-    Integer currentID;
+    ArrayList<Integer> ids = new ArrayList<>();
 
     public HistoryFragment() {
         // Required empty public constructor
@@ -53,6 +55,9 @@ public class HistoryFragment extends Fragment {
         c = getContext();
         dbh = new DataBaseHandler(c);
 
+        TextView header = getActivity().findViewById(R.id.headerText);
+        header.setText("History");
+
         daySpinner = rootView.findViewById(R.id.daySpinner);
         monthSpinner = rootView.findViewById(R.id.monthSpinner);
         yearSpinner = rootView.findViewById(R.id.yearSpinner);
@@ -60,17 +65,18 @@ public class HistoryFragment extends Fragment {
         daySpinner.setEnabled(false);
         yearItems.add("All");
         monthItems.add("All");
+
         for (int i = 1; i<=12; i++){
             monthItems.add(""+i);
         }
-        for (int i = dbh.minYear(); i<=dbh.maxYear(); i++){
-            yearItems.add(""+i);
-        }
-
-        ArrayAdapter<String> yearAdapter = new ArrayAdapter<>(c, android.R.layout.simple_spinner_dropdown_item, yearItems);
-        yearSpinner.setAdapter(yearAdapter);
         ArrayAdapter<String> monthAdapter = new ArrayAdapter<>(c, android.R.layout.simple_spinner_dropdown_item, monthItems);
         monthSpinner.setAdapter(monthAdapter);
+
+        for (int i = dbh.getMinYear(); i<=dbh.getMaxYear(); i++){
+            yearItems.add(""+i);
+        }
+        ArrayAdapter<String> yearAdapter = new ArrayAdapter<>(c, android.R.layout.simple_spinner_dropdown_item, yearItems);
+        yearSpinner.setAdapter(yearAdapter);
 
         yearSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -80,9 +86,7 @@ public class HistoryFragment extends Fragment {
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
+            public void onNothingSelected(AdapterView<?> parent) { }
         });
 
         monthSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -97,7 +101,6 @@ public class HistoryFragment extends Fragment {
                     daySpinner.setEnabled(true);
 
                     dayItems.add("All");
-
                     for (int i = 1; i <= 30; i++) {
                         dayItems.add("" + i);
                     }
@@ -106,14 +109,13 @@ public class HistoryFragment extends Fragment {
                     daySpinner.setEnabled(false);
                     dayItems.clear();
                 }
+
                 ArrayAdapter<String> dayAdapter = new ArrayAdapter<>(c, android.R.layout.simple_spinner_dropdown_item, dayItems);
                 daySpinner.setAdapter(dayAdapter);
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
+            public void onNothingSelected(AdapterView<?> parent) { }
         });
 
         daySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -131,36 +133,17 @@ public class HistoryFragment extends Fragment {
 
         fillHistory(rootView, c);
 
-
-        lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                currentID = ids.get(position);
-                Toast.makeText(c, "" + currentID, Toast.LENGTH_SHORT).show();
-                showEditOptions(currentID);
-                return true;
-            }
-
+        lv.setOnItemLongClickListener((parent, view, position, id) -> {
+            currentID = ids.get(position);
+            showEditOptions(currentID);
+            return true;
         });
-
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-            }
-        });
-
-
-        TextView textview = getActivity().findViewById(R.id.headerText);
-        textview.setText("History");
 
         button = rootView.findViewById(R.id.newRecordButton);
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-                transaction.add(R.id.frameLayout, new newRecordFragment());
-                transaction.commit();
-            }
+        button.setOnClickListener(v -> {
+            FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+            transaction.add(R.id.frameLayout, new newRecordFragment());
+            transaction.commit();
         });
 
         return rootView;
@@ -169,40 +152,32 @@ public class HistoryFragment extends Fragment {
     private void showEditOptions(Integer currentID) {
         final AlertDialog.Builder builder = new AlertDialog.Builder(c);
         builder.setTitle("Edit Records");
-        builder.setMessage("Select action: ");
+        builder.setMessage("");
         builder.setCancelable(true);
-        builder.setPositiveButton("Update", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Bundle bundle = new Bundle();
-                bundle.putInt("id", currentID);
 
-                updateRecordsFragment updateRecordsFragment = new updateRecordsFragment();
-                updateRecordsFragment.setArguments(bundle);
+        builder.setPositiveButton("Update", (dialog, which) -> {
+            Bundle bundle = new Bundle();
+            bundle.putInt("id", currentID);
 
-                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-                transaction.add(R.id.frameLayout, updateRecordsFragment);
-                transaction.commit();
-            }
+            updateRecordsFragment updateRecordsFragment = new updateRecordsFragment();
+            updateRecordsFragment.setArguments(bundle);
+
+            FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+            transaction.add(R.id.frameLayout, updateRecordsFragment);
+            transaction.commit();
         });
-        builder.setNegativeButton("Delete", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                if (dbh.DeleteRecord(currentID)){
-                    Toast.makeText(c, "Record deleted successfully", Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    Toast.makeText(c, "Could not delete this record", Toast.LENGTH_SHORT).show();
-                }
-                fillHistory(rootView, c);
+
+        builder.setNegativeButton("Delete", (dialog, which) -> {
+            if (dbh.deleteRecord(currentID)){
+                Toast.makeText(c, "Record deleted successfully", Toast.LENGTH_SHORT).show();
             }
-        });
-        builder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                builder.create().dismiss();
+            else{
+                Toast.makeText(c, "Could not delete this record", Toast.LENGTH_SHORT).show();
             }
+            fillHistory(rootView, c);
         });
+
+        builder.setNeutralButton("Cancel", (dialog, which) -> builder.create().dismiss());
 
         builder.show();
     }
@@ -210,12 +185,12 @@ public class HistoryFragment extends Fragment {
     public void fillHistory(View root, Context c){
         ids.clear();
         
-        ArrayList<HashMap<String, String>> recordList = dbh.GetRecords(year, month, day);
+        ArrayList<HashMap<String, String>> recordList = dbh.getRecords(year, month, day);
         for (HashMap<String, String> items : recordList){
             ids.add(Integer.parseInt(items.get("ID")));
         }
 
-        lv = (ListView) root.findViewById(R.id.recordsListView);
+        lv = root.findViewById(R.id.recordsListView);
 
         ListAdapter adapter = new SimpleAdapter(c,
                 recordList, R.layout.listrow,
