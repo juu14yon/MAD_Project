@@ -33,19 +33,22 @@ public class MainActivity extends AppCompatActivity {
                 Context.MODE_PRIVATE);
         currentTheme = sharedPreferences.getString("myTheme", "Light");
         currentNotif = sharedPreferences.getBoolean("myNotifs", true);
+        currentLanguage = sharedPreferences.getString("myLang", "en");
+
+        if (!Locale.getDefault().getLanguage().equals(currentLanguage)){
+            Locale locale = new Locale(currentLanguage);
+            Locale.setDefault(locale);
+            Resources resources = getResources();
+            Configuration config = resources.getConfiguration();
+            config.setLocale(locale);
+            recreate();
+        }
 
         if (!currentTheme.equals("Light") | AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
             setTheme(R.style.Theme_Dark);
         }else{
             setTheme(R.style.Theme_Light);
         }
-
-        currentLanguage = sharedPreferences.getString("myLang", "en");
-        Locale locale = new Locale(currentLanguage);
-        Locale.setDefault(locale);
-        Resources resources = getResources();
-        Configuration config = resources.getConfiguration();
-        config.setLocale(locale);
         
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
