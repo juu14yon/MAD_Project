@@ -1,4 +1,4 @@
-#Tue Dec 13 21:49:11 ALMT 2022
+#Tue Dec 13 22:25:35 ALMT 2022
 base.0=C\:\\Users\\alexandra.yugay\\Documents\\GitHub\\MAD_Project\\BudgetCalculator\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex
