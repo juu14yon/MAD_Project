@@ -9,34 +9,43 @@ import androidx.fragment.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
 import com.ma_dev.budgetcalculator.databinding.ActivityMainBinding;
 
+import java.util.Locale;
+
 public class MainActivity extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     ActivityMainBinding binding;
     TextView header;
-    String currentTheme = "Light";
+    String currentTheme, currentLanguage;
     boolean currentNotif = true;
     static final String myPreference = "ADM-prefs";
-    static final String myTheme = "myTheme";
-    static final String myNotifs = "myNotifs";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         sharedPreferences = getSharedPreferences(myPreference,
                 Context.MODE_PRIVATE);
-        currentTheme = sharedPreferences.getString(myTheme, "Light");
-        currentNotif = sharedPreferences.getBoolean(myNotifs, true);
+        currentTheme = sharedPreferences.getString("myTheme", "Light");
+        currentNotif = sharedPreferences.getBoolean("myNotifs", true);
 
         if (!currentTheme.equals("Light") | AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
             setTheme(R.style.Theme_Dark);
         }else{
             setTheme(R.style.Theme_Light);
         }
+
+        currentLanguage = sharedPreferences.getString("myLang", "en");
+        Locale locale = new Locale(currentLanguage);
+        Locale.setDefault(locale);
+        Resources resources = getResources();
+        Configuration config = resources.getConfiguration();
+        config.setLocale(locale);
         
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
@@ -74,5 +83,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void openSettings(View view) {
         startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+        finish();
     }
 }

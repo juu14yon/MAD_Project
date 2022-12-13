@@ -110,6 +110,9 @@ public class DataBaseHandler extends SQLiteOpenHelper {
             recordList.add(record);
         }
 
+        cursor.close();
+        db.close();
+
         return recordList;
     }
 
@@ -130,6 +133,9 @@ public class DataBaseHandler extends SQLiteOpenHelper {
             record.put("Description", cursor.getString(cursor.getColumnIndex(DESCRIPTION_COL)));
             record.put("Date", cursor.getString(cursor.getColumnIndex(DATE_COL)));
         }
+
+        cursor.close();
+        db.close();
 
         return record;
     }
@@ -163,6 +169,8 @@ public class DataBaseHandler extends SQLiteOpenHelper {
         cVals.put(YEAR_COL, calendar.get(Calendar.YEAR));
 
         db.update(TABLE_NAME, cVals, ID_COL+" = ?",new String[]{String.valueOf(id)});
+
+        db.close();
     }
 
     public String whereDateFilter(String year, String month, String day, String all){
@@ -208,22 +216,25 @@ public class DataBaseHandler extends SQLiteOpenHelper {
 
     @SuppressLint("Range")
     public int getMinYear(){
+        int year = 2022;
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT year" +
                 " FROM "+ TABLE_NAME +
                 " WHERE year = (SELECT MIN(year) FROM " + TABLE_NAME + ");";
 
         Cursor cursor = db.rawQuery(query,null);
-
         if(cursor.moveToNext()){
-            return Integer.parseInt(cursor.getString(cursor.getColumnIndex(YEAR_COL)));
+            year = Integer.parseInt(cursor.getString(cursor.getColumnIndex(YEAR_COL)));
         }
-        else{
-            return 2022;
-        }
+
+        cursor.close();
+        db.close();
+        return year;
     }
+
     @SuppressLint("Range")
     public int getMaxYear(){
+        int year = 2022;
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT year" +
                 " FROM "+ TABLE_NAME +
@@ -231,11 +242,12 @@ public class DataBaseHandler extends SQLiteOpenHelper {
 
         Cursor cursor = db.rawQuery(query,null);
         if(cursor.moveToNext()){
-            return Integer.parseInt(cursor.getString(cursor.getColumnIndex(YEAR_COL)));
+            year = Integer.parseInt(cursor.getString(cursor.getColumnIndex(YEAR_COL)));
         }
-        else{
-            return 2022;
-        }
+
+        cursor.close();
+        db.close();
+        return year;
     }
 
     @SuppressLint("Range")
@@ -285,6 +297,9 @@ public class DataBaseHandler extends SQLiteOpenHelper {
                 expences += value;
             }
         }
+
+        cursor.close();
+        db.close();
     }
 
     public Double getAvailable(){
@@ -325,6 +340,7 @@ public class DataBaseHandler extends SQLiteOpenHelper {
                     value = Float.parseFloat(cursor.getString(cursor.getColumnIndex(AMOUNT_COL)).substring(1));
                     total += value;
                 }
+                cursor.close();
             } catch (NumberFormatException e) {
                 total = 0;
             }
@@ -332,6 +348,7 @@ public class DataBaseHandler extends SQLiteOpenHelper {
             totals.add(total);
         }
 
+        db.close();
         return totals;
     }
 

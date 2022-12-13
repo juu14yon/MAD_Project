@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BudgetCalculator</string>
+    <string name="app_name">ADM</string>
 
     <string name="about_us">
         This app was created as a project for Mobile App Development course (COMP4051) in
@@ -80,4 +80,5 @@
     <string name="export_successful">Data was successfully exported to Downloads</string>
     <string name="total">Total:\n</string>
     <string name="update_record">Update record</string>
+    <string name="choose_language">Choose language: </string>
 </resources>

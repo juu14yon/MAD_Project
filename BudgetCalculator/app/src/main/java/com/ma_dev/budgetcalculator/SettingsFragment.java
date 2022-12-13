@@ -1,7 +1,10 @@
 package com.ma_dev.budgetcalculator;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatDelegate;
@@ -15,13 +18,15 @@ import android.widget.Button;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import java.util.Locale;
+
 public class SettingsFragment extends Fragment {
     DataBaseHandler dbh;
 
     Switch themeSwitch, notifSwitch;
-    Button themeButton, notifButton, faqButton, exportButton;
+    Button themeButton, notifButton, faqButton, exportButton, languageButton;
     SharedPreferences sharedPreferences;
-    String currentTheme;
+    String currentTheme, currentLanguage;
     boolean currentNotif;
 
     public SettingsFragment() {
@@ -43,10 +48,12 @@ public class SettingsFragment extends Fragment {
         notifButton = rootView.findViewById(R.id.notificationButton);
         faqButton = rootView.findViewById(R.id.faqButton);
         exportButton = rootView.findViewById(R.id.exportButton);
+        languageButton = rootView.findViewById(R.id.languageButton);
 
         sharedPreferences = getActivity().getSharedPreferences("ADM-prefs", Context.MODE_PRIVATE);
         currentTheme = sharedPreferences.getString("myTheme", "Light");
         currentNotif = sharedPreferences.getBoolean("myNotifs", true);
+        currentLanguage = sharedPreferences.getString("myLang", "en");
 
         aboutButton.setOnClickListener(v -> {
             FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
@@ -95,6 +102,12 @@ public class SettingsFragment extends Fragment {
              if(dbh.exportDatabase()){
                  Toast.makeText(getContext(), R.string.export_successful, Toast.LENGTH_SHORT).show();
              }
+        });
+
+        languageButton.setOnClickListener(v -> {
+            FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+            transaction.add(R.id.settingsFrameLayout, new LanguageFragment());
+            transaction.commit();
         });
 
         return rootView;

@@ -1511,6 +1511,7 @@ id easeInOut
 id easeOut
 id east
 id edit_query
+id enLanguage
 id end
 id end_padder
 id enterAlways
@@ -1587,6 +1588,7 @@ id italic
 id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
+id kyLanguage
 id labeled
 id languageButton
 id languageIcon
@@ -1660,6 +1662,7 @@ id reverseSawtooth
 id right
 id right_icon
 id right_side
+id ruLanguage
 id saveButton
 id save_image_matrix
 id save_non_transition_alpha
@@ -1757,6 +1760,7 @@ id textView22
 id textView3
 id textView4
 id textView5
+id textView6
 id text_input_password_toggle
 id textinput_counter
 id textinput_error
@@ -1889,6 +1893,7 @@ layout fragment_about_us
 layout fragment_f_a_q
 layout fragment_history
 layout fragment_home
+layout fragment_language
 layout fragment_new_record
 layout fragment_settings
 layout fragment_stats
@@ -1957,6 +1962,7 @@ string bottom_sheet_behavior
 string cancel
 string character_counter_content_description
 string character_counter_pattern
+string choose_language
 string complete_fields
 string dark_theme
 string dashboard
