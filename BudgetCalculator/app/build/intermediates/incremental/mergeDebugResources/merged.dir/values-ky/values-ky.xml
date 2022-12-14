@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <string msgid="5976598919945601918" name="abc_action_bar_home_description">"Башкы бетке чабыттоо"</string>
+    <string msgid="8388173803310557296" name="abc_action_bar_up_description">"Мурунку экранга өтүү"</string>
+    <string msgid="3937310113216875497" name="abc_action_menu_overflow_description">"Дагы параметрлер"</string>
+    <string msgid="4692188335987374352" name="abc_action_mode_done">"Бүттү"</string>
+    <string msgid="1189761859438369441" name="abc_activity_chooser_view_see_all">"Баарын көрүү"</string>
+    <string msgid="2165779757652331008" name="abc_activitychooserview_choose_application">"Колдонмо тандоо"</string>
+    <string msgid="4215997306490295099" name="abc_capital_off">"ӨЧҮК"</string>
+    <string msgid="884982626291842264" name="abc_capital_on">"КҮЙҮК"</string>
+    <string msgid="8833365367933412986" name="abc_menu_alt_shortcut_label">"Alt+"</string>
+    <string msgid="2223301931652355242" name="abc_menu_ctrl_shortcut_label">"Ctrl+"</string>
+    <string msgid="838001238306846836" name="abc_menu_delete_shortcut_label">"delete"</string>
+    <string msgid="7986526966204849475" name="abc_menu_enter_shortcut_label">"enter"</string>
+    <string msgid="375214403600139847" name="abc_menu_function_shortcut_label">"Function+"</string>
+    <string msgid="4192209724446364286" name="abc_menu_meta_shortcut_label">"Meta+"</string>
+    <string msgid="4741552369836443843" name="abc_menu_shift_shortcut_label">"Shift+"</string>
+    <string msgid="5473865519181928982" name="abc_menu_space_shortcut_label">"боштук"</string>
+    <string msgid="6180552449598693998" name="abc_menu_sym_shortcut_label">"Sym+"</string>
+    <string msgid="5520303668377388990" name="abc_prepend_shortcut_label">"Menu+"</string>
+    <string msgid="7208076849092622260" name="abc_search_hint">"Издөө…"</string>
+    <string msgid="3741173234950517107" name="abc_searchview_description_clear">"Сурамды өчүрүү"</string>
+    <string msgid="693312494995508443" name="abc_searchview_description_query">"Изделген сурам"</string>
+    <string msgid="3417662926640357176" name="abc_searchview_description_search">"Издөө"</string>
+    <string msgid="1486535517437947103" name="abc_searchview_description_submit">"Сурам тапшыруу"</string>
+    <string msgid="2293578557972875415" name="abc_searchview_description_voice">"Айтып издөө"</string>
+    <string msgid="8875138169939072951" name="abc_shareactionprovider_share_with">"Төмөнкү менен бөлүшүү"</string>
+    <string msgid="9055268688411532828" name="abc_shareactionprovider_share_with_application">"<ns1:g id="APPLICATION_NAME">%s</ns1:g> аркылуу бөлүшүү"</string>
+    <string msgid="1656852541809559762" name="abc_toolbar_collapse_description">"Жыйыштыруу"</string>
+    <string name="about_us">
+        Бул колдонмо Android үчүн мобилдик өнүктүрүү курсунун (COMP4051) долбоору катары түзүлгөн. Борбордук Азия Университетти (Нарын, Кыргызстан).\n\nАвторлор:\n
+        ► Югай Александра\n
+        ► Абдрахманова Наита\n
+        ► Жуманазар кызы Жайнагүл\n\n\n
+        Булак коду (Github): https://github.com/juu14yon/MAD_Project\n\n\n
+
+        © 2022-2023
+    </string>
+    <string name="aboutus">Биз жөнүндө</string>
+    <string name="all">Баары</string>
+    <string name="amount">Саны</string>
+    <string name="app_name">АДМ</string>
+    <string name="available">Жеткиликтүү</string>
+    <string name="cancel">Жокко чыгаруу</string>
+    <string name="choose_language">Тилди тандаңыз: </string>
+    <string name="complete_fields">Бардык талааларды толтуруңуз</string>
+    <string name="dark_theme">Караңгы тема</string>
+    <string name="dashboard">Башкы бет</string>
+    <string name="day">Күн</string>
+    <string name="delete">Жок кылуу</string>
+    <string name="delete_confirm">Киргизүү ийгиликтүү өчүрүлдү</string>
+    <string name="delete_fail">Жазууну жок кылууда ката кетти</string>
+    <string name="description">Сүрөттөмө</string>
+    <string name="edit_record">Жазууну түзөтүү</string>
+    <string name="entertainment">Көңүл ачуу</string>
+    <string name="expences">Чыгымдар</string>
+    <string name="export_data">Маалыматтарды экспорттоо</string>
+    <string name="export_successful">Дайындар Жүктөлүп алынгандарга экспорттолду</string>
+    <string name="faq">
+        <b>1. Бул жаңы ADM (Ac.Money.Money) тиркемесин колдонуу үчүн акы алынабы?\n</b>
+\tЖок. Бул колдонмо акысыз.\n\n
+<b>2. Колдонмодо кандай категориялар бар?\n</b>
+\tADM колдонмосунда киреше, транспорт, тамак-аш, соода, керектүү төлөмдөр, көңүл ачуу, ден соолук жана дары-дармек, жашоо образы жана аманат сыяктуу түрдүү категориялар бар.\n\n
+<b>3. Жаңы категорияларды түзөтүп же кошо аламбы?\n</b>
+\tТилекке каршы, мүмкүн эмес. Бирок ар бир жазууга сүрөттөмөлөрдү кошо аласыз.\n\n
+<b>4. Акыркы айдагы бюджетти өзгөртө аламбы?\n</b>
+\tОоба, сиз бүткүл мезгил үчүн бюджеттик жазууларды түзөтө аласыз.\n\n
+<b>5. Чыгымдарымды канчалык артка карай алам?\n</b>
+\tСиз бардык бюджеттик жазууларды көрө аласыз. Белгилүү бир убакыт аралыгындагы жазууларды көрсөтүү үчүн жылды, айды жана күндү да тандай аласыз.\n\n
+<b>6. Сактоо максаттарыма кантип көз салсам болот?\n</b>
+\tЖашына жана жашоо образына жараша адамдар ар кандай себептер менен акча топтошот. Сиз пенсияга, жылдык мүлккө салыкка, чет өлкөгө саякатка, үйдү капиталдык оңдоого, колледжде билим алууга акча же кымбат баалуу кийим же зер буюмдарды үнөмдөй аласыз. Кандай муктаждыктарыңыз же каалоолоруңуз болбосун, бардык максаттарыңызга карай прогрессиңизге көз салыңыз. ADM (Akcha.Money.Money) акчаны башкаруу боюнча эң белгилүү программа.\n\n
+<b>7. Абсолюттук артыкчылыктар кайсылар?\n</b>
+\tЭгерде сиз акчаны үнөмдөшүңүз керек болгон нерселердин санына - тойго, жаңы муздаткычка, үйгө - көңүлүңүздү чөгөрүп жатсаңыз, терең дем алып, бир нече маанилүү нерселерге көңүл буруңуз. Коммуналдык кызматтар жана турак-жай биринчи орунда, андан кийин тамак-аш болушу керек. Башка негизги нерселерге дары-дармектер жана транспорт кирет. Ресторанда жакшы кечки тамак же жаңы бут кийим сизге көз каранды. Оорукананын төлөмдөрү сыяктуу айрым нерселер камтылбайт.\n\n
+<b>8. Мен башынан эле максаттарды коюшум керекпи?\n</b>
+\tБюджет түзүүнү баштаганда, узак мөөнөттүү жана кыска мөөнөттүү үнөмдөө максаттарын бирдей эске алуу маанилүү. Максаттардын кандай түрлөрүн жана качан коюуну аныктоо үчүн өзүңүзгө конкреттүү суроолорду бериңиз, мисалы:\n
+\t\t• Мен пенсия планын түзгүм келеби?\n
+\t\t• Мен колледжге акча топтоп жатамбы же балдарым үчүн фонд түзүшүм керекпи?\n
+\t\t• Машина сатып алуу же ипотека сыяктуу ири чыгымдар үчүн фонд түзүшүм керекпи?\n
+\t\t• Жаңы техника сатып алуу же жайкы эс алуу сыяктуу кыска мөөнөттүү олуттуу каржылык максаттарым барбы?\n\n
+\tБул бюджеттик суроолор сизге финансылык максаттардын топтомун иштеп чыгууга жана аларга жетүү үчүн мөөнөттөрдү белгилөөгө жардам берет. Мисалы, пенсиялык топтоолорду түзүү узак мөөнөттүү максат катары каралса, саякат фондун түзүү кыска мөөнөттүү максат катары каралышы мүмкүн.\n
+    </string>
+    <string name="food">Тамак-аш</string>
+    <string name="go_back">Артка</string>
+    <string name="health_and_medical">Ден соолук</string>
+    <string name="history">Журнал</string>
+    <string name="income">Киреше</string>
+    <string name="language">Тил</string>
+    <string name="lifestyle">Жашоо стили</string>
+    <string name="month">Ай</string>
+    <string name="monthly_report">Айлык отчет</string>
+    <string name="name">Аты</string>
+    <string name="necessary_payments">Милдеттүү чыгымдар</string>
+    <string name="new_record">Жаңы кириш</string>
+    <string name="notifications">Эскертмелер</string>
+    <string name="questions">FAQ</string>
+    <string name="save">Сактоо</string>
+    <string name="save_success">Жазуу сакталды</string>
+    <string msgid="6264217191555673260" name="search_menu_title">"Издөө"</string>
+    <string name="select_category">Категория тандаңыз: </string>
+    <string name="select_date">Күн тандаңыз</string>
+    <string name="settings">Орнотуулар</string>
+    <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="total">Бардыгы:\n</string>
+    <string name="transportation">Транспорт</string>
+    <string name="update">Түзөтүү</string>
+    <string name="update_record">Жазууну түзөтүү</string>
+    <string name="utilities">Сатып алуулар</string>
+    <string name="welcomeText">Бюджетти түзүү боюнча эң жакшы кеңештердин бири 50-20-30 эрежеси болуп саналат, ал төмөнкүгө сарпталышын сунуштайт:\n -- салыктардан кийинки кирешеңиздин 50%,\n -- 30% муктаждыктарга,\n -- 20% үнөмдөө.\n\nБул акчаны бюджет категорияларына жайылтуунун эң сонун жолу, өзгөчө бюджетти биринчи жолу түзүп жатсаңыз.</string>
+    <string name="year">Жыл</string>
+</resources>

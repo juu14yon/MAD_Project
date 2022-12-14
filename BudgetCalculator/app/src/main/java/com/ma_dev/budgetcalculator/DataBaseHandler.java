@@ -89,6 +89,12 @@ public class DataBaseHandler extends SQLiteOpenHelper {
         db.setVersion(oldVersion);
     }
 
+    public boolean dropDatabase(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
+        return true;
+    }
+
     @SuppressLint("Range")
     public ArrayList<HashMap<String, String>> getRecords(String year, String month, String day, String all){
         SQLiteDatabase db = this.getWritableDatabase();
@@ -149,7 +155,6 @@ public class DataBaseHandler extends SQLiteOpenHelper {
         } catch(Exception e){
             return false;
         }
-
     }
 
     public void updateRecordDetails(String name, String amount, String description, String category, String date, int id){
