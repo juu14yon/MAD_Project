@@ -15,11 +15,11 @@ import java.util.Calendar;
 import java.util.HashMap;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 @RunWith(AndroidJUnit4.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
+
 public class DatabaseHandlerTests {
     private DataBaseHandler dbh;
     private String name = "Name";

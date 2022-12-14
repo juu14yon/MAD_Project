@@ -1,4 +1,4 @@
-#Wed Dec 14 15:01:12 ALMT 2022
+#Wed Dec 14 15:04:21 ALMT 2022
 base.0=C\:\\Users\\alexandra.yugay\\Documents\\GitHub\\MAD_Project\\BudgetCalculator\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeExtDexDebugAndroidTest\\classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex

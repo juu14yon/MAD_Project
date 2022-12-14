@@ -20,11 +20,11 @@ import com.ma_dev.budgetcalculator.databinding.ActivityMainBinding;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
-    SharedPreferences sharedPreferences;
-    ActivityMainBinding binding;
-    TextView header;
-    String currentTheme, currentLanguage;
-    boolean currentNotif = true;
+    private SharedPreferences sharedPreferences;
+    private ActivityMainBinding binding;
+    private TextView header;
+    private String currentTheme, currentLanguage;
+    private boolean currentNotif = true;
     static final String myPreference = "ADM-prefs";
 
     @Override

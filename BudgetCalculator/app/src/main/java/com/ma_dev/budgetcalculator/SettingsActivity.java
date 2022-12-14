@@ -13,15 +13,13 @@ import android.os.Bundle;
 import android.view.View;
 
 public class SettingsActivity extends AppCompatActivity {
-    SharedPreferences sharedPreferences;
-    String currentTheme;
     static final String myPreference = "ADM-prefs";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        sharedPreferences = getSharedPreferences(myPreference,
+        SharedPreferences sharedPreferences = getSharedPreferences(myPreference,
                 Context.MODE_PRIVATE);
-        currentTheme = sharedPreferences.getString("myTheme", "Light");
+        String currentTheme = sharedPreferences.getString("myTheme", "Light");
 
         if (!currentTheme.equals("Light") | AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
             setTheme(R.style.Theme_Dark);

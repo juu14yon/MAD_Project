@@ -18,16 +18,18 @@
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="@+id/notificationLabel"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/exportButton" />
 
         <Switch
             android:id="@+id/notificationSwitch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="24dp"
+            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="@+id/notificationLabel"
             app:layout_constraintEnd_toEndOf="@+id/notificationButton"
             app:layout_constraintTop_toTopOf="@+id/notificationLabel" />
@@ -39,6 +41,7 @@
             android:layout_marginStart="24dp"
             android:src="@drawable/icn_notification"
             android:tint="?attr/text1_color"
+            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="@+id/notificationLabel"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/notificationLabel" />
@@ -51,9 +54,10 @@
             android:gravity="center_vertical|left|start"
             android:text="@string/notifications"
             android:textSize="16dp"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/notificationIcon"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/exportLabel" />
 
         <Button
             android:id="@+id/languageButton"
@@ -74,7 +78,7 @@
             android:tint="?attr/text1_color"
             app:layout_constraintBottom_toBottomOf="@+id/languageLabel"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/notificationLabel" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/languageLabel"
@@ -86,7 +90,7 @@
             android:textSize="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/languageIcon"
-            app:layout_constraintTop_toBottomOf="@+id/notificationLabel" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/themeButton"

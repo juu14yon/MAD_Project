@@ -1,10 +1,7 @@
 package com.ma_dev.budgetcalculator;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatDelegate;
@@ -17,8 +14,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Switch;
 import android.widget.Toast;
-
-import java.util.Locale;
 
 public class SettingsFragment extends Fragment {
     DataBaseHandler dbh;
